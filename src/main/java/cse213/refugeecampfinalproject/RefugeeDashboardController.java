@@ -30,8 +30,8 @@ public class RefugeeDashboardController
 
     ArrayList<HealthServicesModel> appointments = HealthcareServicesController.HealthcareServicesList;
     ArrayList<EducationServicesModel> education = EducationServicesController.EducacationServicesList;
-    ArrayList<ResourcesInventoryModel> resources = ResourcesInventoryController.ResourcesInventoryList;
-    ArrayList<ReportIssuesModel> reports = ReportIssuesController.ReportIssuesList;
+    ArrayList<ResourceRequestsModel> resources = ResourcesInventoryController.ResourceRequestsList;
+    ArrayList<IssueReportsModel> reports = ReportIssuesController.IssueReportsList;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -41,11 +41,11 @@ public class RefugeeDashboardController
         for (EducationServicesModel esm : education) {
             dashboardentries.add(new RefugeeDashboardTableViewEntriesModel(esm.getProgramName(), esm.getTiming(), esm.getAge()));
         }
-        for (ResourcesInventoryModel rsm: resources) {
-            dashboardentries.add(new RefugeeDashboardTableViewEntriesModel(rsm.getClothingType(), LocalDate.now().toString(), String.valueOf(rsm.getQuantity())));
+        for (ResourceRequestsModel rsm: resources) {
+            dashboardentries.add(new RefugeeDashboardTableViewEntriesModel(rsm.getRequestType(), LocalDate.now().toString(), String.valueOf(rsm.getQuantity())));
         }
-        for (ReportIssuesModel rim : reports) {
-            dashboardentries.add(new RefugeeDashboardTableViewEntriesModel(rim.getIssueCategory(),LocalDate.now().toString(), rim.getIssueLocation()));
+        for (IssueReportsModel rim : reports) {
+            dashboardentries.add(new RefugeeDashboardTableViewEntriesModel(rim.getCategory(),LocalDate.now().toString(), rim.getLocation()));
         }
 
         refTableTypeCol.setCellValueFactory(new PropertyValueFactory<>("type"));

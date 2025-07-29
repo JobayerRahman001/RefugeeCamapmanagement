@@ -23,34 +23,38 @@ public class ResourcesInventoryController
     @javafx.fxml.FXML
     private TextField quantityTextField;
     @javafx.fxml.FXML
-    private ComboBox<String> clothingTypeComboBox;
+    private TextField refugeeIDTextField;
+    @javafx.fxml.FXML
+    private ComboBox<String> requestTypeComboBox;
 
     @javafx.fxml.FXML
     public void initialize() {
-        clothingTypeComboBox.getItems().addAll("Shirt", "Jacket", "Blanket", "Shawl", "Female Attire", "Male Attire", "Childrens Attire");
+        requestTypeComboBox.getItems().addAll("Shirt", "Jacket", "Blanket", "Shawl", "Female Attire", "Male Attire", "Children Attire", "Extra Food", "Medicine");
     }
 
-public static ArrayList<ResourcesInventoryModel>ResourcesInventoryList = new ArrayList<>();
+public static ArrayList<ResourceRequestsModel>ResourceRequestsList = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void sendInventoryReqOnClick(ActionEvent actionEvent) {
-        if(quantityTextField.getText().isEmpty()||reasonTextField.getText().isEmpty()||clothingTypeComboBox.getValue()==null) {
+        if(refugeeIDTextField.getText().isEmpty()||quantityTextField.getText().isEmpty()||reasonTextField.getText().isEmpty()||requestTypeComboBox.getValue()==null) {
             ResourcesInventoryMsgLabel.setText("Please fill in all details to send a request");
             return;
         }
-        for(ResourcesInventoryModel rsm : ResourcesInventoryList) {
-            if (rsm.getClothingType().equals(clothingTypeComboBox.getValue())) {
+        for(ResourceRequestsModel rsm : ResourceRequestsList) {
+            if (rsm.getRequestType().equals(requestTypeComboBox.getValue())) {
                 ResourcesInventoryMsgLabel.setText("You have already requested for this item.");
                 return;
             }
         }
-        String clothingType = clothingTypeComboBox.getValue();
-        int quantity = Integer.parseInt(quantityTextField.getText().trim());
+        String refugeeID = refugeeIDTextField.getText().trim();
+        String requestType = requestTypeComboBox.getValue();
+        String quantity = quantityTextField.getText().trim();
         String reason = reasonTextField.getText().trim();
+        String status = "Pending";
 
-        ResourcesInventoryModel rsm = new ResourcesInventoryModel(clothingType, quantity, reason);
+        ResourceRequestsModel resourceRequestsModel = new ResourceRequestsModel(refugeeID, requestType,quantity, reason, status);
 
-        ResourcesInventoryList.add(rsm);
+        ResourceRequestsModel.ResourceRequestsList.add(resourceRequestsModel);
         ResourcesInventoryMsgLabel.setText("Request successfully sent to authorities!");
     }
 

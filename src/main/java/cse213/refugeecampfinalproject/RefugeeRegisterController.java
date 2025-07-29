@@ -36,6 +36,7 @@ public class RefugeeRegisterController
         refGenderComboBox.getItems().addAll( "Male", "Female", "Prefer Not to say");
     }
     ArrayList<Refugee> RefugeeList = new ArrayList<>();
+public static ArrayList<RefugeeAllocationsAdminModel> allocationList = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void registerAsRefOnClick(ActionEvent actionEvent) throws IOException{
@@ -56,6 +57,9 @@ public class RefugeeRegisterController
         Refugee r = new Refugee(id, refName, passcode, refAge, refGender, refFamSize, refNationality);
 
         RefugeeList.add(r);
+        RefugeeAllocationsAdminModel newallocation = new RefugeeAllocationsAdminModel(id, "", "", "", "");
+        RefugeeAllocationsAdminController.allocationList.clear();
+        RefugeeAllocationsAdminController.allocationList.add(newallocation);
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Registration Successful");

@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,6 +21,8 @@ public class EducationServicesController {
     private ComboBox<String> programNameComboBox;
     @javafx.fxml.FXML
     private ComboBox<String> ageGroupComboBox;
+    @javafx.fxml.FXML
+    private TextField refugeeIDTextField;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -31,12 +34,13 @@ public class EducationServicesController {
 
     @javafx.fxml.FXML
     public void enrollEducationOnClick(ActionEvent actionEvent) {
-        if (ageGroupComboBox.getValue() == null || programNameComboBox.getValue() == null) {
-            edServiceMsgLabel.setText("Please select Age Group and Program Name to enroll");
+        if (refugeeIDTextField.getText().isEmpty()||ageGroupComboBox.getValue() == null || programNameComboBox.getValue() == null) {
+            edServiceMsgLabel.setText("Please select Age Group and Program Name and enter your ID to enroll");
             return;
         }
         String selectedAgeGroup = ageGroupComboBox.getValue();
         String selectedProgram = programNameComboBox.getValue();
+        String selectedRefugeeID = refugeeIDTextField.getText().trim();
 
         String timing = switch (selectedProgram) {
             case "Vocational Training" -> "Sun-Tue 10:00 AM";
@@ -52,7 +56,7 @@ public class EducationServicesController {
                 return;
             }
         }
-        EducationServicesModel newEnrollment = new EducationServicesModel(selectedAgeGroup, selectedProgram, timing);
+        EducationServicesModel newEnrollment = new EducationServicesModel(selectedRefugeeID, selectedAgeGroup, selectedProgram, timing);
         EducacationServicesList.add(newEnrollment);
 
         edServiceMsgLabel.setText("Enrolled in" + selectedProgram + timing);

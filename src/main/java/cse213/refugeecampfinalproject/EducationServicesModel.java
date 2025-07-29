@@ -1,14 +1,24 @@
 package cse213.refugeecampfinalproject;
 
 public class EducationServicesModel {
+    private String refugeeID;
     private String age;
     private String programName;
     private String timing;
 
-    public EducationServicesModel(String age, String programName, String timing) {
+    public EducationServicesModel(String refugeeID, String age, String programName, String timing) {
+        this.refugeeID = refugeeID;
         this.age = age;
         this.programName = programName;
         this.timing = timing;
+    }
+
+    public String getRefugeeID() {
+        return refugeeID;
+    }
+
+    public void setRefugeeID(String refugeeID) {
+        this.refugeeID = refugeeID;
     }
 
     public String getAge() {
@@ -38,7 +48,8 @@ public class EducationServicesModel {
     @Override
     public String toString() {
         return "EducationServicesModel{" +
-                "age='" + age + '\'' +
+                "refugeeID='" + refugeeID + '\'' +
+                ", age='" + age + '\'' +
                 ", programName='" + programName + '\'' +
                 ", timing='" + timing + '\'' +
                 '}';

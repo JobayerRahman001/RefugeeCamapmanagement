@@ -1,16 +1,26 @@
 package cse213.refugeecampfinalproject;
 
 public class VolunteerModel {
+    private String volID;
     private String volName;
     private String volSkills;
     private String volServiceArea;
     private boolean volAvailability;
 
-    public VolunteerModel(String volName, String volSkills, String volServiceArea, boolean volAvailability) {
+    public VolunteerModel(String volID, String volName, String volSkills, String volServiceArea, boolean volAvailability) {
+        this.volID = volID;
         this.volName = volName;
         this.volSkills = volSkills;
         this.volServiceArea = volServiceArea;
         this.volAvailability = volAvailability;
+    }
+
+    public String getVolID() {
+        return volID;
+    }
+
+    public void setVolID(String volID) {
+        this.volID = volID;
     }
 
     public String getVolName() {
@@ -48,7 +58,8 @@ public class VolunteerModel {
     @Override
     public String toString() {
         return "VolunteerModel{" +
-                "volName='" + volName + '\'' +
+                "volID='" + volID + '\'' +
+                ", volName='" + volName + '\'' +
                 ", volSkills='" + volSkills + '\'' +
                 ", volServiceArea='" + volServiceArea + '\'' +
                 ", volAvailability=" + volAvailability +

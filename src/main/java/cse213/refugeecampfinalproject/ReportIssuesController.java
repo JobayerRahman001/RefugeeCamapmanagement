@@ -26,8 +26,11 @@ public class ReportIssuesController
     private Label reportIssueMsgLabel;
     @javafx.fxml.FXML
     private TextField issueDetailsTextField;
+    @javafx.fxml.FXML
+    private TextField refIDTextField;
 
-public static ArrayList<ReportIssuesModel>ReportIssuesList = new ArrayList<>();
+public static ArrayList<IssueReportsModel>IssueReportsList = new ArrayList<>();
+
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -47,20 +50,22 @@ public static ArrayList<ReportIssuesModel>ReportIssuesList = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void sendReportOnClick(ActionEvent actionEvent) {
-        if(issueCategoryComboBox.getValue()==null||issueLocationComboBox.getValue()==null||issueUrgencyLvlComboBox.getValue()==null||issueDetailsTextField.getText().isEmpty()) {
-            reportIssueMsgLabel.setText("Please file in the details");
+        if(refIDTextField.getText().isEmpty()||issueCategoryComboBox.getValue()==null||issueLocationComboBox.getValue()==null||issueUrgencyLvlComboBox.getValue()==null||issueDetailsTextField.getText().isEmpty()) {
+            reportIssueMsgLabel.setText("Please fill in everything");
             return;
         }
 
+        String refugeeID = refIDTextField.getText().trim();
         String category = issueCategoryComboBox.getValue();
         String details = issueDetailsTextField.getText().trim();
         String urgency = issueUrgencyLvlComboBox.getValue();
         String location = issueLocationComboBox.getValue();
+        String status = "Pending";
 
-        ReportIssuesModel reportIssuesModel = new ReportIssuesModel(category, details, urgency, location);
+        IssueReportsModel issuereportsModel = new IssueReportsModel(refugeeID, category, details, urgency, location, status);
 
         reportIssueMsgLabel.setText("Thank you for reporting, the authorities will get to it.");
 
-        ReportIssuesList.add(reportIssuesModel);
+        IssueReportsModel.IssueReportsList.add(issuereportsModel);
     }
 }

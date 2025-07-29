@@ -28,9 +28,9 @@ public class VolunteerSignupController
     @javafx.fxml.FXML
     public void initialize() {
 
-        volServiceAreaComboBox.getItems().addAll( "Food", "Health", "Education", "Inventory Management");
+        volServiceAreaComboBox.getItems().addAll( "Food", "Healthcare", "Education", "Inventory Management");
     }
-    ArrayList<VolunteerModel> VolunteerList = new ArrayList<>();
+    public static ArrayList<VolunteerModel>VolunteerList = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void volSignupOnClick(ActionEvent actionEvent) throws IOException {
@@ -39,12 +39,14 @@ public class VolunteerSignupController
             return;
         }
 
+        String volid = "VOL" + (VolunteerList.size()+1);
         String volName = volNameTextField.getText().trim();
         String volSkills = volSkillsTextField.getText().trim();
         String volselectedServiceAreaComboBox = volServiceAreaComboBox.getValue();
         boolean volisAvailable = volAvailabilityCheckBox.isSelected();
 
-        VolunteerModel vl = new VolunteerModel(volName, volSkills, volselectedServiceAreaComboBox, volisAvailable);
+
+        VolunteerModel vl = new VolunteerModel(volid, volName, volSkills, volselectedServiceAreaComboBox, volisAvailable);
 
         VolunteerList.add(vl);
 
