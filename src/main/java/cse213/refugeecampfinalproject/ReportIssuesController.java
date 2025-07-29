@@ -1,0 +1,66 @@
+package cse213.refugeecampfinalproject;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Objects;
+
+public class ReportIssuesController
+{
+    @javafx.fxml.FXML
+    private ComboBox<String> issueUrgencyLvlComboBox;
+    @javafx.fxml.FXML
+    private ComboBox<String> issueCategoryComboBox;
+    @javafx.fxml.FXML
+    private ComboBox<String> issueLocationComboBox;
+    @javafx.fxml.FXML
+    private Label reportIssueMsgLabel;
+    @javafx.fxml.FXML
+    private TextField issueDetailsTextField;
+
+public static ArrayList<ReportIssuesModel>ReportIssuesList = new ArrayList<>();
+
+    @javafx.fxml.FXML
+    public void initialize() {
+        issueUrgencyLvlComboBox.getItems().addAll("Low", "Medium", "High", "Immediate");
+        issueLocationComboBox.getItems().addAll("Block A", "Block B", "Block C", "Block D");
+        issueCategoryComboBox.getItems().addAll("safety", "Clean Water", "Hygiene & Sanitation", "Toiletaries", "Food", "Shelter", "Other");
+    }
+
+    @javafx.fxml.FXML
+    public void backtoDashboardOnClick(ActionEvent actionEvent) throws IOException {
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/RefugeeDashboard.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(home));
+        stage.setTitle("Refugee Dashboard");
+        stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void sendReportOnClick(ActionEvent actionEvent) {
+        if(issueCategoryComboBox.getValue()==null||issueLocationComboBox.getValue()==null||issueUrgencyLvlComboBox.getValue()==null||issueDetailsTextField.getText().isEmpty()) {
+            reportIssueMsgLabel.setText("Please file in the details");
+            return;
+        }
+
+        String category = issueCategoryComboBox.getValue();
+        String details = issueDetailsTextField.getText().trim();
+        String urgency = issueUrgencyLvlComboBox.getValue();
+        String location = issueLocationComboBox.getValue();
+
+        ReportIssuesModel reportIssuesModel = new ReportIssuesModel(category, details, urgency, location);
+
+        reportIssueMsgLabel.setText("Thank you for reporting, the authorities will get to it.");
+
+        ReportIssuesList.add(reportIssuesModel);
+    }
+}
