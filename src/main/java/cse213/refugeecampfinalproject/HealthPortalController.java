@@ -23,4 +23,36 @@ public class HealthPortalController {
         stage.setTitle("Home");
         stage.show();
     }
+
+    @javafx.fxml.FXML
+    public void reviewongoingOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void creatpreacriptionOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void testresultOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void updatevaccinrecordOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void viewAppointmentOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void referhospitalOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void schedulefollowupOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void addmedicalnotesOnAction(ActionEvent actionEvent) {
+    }
 }
