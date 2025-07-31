@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.ResourceRepairRequestsController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: fff8e1;">
+         <children>
+            <Label layoutX="175.0" layoutY="12.0" prefHeight="42.0" prefWidth="241.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text=" Resource Repair Requests">
+               <font>
+                  <Font name="Bookman Old Style" size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="21.0" layoutY="19.0" mnemonicParsing="false" onAction="#backToHomeOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Go Back" />
+            <Label fx:id="InputLabel" layoutX="21.0" layoutY="69.0" prefHeight="18.0" prefWidth="106.0" text="Repair Tickets Table" />
+            <TextField fx:id="etaField" layoutX="396.0" layoutY="104.0" prefHeight="26.0" prefWidth="150.0" />
+            <Button fx:id="updateRequestButton" layoutX="426.0" layoutY="172.0" mnemonicParsing="false" onAction="#updateRequestButtonOnAction" prefHeight="27.0" prefWidth="115.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Update Button" />
+            <Label fx:id="confirmationLabel" layoutX="237.0" layoutY="249.0" prefHeight="50.0" prefWidth="350.0" style="-fx-background-color: white;" />
+            <TableView fx:id="repairTicketsTable" layoutX="33.0" layoutY="100.0" prefHeight="200.0" prefWidth="195.0" style="-fx-background-color: e0f7fa;">
+               <columns>
+                  <TableColumn fx:id="issueColumn" prefWidth="65.5999755859375" text="Issue" />
+                  <TableColumn fx:id="priorityColumn" prefWidth="67.20001220703125" text="Priority " />
+                  <TableColumn fx:id="statusColumn" prefWidth="61.5999755859375" text="Status" />
+               </columns>
+            </TableView>
+            <Label fx:id="assignStaffLabel" layoutX="286.0" layoutY="70.0" text="Assign Staff : " />
+            <ComboBox fx:id="staffComboBox" layoutX="396.0" layoutY="66.0" prefWidth="150.0" />
+            <Label fx:id="ETALabel" layoutX="319.0" layoutY="108.0" text="ETA  : " />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -41,9 +41,13 @@ public class EducationServicesController {
         String selectedAgeGroup = ageGroupComboBox.getValue();
         String selectedProgram = programNameComboBox.getValue();
         String selectedRefugeeID = refugeeIDTextField.getText().trim();
+        if(!selectedRefugeeID.equals(LoggedInRefModel.getLoggedInRefugeeId())){
+            edServiceMsgLabel.setText("Please enter your own refugee ID!");
+            return;
+        }
 
         String timing = switch (selectedProgram) {
-            case "Vocational Training" -> "Sun-Tue 10:00 AM";
+            case "Vocational Training", "5 to 10 years" -> "Sun-Tue 10:00 AM";
             case "English Language" -> "Mon-Wed 2:00 PM";
             case "Basic Literacy" -> "Tue-Thu 9:00 AM";
             case "Basic Schooling" -> "Daily 8:00 AM";

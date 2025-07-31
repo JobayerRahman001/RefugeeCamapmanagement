@@ -60,6 +60,10 @@ public static ArrayList<HealthServicesModel> HealthcareServicesList = new ArrayL
         }
 
         String refugeeid = refidTextField.getText().trim();
+        if(!refugeeid.equals(LoggedInRefModel.getLoggedInRefugeeId())){
+            healthcareMsgLabel.setText("Please enter your own refugee ID!");
+            return;
+        }
         String symptoms = null;
         String appointmentTime = null;
         String concerns = refugeeConcernsTextField.getText().trim();
@@ -68,6 +72,12 @@ public static ArrayList<HealthServicesModel> HealthcareServicesList = new ArrayL
         String result = null;
         String prescription = null;
 
+        for(HealthServicesModel hsm: HealthcareServicesList) {
+            if (hsm.getrefugeeid().equals(refugeeid) && hsm.getHealthcareServiceType().equals("Counselling")) {
+                healthcareMsgLabel.setText("You have already booked a session.");
+                return;
+            }
+        }
         HealthServicesModel appointment = new HealthServicesModel(refugeeid, "Counselling", symptoms, appointmentTime, concerns, counsellingTime,testName, result, prescription);
 
         HealthcareServicesList.add(appointment);
@@ -82,6 +92,10 @@ public static ArrayList<HealthServicesModel> HealthcareServicesList = new ArrayL
         }
 
         String refugeeid = refidTextField.getText().trim();
+        if(!refugeeid.equals(LoggedInRefModel.getLoggedInRefugeeId())){
+            healthcareMsgLabel.setText("Please enter your own refugee ID!");
+            return;
+        }
         String symptoms = refugeeSymptomsTextField.getText().trim();
         String appointmentTime = refAppointmentTimeComboBox.getValue();
         String concerns = null;
@@ -90,6 +104,12 @@ public static ArrayList<HealthServicesModel> HealthcareServicesList = new ArrayL
         String result = null;
         String prescription = null;
 
+        for(HealthServicesModel hsm: HealthcareServicesList) {
+            if(hsm.getrefugeeid().equals(refugeeid) && hsm.getHealthcareServiceType().equals("Appointment")) {
+                healthcareMsgLabel.setText("You have already booked an appointment.");
+                return;
+            }
+        }
         HealthServicesModel appointment = new HealthServicesModel(refugeeid, "Appointment", symptoms, appointmentTime, concerns, counsellingTime,testName, result, prescription);
 
         HealthcareServicesList.add(appointment);
@@ -108,6 +128,10 @@ public static ArrayList<HealthServicesModel> HealthcareServicesList = new ArrayL
     @javafx.fxml.FXML
     public void loadTestsPrescriptionsOnClick(ActionEvent actionEvent) {
         String enteredID = refidTextField.getText().trim();
+        if(!enteredID.equals(LoggedInRefModel.getLoggedInRefugeeId())){
+            healthcareMsgLabel.setText("Please enter your own refugee ID!");
+            return;
+        }
 
         if (enteredID.isEmpty()) {
             healthcareMsgLabel.setText("Please enter ID");

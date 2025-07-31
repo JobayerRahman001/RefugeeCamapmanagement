@@ -56,16 +56,24 @@ public static ArrayList<IssueReportsModel>IssueReportsList = new ArrayList<>();
         }
 
         String refugeeID = refIDTextField.getText().trim();
+        if(!refugeeID.equals(LoggedInRefModel.getLoggedInRefugeeId())){
+            reportIssueMsgLabel.setText("Please enter your own refugee ID!");
+            return;
+        }
         String category = issueCategoryComboBox.getValue();
         String details = issueDetailsTextField.getText().trim();
         String urgency = issueUrgencyLvlComboBox.getValue();
         String location = issueLocationComboBox.getValue();
         String status = "Pending";
-
         IssueReportsModel issuereportsModel = new IssueReportsModel(refugeeID, category, details, urgency, location, status);
-
+        for(IssueReportsModel IRM : IssueReportsList) {
+            if(IRM.getRefugeeID().equals(refugeeID) && IRM.getCategory().equals("safety")||IRM.getCategory().equals("Clean Water")||IRM.getCategory().equals("Hygiene & Sanitation")||IRM.getCategory().equals("Food")||IRM.getCategory().equals("Shelter")) {
+                reportIssueMsgLabel.setText("You have already made a report.");
+                return;
+            }
+        }
         reportIssueMsgLabel.setText("Thank you for reporting, the authorities will get to it.");
 
-        IssueReportsModel.IssueReportsList.add(issuereportsModel);
+        IssueReportsList.add(issuereportsModel);
     }
 }

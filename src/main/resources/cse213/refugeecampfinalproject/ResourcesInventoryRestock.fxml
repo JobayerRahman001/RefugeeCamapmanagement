@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.ResourcesInventoryRestockController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: fff8e1;">
+         <children>
+            <Label layoutX="179.0" layoutY="33.0" prefHeight="42.0" prefWidth="175.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text=" Restock Inventory">
+               <font>
+                  <Font name="Bookman Old Style" size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="21.0" layoutY="40.0" mnemonicParsing="false" onAction="#backToHomeOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Go Back" />
+            <Label fx:id="phLabel" layoutX="14.0" layoutY="142.0" prefHeight="18.0" prefWidth="106.0" text="pH Level:" />
+            <TextField fx:id="phField" layoutX="117.0" layoutY="138.0" prefHeight="26.0" prefWidth="150.0" />
+            <Button fx:id="updateStockButton" layoutX="118.0" layoutY="244.0" mnemonicParsing="false" onAction="#updateStockButtonOnAction" prefHeight="42.0" prefWidth="150.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Update Stock" />
+            <Label fx:id="updateConfirmationLabel" layoutX="307.0" layoutY="324.0" prefHeight="50.0" prefWidth="246.0" style="-fx-background-color: white;" />
+            <TableView fx:id="restockTableView" layoutX="307.0" layoutY="87.0" prefHeight="200.0" prefWidth="246.0" style="-fx-background-color: e0f7fa;">
+               <columns>
+                  <TableColumn fx:id="ItemNameColumn" prefWidth="70.40008544921875" text=" Item Name" />
+                  <TableColumn fx:id="CurrentQtyColumn" prefWidth="79.20001220703125" text="Current Qty" />
+                  <TableColumn fx:id="tankStatusColumn" prefWidth="94.4" text="Received Qty" />
+               </columns>
+            </TableView>
+            <Label fx:id="assignStaffLabel" layoutX="21.0" layoutY="143.0" />
+            <Label fx:id="ETALabel" layoutX="15.0" layoutY="191.0" text="Clarity Level:: " />
+            <TextField fx:id="clarityLabel" layoutX="118.0" layoutY="187.0" prefHeight="26.0" prefWidth="150.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

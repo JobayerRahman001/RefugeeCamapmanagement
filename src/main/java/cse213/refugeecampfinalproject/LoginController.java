@@ -60,6 +60,7 @@ public class LoginController {
         if (selectedUser.equals("Refugee")) {
             for (Refugee r : registeredRefugees) {
                 if (r.getPasscode().equals(enteredPasscode)) {
+                    LoggedInRefModel.setLoggedInRefugeeId(r.getId());
                     Parent dashboard = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/RefugeeDashboard.fxml")));
                     Stage stage = (Stage) userTypeComboBox.getScene().getWindow();
                     stage.setScene(new Scene(dashboard));

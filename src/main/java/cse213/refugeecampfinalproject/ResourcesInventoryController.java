@@ -47,15 +47,25 @@ public static ArrayList<ResourceRequestsModel>ResourceRequestsList = new ArrayLi
             }
         }
         String refugeeID = refugeeIDTextField.getText().trim();
+        if(!refugeeID.equals(LoggedInRefModel.getLoggedInRefugeeId())){
+            ResourcesInventoryMsgLabel.setText("Please enter your own refugee ID!");
+            return;
+        }
         String requestType = requestTypeComboBox.getValue();
         String quantity = quantityTextField.getText().trim();
         String reason = reasonTextField.getText().trim();
         String status = "Pending";
 
         ResourceRequestsModel resourceRequestsModel = new ResourceRequestsModel(refugeeID, requestType,quantity, reason, status);
-
-        ResourceRequestsModel.ResourceRequestsList.add(resourceRequestsModel);
+        for(ResourceRequestsModel RSM : ResourceRequestsList) {
+            if(RSM.getRefugeeID().equals(refugeeID) && RSM.getRequestType().equals("Shirt")||RSM.getRequestType().equals( "Jacket")||RSM.getRequestType().equals("Blanket")||RSM.getRequestType().equals("Shawl")||RSM.getRequestType().equals("Female Attire")||RSM.getRequestType().equals("Male Attire")||RSM.getRequestType().equals("Children Attire")||RSM.getRequestType().equals("Extra Food")||RSM.getRequestType().equals("Medicine")) {
+                ResourcesInventoryMsgLabel.setText("You have already made a request.");
+                return;
+            }
+        }
+        ResourceRequestsList.add(resourceRequestsModel);
         ResourcesInventoryMsgLabel.setText("Request successfully sent to authorities!");
+
     }
 
     @javafx.fxml.FXML

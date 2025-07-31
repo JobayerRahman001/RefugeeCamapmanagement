@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: fff8e1;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.VolunteerEditSkillsController">
+   <children>
+      <Label layoutX="234.0" layoutY="24.0" prefHeight="42.0" prefWidth="114.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="  Edit Skills">
+         <font>
+            <Font name="Bookman Old Style" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="32.0" layoutY="33.0" mnemonicParsing="false" onAction="#backToHomeOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Go Back" />
+      <Label fx:id="InputLabel" layoutX="41.0" layoutY="91.0" text="Input new skill: " />
+      <TextField fx:id="newSkillField" layoutX="136.0" layoutY="87.0" prefHeight="26.0" prefWidth="266.0" />
+      <Button fx:id="addSkillButton" layoutX="427.0" layoutY="86.0" mnemonicParsing="false" onAction="#addSkillButoonOnAction" prefHeight="26.0" prefWidth="90.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Add new skill" />
+      <Button fx:id="saveButton" layoutX="488.0" layoutY="351.0" mnemonicParsing="false" onAction="#saveButtonOnACtion" prefHeight="34.0" prefWidth="90.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Save" />
+      <Label fx:id="validationLabel" layoutX="150.0" layoutY="175.0" prefHeight="110.0" prefWidth="238.0" style="-fx-background-color: white;" />
+      <TableView fx:id="availableShiftsTable" layoutX="427.0" layoutY="124.0" prefHeight="200.0" prefWidth="148.0" style="-fx-background-color: e0f7fa;">
+         <columns>
+            <TableColumn fx:id="skillNameColumn" prefWidth="147.20001220703125" text="Skill" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
