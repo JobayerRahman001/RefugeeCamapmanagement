@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.EmergencyFundRequestController">
+   <children>
+      <Label layoutX="196.0" layoutY="14.0" text="Emerency Fund Request">
+         <font>
+            <Font name="Bookman Old Style" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="373.0" layoutY="273.0" mnemonicParsing="false" onAction="#approverequestOnAction" prefHeight="25.0" prefWidth="155.0" text="Approve Request" />
+      <TableView fx:id="emergencyfundrequestTabelView" layoutX="24.0" layoutY="217.0" prefHeight="163.0" prefWidth="324.0">
+        <columns>
+          <TableColumn fx:id="requesternameColum" prefWidth="97.60001373291016" text="Requester name" />
+          <TableColumn fx:id="requesteddateColum" prefWidth="100.0" text="Requested Date" />
+            <TableColumn fx:id="requestedammountColum" prefWidth="125.60003662109375" text="Requested Ammount" />
+        </columns>
+      </TableView>
+      <Button layoutX="373.0" layoutY="319.0" mnemonicParsing="false" onAction="#rejectrequestOnAction" prefHeight="25.0" prefWidth="155.0" text="Reject Request" />
+      <Button layoutX="373.0" layoutY="224.0" mnemonicParsing="false" onAction="#viewemergencyrequestOnAction" prefHeight="25.0" prefWidth="155.0" text="View Emergency Request" />
+      <Button layoutX="373.0" layoutY="364.0" mnemonicParsing="false" onAction="#gobacktoundashboardOnAction" text="Go Back to UN Dashboard" />
+      <TextArea fx:id="emergenctreasonTextArea" layoutX="133.0" layoutY="54.0" prefHeight="50.0" prefWidth="194.0" />
+      <TextArea fx:id="remarksTextArea" layoutX="113.0" layoutY="118.0" prefHeight="50.0" prefWidth="200.0" />
+      <TextField fx:id="requestedammountTextField" layoutX="443.0" layoutY="54.0" />
+      <Label layoutX="24.0" layoutY="71.0" text="Emergency Reason" />
+      <Label layoutX="24.0" layoutY="143.0" text="Remarks" />
+      <Label layoutX="327.0" layoutY="58.0" text="Requested Ammount" />
+      <CheckBox fx:id="emergencyvalidcheckbox" layoutX="454.0" layoutY="95.0" mnemonicParsing="false" text="Emergency Valid" />
+      <Label fx:id="verificationnotesLabel" layoutX="356.0" layoutY="134.0" prefHeight="36.0" prefWidth="230.0" />
+      <Label fx:id="selectedrequestedinfoLabel" layoutX="356.0" layoutY="182.0" prefHeight="36.0" prefWidth="230.0" />
+   </children>
+</AnchorPane>

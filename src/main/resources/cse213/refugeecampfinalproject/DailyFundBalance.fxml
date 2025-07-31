@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.DailyFundBalanceController">
+   <children>
+      <Label layoutX="212.0" layoutY="14.0" text="Daily Fund Balance">
+         <font>
+            <Font name="Bookman Old Style" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="59.0" layoutY="81.0" text="Avilable Balance" />
+      <Label fx:id="datafreshnesslabel" layoutX="57.0" layoutY="182.0" prefHeight="32.0" prefWidth="188.0" />
+      <Label fx:id="fundheadinglabel" layoutX="347.0" layoutY="77.0" prefHeight="25.0" prefWidth="206.0" />
+      <Label layoutX="59.0" layoutY="143.0" text="Last Updated" />
+      <TextField fx:id="avilableBalanceTextField" layoutX="151.0" layoutY="77.0" />
+      <TextField fx:id="lastupdatedTextField" layoutX="151.0" layoutY="139.0" />
+      <Label fx:id="statuslabel" layoutX="48.0" layoutY="348.0" prefHeight="32.0" prefWidth="188.0" />
+      <Button layoutX="68.0" layoutY="250.0" mnemonicParsing="false" onAction="#viewtodaybalanceOnAction" text="View Today Balance" />
+      <Button layoutX="326.0" layoutY="250.0" mnemonicParsing="false" onAction="#gobacktoundashboardOnAction" text="Go Back to UN Dashboard" />
+   </children>
+</AnchorPane>
