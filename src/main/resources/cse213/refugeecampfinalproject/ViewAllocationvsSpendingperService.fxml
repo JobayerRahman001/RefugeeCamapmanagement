@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.ViewAllocationvsSpendingperServiceController">
+   <children>
+      <Label layoutX="128.0" layoutY="14.0" text=" View Allocation vs Spending per Service">
+         <font>
+            <Font name="Bookman Old Style" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="41.0" layoutY="108.0" mnemonicParsing="false" onAction="#viewbudgetOnAction" text="View Budget Utilization" />
+      <TableView fx:id="viewallocationTabelView" layoutX="251.0" layoutY="93.0" prefHeight="200.0" prefWidth="285.0">
+        <columns>
+          <TableColumn fx:id="servicenameColum" prefWidth="92.8000259399414" text="Service Name" />
+          <TableColumn fx:id="alocatedColum" prefWidth="101.199951171875" text="Allocated" />
+            <TableColumn fx:id="spentColum" prefWidth="91.20001220703125" text="Spent" />
+        </columns>
+      </TableView>
+      <Label fx:id="budgetStatusLabel" layoutX="27.0" layoutY="268.0" prefHeight="25.0" prefWidth="220.0" text=" " />
+      <Button layoutX="335.0" layoutY="333.0" mnemonicParsing="false" onAction="#gobacktoaccountlogisticsdashboardOnAction" text="Go Back to Account &amp; Logistics Dashoard" />
+   </children>
+</AnchorPane>
