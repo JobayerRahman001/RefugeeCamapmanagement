@@ -24,4 +24,36 @@ public class EducationPanelController
         stage.setTitle("Home");
         stage.show();
     }
+
+    @javafx.fxml.FXML
+    public void updateprogramscheduleOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void enrollmentstatusOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void educatonapplicationOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void archiveprogramOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void evulateteacherperformanceOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void uplodestudymaterialOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void addprogramOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void asignteacherOnAction(ActionEvent actionEvent) {
+    }
 }

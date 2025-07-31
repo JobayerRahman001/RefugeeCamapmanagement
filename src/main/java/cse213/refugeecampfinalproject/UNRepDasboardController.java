@@ -16,12 +16,48 @@ public class UNRepDasboardController
     public void initialize() {
     }
 
-    @javafx.fxml.FXML
+    @java.lang.Deprecated
     public void backToHomeOnClick(ActionEvent actionEvent) throws IOException {
         Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/homepage.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Home");
         stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void fundnewinitiativeOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void annualfundingplanOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void auditreportfeedbackOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void impactanalysisreportOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void monthlysummaryreportOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void checkfundbalanceOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void approveemergencyfundOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void backToHomeOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void viewcountrydonationOnAction(ActionEvent actionEvent) {
     }
 }
