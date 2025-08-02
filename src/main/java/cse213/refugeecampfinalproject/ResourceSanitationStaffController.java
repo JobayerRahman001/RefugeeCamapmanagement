@@ -1,5 +1,8 @@
 package cse213.refugeecampfinalproject;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.*;
+
 public class ResourceSanitationStaffController
 {
     @javafx.fxml.FXML

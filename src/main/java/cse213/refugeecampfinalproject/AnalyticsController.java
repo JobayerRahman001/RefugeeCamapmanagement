@@ -82,7 +82,7 @@ public static ArrayList<AnalyticsModel> food = new ArrayList<>();
         typeTableCol.setCellValueFactory(new PropertyValueFactory<>("type"));
         statusTableColH.setCellValueFactory(new PropertyValueFactory<>("status"));
         for (HealthServicesModel hsm : appointments) {
-            healthcareTableView.getItems().add(new AnalyticsModel(hsm.getrefugeeid(), hsm.getHealthcareServiceType(), hsm.getDisplayDate(), null, null, null, null, null));
+            healthcareTableView.getItems().add(new AnalyticsModel(hsm.getRefugeeID(), hsm.getHealthcareServiceType(), hsm.getStatus(), null, null, null, null, null));
         }
 
         refugeeIDTableColE.setCellValueFactory(new PropertyValueFactory<>("refugeeID"));

@@ -1,5 +1,7 @@
 package cse213.refugeecampfinalproject;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -71,14 +73,15 @@ public static ArrayList<HealthServicesModel> HealthcareServicesList = new ArrayL
         String testName = null;
         String result = null;
         String prescription = null;
+        String status = "Pending";
 
         for(HealthServicesModel hsm: HealthcareServicesList) {
-            if (hsm.getrefugeeid().equals(refugeeid) && hsm.getHealthcareServiceType().equals("Counselling")) {
+            if (hsm.getRefugeeID().equals(refugeeid) && hsm.getHealthcareServiceType().equals("Counselling")) {
                 healthcareMsgLabel.setText("You have already booked a session.");
                 return;
             }
         }
-        HealthServicesModel appointment = new HealthServicesModel(refugeeid, "Counselling", symptoms, appointmentTime, concerns, counsellingTime,testName, result, prescription);
+        HealthServicesModel appointment = new HealthServicesModel(refugeeid, "Counselling", symptoms, appointmentTime, concerns, counsellingTime,testName, result, prescription, status);
 
         HealthcareServicesList.add(appointment);
         healthcareMsgLabel.setText("Counselling Session Booked");
@@ -103,14 +106,15 @@ public static ArrayList<HealthServicesModel> HealthcareServicesList = new ArrayL
         String testName = null;
         String result = null;
         String prescription = null;
+        String status = "Pending";
 
         for(HealthServicesModel hsm: HealthcareServicesList) {
-            if(hsm.getrefugeeid().equals(refugeeid) && hsm.getHealthcareServiceType().equals("Appointment")) {
+            if(hsm.getRefugeeID().equals(refugeeid) && hsm.getHealthcareServiceType().equals("Appointment")) {
                 healthcareMsgLabel.setText("You have already booked an appointment.");
                 return;
             }
         }
-        HealthServicesModel appointment = new HealthServicesModel(refugeeid, "Appointment", symptoms, appointmentTime, concerns, counsellingTime,testName, result, prescription);
+        HealthServicesModel appointment = new HealthServicesModel(refugeeid, "Appointment", symptoms, appointmentTime, concerns, counsellingTime,testName, result, prescription, status);
 
         HealthcareServicesList.add(appointment);
         healthcareMsgLabel.setText("Medical Appointment booked.");

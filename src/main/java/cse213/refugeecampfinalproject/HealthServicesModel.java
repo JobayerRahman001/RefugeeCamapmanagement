@@ -3,7 +3,7 @@ package cse213.refugeecampfinalproject;
 import java.util.Locale;
 
 public class HealthServicesModel {
-    private String refugeeid;
+    private String refugeeID;
     private String healthcareServiceType;
     private String symptoms;
     private String appointmentTime;
@@ -12,9 +12,10 @@ public class HealthServicesModel {
     private String testName;
     private String result;
     private String prescription;
+    private String status;
 
-    public HealthServicesModel(String refugeeid, String healthcareServiceType, String symptoms, String appointmentTime, String concerns, String counsellingTime, String testName, String result, String prescription) {
-        this.refugeeid = refugeeid;
+    public HealthServicesModel(String refugeeID, String healthcareServiceType, String symptoms, String appointmentTime, String concerns, String counsellingTime, String testName, String result, String prescription, String status) {
+        this.refugeeID = refugeeID;
         this.healthcareServiceType = healthcareServiceType;
         this.symptoms = symptoms;
         this.appointmentTime = appointmentTime;
@@ -23,14 +24,15 @@ public class HealthServicesModel {
         this.testName = testName;
         this.result = result;
         this.prescription = prescription;
+        this.status = status;
     }
 
-    public String getrefugeeid() {
-        return refugeeid;
+    public String getRefugeeID() {
+        return refugeeID;
     }
 
-    public void setrefugeeid(String refugeeid) {
-        this.refugeeid = refugeeid;
+    public void setRefugeeID(String refugeeID) {
+        this.refugeeID = refugeeID;
     }
 
     public String getHealthcareServiceType() {
@@ -96,29 +98,19 @@ public class HealthServicesModel {
     public void setPrescription(String prescription) {
         this.prescription = prescription;
     }
-    public String getDisplayDate() {
-        if (appointmentTime != null && !appointmentTime.isEmpty()) {
-            return appointmentTime;
-        } else if (counsellingTime != null && !counsellingTime.isEmpty()) {
-            return counsellingTime;
-        } else {
-            return "N/A";
-        }
+
+    public String getStatus() {
+        return status;
     }
-    public String getDisplayDetails() {
-        if (symptoms != null && !symptoms.isEmpty()) {
-            return symptoms;
-        } else if (concerns != null && !concerns.isEmpty()) {
-            return concerns;
-        } else {
-            return "N/A";
-        }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
     public String toString() {
         return "HealthServicesModel{" +
-                "refugeeid='" + refugeeid + '\'' +
+                "refugeeID='" + refugeeID + '\'' +
                 ", healthcareServiceType='" + healthcareServiceType + '\'' +
                 ", symptoms='" + symptoms + '\'' +
                 ", appointmentTime='" + appointmentTime + '\'' +
@@ -127,6 +119,7 @@ public class HealthServicesModel {
                 ", testName='" + testName + '\'' +
                 ", result='" + result + '\'' +
                 ", prescription='" + prescription + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 }

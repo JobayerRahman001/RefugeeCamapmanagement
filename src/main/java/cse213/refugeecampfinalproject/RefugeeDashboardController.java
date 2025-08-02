@@ -1,5 +1,7 @@
 package cse213.refugeecampfinalproject;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -26,7 +28,7 @@ public class RefugeeDashboardController
     @javafx.fxml.FXML
     private TableColumn<RefugeeDashboardTableViewEntriesModel, String> refTableDateCol;
 
-    ArrayList<RefugeeDashboardTableViewEntriesModel> dashboardentries = new ArrayList<>();
+    ObservableList<RefugeeDashboardTableViewEntriesModel> dashboardentries = FXCollections.observableArrayList();
 
     ArrayList<HealthServicesModel> appointments = HealthcareServicesController.HealthcareServicesList;
     ArrayList<EducationServicesModel> education = EducationServicesController.EducacationServicesList;
@@ -35,8 +37,12 @@ public class RefugeeDashboardController
 
     @javafx.fxml.FXML
     public void initialize() {
-        for (HealthServicesModel hsm : appointments) {
-            dashboardentries.add(new RefugeeDashboardTableViewEntriesModel(hsm.getHealthcareServiceType(), hsm.getDisplayDate(), hsm.getDisplayDetails()));
+        for (HealthServicesModel hsm : HealthcareServicesController.HealthcareServicesList) {
+            String date = hsm.getAppointmentTime() != null ? hsm.getAppointmentTime() : hsm.getCounsellingTime();
+            String details = hsm.getSymptoms() != null ? hsm.getSymptoms() : hsm.getConcerns();
+            dashboardentries.add(new RefugeeDashboardTableViewEntriesModel(
+                    hsm.getHealthcareServiceType(), date, details
+            ));
         }
         for (EducationServicesModel esm : education) {
             dashboardentries.add(new RefugeeDashboardTableViewEntriesModel(esm.getProgramName(), esm.getTiming(), esm.getAge()));

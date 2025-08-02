@@ -28,6 +28,7 @@ public class HealthPortalController {
     public void reviewongoingOnAction(ActionEvent actionEvent) {
     }
 
+
     @javafx.fxml.FXML
     public void creatpreacriptionOnAction(ActionEvent actionEvent) {
     }
@@ -41,7 +42,12 @@ public class HealthPortalController {
     }
 
     @javafx.fxml.FXML
-    public void viewAppointmentOnAction(ActionEvent actionEvent) {
+    public void viewAppointmentOnAction(ActionEvent actionEvent) throws IOException {
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ReviewAppointment.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(home));
+        stage.setTitle("Review Appointments");
+        stage.show();
     }
 
     @javafx.fxml.FXML
