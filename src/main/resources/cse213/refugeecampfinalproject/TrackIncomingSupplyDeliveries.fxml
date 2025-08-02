@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.TrackIncomingSupplyDeliveriesController">
+   <children>
+      <Label layoutX="159.0" layoutY="12.0" text="Track Incoming Supply Deliveries">
+         <font>
+            <Font name="Bookman Old Style" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="29.0" layoutY="54.0" text="Supplier Name" />
+      <Label layoutX="29.0" layoutY="100.0" text="Quantity" />
+      <Label layoutX="303.0" layoutY="54.0" text="Boltem Catagory" />
+      <Label layoutX="303.0" layoutY="100.0" text="Delivery Date" />
+      <TextField fx:id="quantityTextField" layoutX="117.0" layoutY="96.0" />
+      <TextField fx:id="suppliernameTextField" layoutX="114.0" layoutY="50.0" />
+      <ComboBox fx:id="catagoryComboBox" layoutX="407.0" layoutY="50.0" prefWidth="150.0" />
+      <DatePicker fx:id="deliverydatepicker" layoutX="400.0" layoutY="96.0" />
+      <TableView fx:id="trackincomesupplyTableView" layoutX="29.0" layoutY="140.0" prefHeight="164.0" prefWidth="507.0">
+        <columns>
+          <TableColumn fx:id="supplierColum" prefWidth="89.59994506835938" text="Supplier" />
+          <TableColumn fx:id="catagoryColum" prefWidth="104.00006866455078" text="Catagory" />
+            <TableColumn fx:id="quantityColum" prefWidth="108.800048828125" text="Quantity" />
+            <TableColumn fx:id="supplierdateColum" prefWidth="98.79998779296875" text="Supplier Date" />
+            <TableColumn fx:id="statusColum" prefWidth="104.79995727539062" text="Status" />
+        </columns>
+      </TableView>
+      <Button layoutX="43.0" layoutY="316.0" mnemonicParsing="false" onAction="#lognewdeliveryOnAction" text="Log New Delivery" />
+      <Button layoutX="42.0" layoutY="354.0" mnemonicParsing="false" onAction="#submtdeliveryOnAction" text="Submit Delivery" />
+      <Button layoutX="377.0" layoutY="354.0" mnemonicParsing="false" onAction="#gobacktoaccountlogisticsdashboardOnAction" text="Go Back to Account &amp; Logistics Dashboard" />
+      <Label fx:id="deliveryStatusLabel" layoutX="324.0" layoutY="320.0" prefHeight="17.0" prefWidth="243.0" />
+   </children>
+</AnchorPane>
