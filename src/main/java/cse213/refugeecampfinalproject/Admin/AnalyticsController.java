@@ -1,5 +1,9 @@
-package cse213.refugeecampfinalproject.RefugeeandAdmin;
+package cse213.refugeecampfinalproject.Admin;
 
+import cse213.refugeecampfinalproject.Refugee.EducationServicesController;
+import cse213.refugeecampfinalproject.Refugee.EducationServicesModel;
+import cse213.refugeecampfinalproject.Refugee.HealthServicesModel;
+import cse213.refugeecampfinalproject.Refugee.HealthcareServicesController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;

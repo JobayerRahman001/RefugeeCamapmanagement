@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: fff8e1;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.RefugeeandAdmin.ResourcesInventoryController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: fff8e1;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.Refugee.ResourcesInventoryController">
    <children>
       <Button layoutX="78.0" layoutY="320.0" mnemonicParsing="false" onAction="#sendInventoryReqOnClick" prefHeight="34.0" prefWidth="95.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Send Request" />
       <TextField fx:id="reasonTextField" layoutX="128.0" layoutY="243.0" prefHeight="54.0" prefWidth="186.0" style="-fx-background-color: e0f7fa;" />

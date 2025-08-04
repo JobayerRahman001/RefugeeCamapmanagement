@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="451.0" prefWidth="660.0" style="-fx-background-color: fff8e1;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.RefugeeandAdmin.RequestsReceivedAdminController">
+<AnchorPane prefHeight="451.0" prefWidth="660.0" style="-fx-background-color: fff8e1;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.Admin.RequestsReceivedAdminController">
    <children>
       <TableView fx:id="requestsReceivedTableView" layoutX="24.0" layoutY="76.0" prefHeight="256.0" prefWidth="411.0">
          <columns>

@@ -1,7 +1,7 @@
 package cse213.refugeecampfinalproject;
 
-import cse213.refugeecampfinalproject.RefugeeandAdmin.HealthServicesModel;
-import cse213.refugeecampfinalproject.RefugeeandAdmin.HealthcareServicesController;
+import cse213.refugeecampfinalproject.Refugee.HealthServicesModel;
+import cse213.refugeecampfinalproject.Refugee.HealthcareServicesController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -11,7 +11,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import javafx.stage.FileChooser;
 
 import java.io.IOException;
 import java.util.ArrayList;

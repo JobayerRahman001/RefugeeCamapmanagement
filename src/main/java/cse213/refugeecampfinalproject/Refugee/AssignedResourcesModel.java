@@ -1,4 +1,4 @@
-package cse213.refugeecampfinalproject.RefugeeandAdmin;
+package cse213.refugeecampfinalproject.Refugee;
 
 import java.util.ArrayList;
 

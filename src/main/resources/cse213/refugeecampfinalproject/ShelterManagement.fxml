@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="455.0" prefWidth="686.0" style="-fx-background-color: fff8e1;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.RefugeeandAdmin.ShelterManagementController">
+<AnchorPane prefHeight="455.0" prefWidth="686.0" style="-fx-background-color: fff8e1;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.Admin.ShelterManagementController">
    <children>
       <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#backtoDashboardOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Go back" />
       <TableView fx:id="newRefugeeTableView" layoutX="14.0" layoutY="53.0" prefHeight="200.0" prefWidth="369.0" style="-fx-background-color: e0f7fa;">

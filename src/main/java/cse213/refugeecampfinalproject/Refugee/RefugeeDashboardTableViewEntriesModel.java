@@ -1,4 +1,4 @@
-package cse213.refugeecampfinalproject.RefugeeandAdmin;
+package cse213.refugeecampfinalproject.Refugee;
 
 public class RefugeeDashboardTableViewEntriesModel {
     private String type;

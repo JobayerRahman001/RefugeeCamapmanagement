@@ -1,4 +1,4 @@
-package cse213.refugeecampfinalproject.RefugeeandAdmin;
+package cse213.refugeecampfinalproject.Admin;
 
 import cse213.refugeecampfinalproject.VolunteerModel;
 import javafx.event.ActionEvent;

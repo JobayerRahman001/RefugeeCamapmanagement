@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="412.0" prefWidth="600.0" style="-fx-background-color: fff8e1;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.RefugeeandAdmin.RefugeeSkillsProfileController">
+<AnchorPane prefHeight="412.0" prefWidth="600.0" style="-fx-background-color: fff8e1;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.Refugee.RefugeeSkillsProfileController">
    <children>
       <TextField fx:id="addSkillsTextField" layoutX="118.0" layoutY="48.0" prefHeight="40.0" prefWidth="164.0" style="-fx-background-color: e0f7fa;" />
       <TextField fx:id="certificateTextField" layoutX="118.0" layoutY="189.0" prefHeight="40.0" prefWidth="164.0" style="-fx-background-color: e0f7fa;" />

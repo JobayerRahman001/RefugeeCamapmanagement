@@ -1,4 +1,4 @@
-package cse213.refugeecampfinalproject.RefugeeandAdmin;
+package cse213.refugeecampfinalproject.Admin;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;

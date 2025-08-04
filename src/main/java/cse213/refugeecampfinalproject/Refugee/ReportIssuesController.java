@@ -1,5 +1,6 @@
-package cse213.refugeecampfinalproject.RefugeeandAdmin;
+package cse213.refugeecampfinalproject.Refugee;
 
+import cse213.refugeecampfinalproject.Admin.IssueReportsModel;
 import cse213.refugeecampfinalproject.LoggedInRefModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;

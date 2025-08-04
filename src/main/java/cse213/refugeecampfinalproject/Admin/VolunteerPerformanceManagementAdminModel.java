@@ -1,4 +1,4 @@
-package cse213.refugeecampfinalproject.RefugeeandAdmin;
+package cse213.refugeecampfinalproject.Admin;
 
 public class VolunteerPerformanceManagementAdminModel {
     private String volServiceArea;
