@@ -30,5 +30,6 @@
       <TextField fx:id="durationTextField" layoutX="91.0" layoutY="353.0" />
       <Button layoutX="370.0" layoutY="357.0" mnemonicParsing="false" onAction="#gobacktohealthportalOnAction" prefHeight="33.0" prefWidth="177.0" text="Go Back to Health Portal" />
       <Button layoutX="370.0" layoutY="298.0" mnemonicParsing="false" onAction="#creatprecriptionOnAction" prefHeight="33.0" prefWidth="137.0" text="Creat Prescription" />
+      <Label fx:id="confirmationLabel" layoutX="425.0" layoutY="239.0" prefHeight="17.0" prefWidth="170.0" />
    </children>
 </AnchorPane>
