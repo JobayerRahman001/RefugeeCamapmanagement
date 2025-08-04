@@ -23,5 +23,6 @@
       <Label layoutX="42.0" layoutY="260.0" text="Remarks" />
       <Button layoutX="42.0" layoutY="332.0" mnemonicParsing="false" onAction="#saveInfoOnAtion" prefHeight="35.0" prefWidth="107.0" text="Click to Save" />
       <Button layoutX="414.0" layoutY="332.0" mnemonicParsing="false" onAction="#gobacktohealthportalOnAction" prefHeight="35.0" prefWidth="150.0" text="Go Back to Health Portal" />
+      <Label fx:id="confirmationLabel" layoutX="165.0" layoutY="306.0" prefHeight="17.0" prefWidth="213.0" />
    </children>
 </AnchorPane>
