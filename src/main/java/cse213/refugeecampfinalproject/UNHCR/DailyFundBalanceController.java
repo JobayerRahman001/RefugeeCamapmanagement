@@ -1,4 +1,4 @@
-package cse213.refugeecampfinalproject.AccountantAndLogistics;
+package cse213.refugeecampfinalproject.UNHCR;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;

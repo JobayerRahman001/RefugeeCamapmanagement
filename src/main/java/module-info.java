@@ -19,4 +19,6 @@ module cse213.refugeecampfinalproject {
     opens cse213.refugeecampfinalproject.ResourceManager to javafx.fxml;
     exports cse213.refugeecampfinalproject.AccountantAndLogistics;
     opens cse213.refugeecampfinalproject.AccountantAndLogistics to javafx.fxml;
+    exports cse213.refugeecampfinalproject.UNHCR;
+    opens cse213.refugeecampfinalproject.UNHCR to javafx.fxml;
 }
