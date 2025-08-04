@@ -1,6 +1,5 @@
-package cse213.refugeecampfinalproject;
+package cse213.refugeecampfinalproject.RefugeeandAdmin;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class AssignedResourcesModel {

@@ -1,5 +1,6 @@
-package cse213.refugeecampfinalproject;
+package cse213.refugeecampfinalproject.RefugeeandAdmin;
 
+import cse213.refugeecampfinalproject.LoggedInRefModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;

@@ -4,13 +4,11 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.UpdateVaccineRecordController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.UpdateVaccineRecordController">
    <children>
       <Label layoutX="242.0" layoutY="25.0" text="Vaccin Record">
          <font>
@@ -18,16 +16,14 @@
          </font>
       </Label>
       <Label layoutX="60.0" layoutY="79.0" text="Vaccin Name" />
-      <TextField fx:id="vaccinnameTextField" layoutX="142.0" layoutY="75.0" />
-      <ComboBox fx:id="selectPatientComboBox" layoutX="368.0" layoutY="75.0" prefWidth="150.0" promptText="Select patient" />
+      <TextField fx:id="vaccinnameTextField" layoutX="142.0" layoutY="75.0" style="-fx-background-color: e0f7fa;" />
+      <ComboBox fx:id="selectPatientComboBox" layoutX="373.0" layoutY="75.0" prefWidth="150.0" promptText="Select patient" style="-fx-background-color: e0f7fa;" />
       <Label layoutX="60.0" layoutY="129.0" text="Batch No" />
-      <TextField fx:id="batchNoTextField" layoutX="142.0" layoutY="125.0" />
+      <TextField fx:id="batchNoTextField" layoutX="142.0" layoutY="125.0" style="-fx-background-color: e0f7fa;" />
       <Label layoutX="60.0" layoutY="178.0" text="Dose" />
-      <TextField fx:id="doseTextField" layoutX="142.0" layoutY="174.0" />
-      <Button layoutX="59.0" layoutY="309.0" mnemonicParsing="false" onAction="#updateVaccinOnAction" text="Update Vaccin" />
-      <Button layoutX="434.0" layoutY="309.0" mnemonicParsing="false" onAction="#gobacktohealthportalOnAction" text="Go Back to Home Page" />
-      <Label layoutX="60.0" layoutY="241.0" text="Vaccin Output" />
-      <TextArea fx:id="vaccinoutputTextArea" layoutX="139.0" layoutY="217.0" prefHeight="55.0" prefWidth="171.0" />
-      <DatePicker fx:id="datepicker" layoutX="361.0" layoutY="125.0" />
+      <TextField fx:id="doseTextField" layoutX="142.0" layoutY="174.0" style="-fx-background-color: e0f7fa;" />
+      <Button layoutX="59.0" layoutY="309.0" mnemonicParsing="false" onAction="#updateVaccinOnAction" style="-fx-background-color: e0f7fa;" text="Update Vaccin" />
+      <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#gobacktohealthportalOnAction" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Go Back" />
+      <DatePicker fx:id="datepicker" layoutX="361.0" layoutY="125.0" style="-fx-background-color: e0f7fa;" />
    </children>
 </AnchorPane>

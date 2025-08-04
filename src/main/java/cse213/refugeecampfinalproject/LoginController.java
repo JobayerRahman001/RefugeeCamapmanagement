@@ -1,5 +1,6 @@
 package cse213.refugeecampfinalproject;
 
+import cse213.refugeecampfinalproject.RefugeeandAdmin.Refugee;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

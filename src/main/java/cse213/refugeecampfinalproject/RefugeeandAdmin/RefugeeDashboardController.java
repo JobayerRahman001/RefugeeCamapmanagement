@@ -1,4 +1,4 @@
-package cse213.refugeecampfinalproject;
+package cse213.refugeecampfinalproject.RefugeeandAdmin;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

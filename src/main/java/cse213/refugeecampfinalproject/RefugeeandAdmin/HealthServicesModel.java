@@ -1,6 +1,4 @@
-package cse213.refugeecampfinalproject;
-
-import java.util.Locale;
+package cse213.refugeecampfinalproject.RefugeeandAdmin;
 
 public class HealthServicesModel {
     private String refugeeID;

@@ -5,4 +5,6 @@ module cse213.refugeecampfinalproject {
 
     opens cse213.refugeecampfinalproject to javafx.fxml;
     exports cse213.refugeecampfinalproject;
+    exports cse213.refugeecampfinalproject.RefugeeandAdmin;
+    opens cse213.refugeecampfinalproject.RefugeeandAdmin to javafx.fxml;
 }

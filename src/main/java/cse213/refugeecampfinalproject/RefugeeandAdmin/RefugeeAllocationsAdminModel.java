@@ -1,4 +1,4 @@
-package cse213.refugeecampfinalproject;
+package cse213.refugeecampfinalproject.RefugeeandAdmin;
 
 public class RefugeeAllocationsAdminModel {
     private String refugeeID;

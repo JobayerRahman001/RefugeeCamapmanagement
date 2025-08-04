@@ -1,4 +1,4 @@
-package cse213.refugeecampfinalproject;
+package cse213.refugeecampfinalproject.RefugeeandAdmin;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +14,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Objects;
 
 public class RefugeeSkillsProfileController
