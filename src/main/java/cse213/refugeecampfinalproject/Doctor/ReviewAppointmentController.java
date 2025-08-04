@@ -52,7 +52,7 @@ public static ArrayList<HealthServicesModel> HealthcareServicesList = new ArrayL
 
     @javafx.fxml.FXML
     public void gobacktohealthportalOnAction(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/HealthPortal.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Doctor/HealthPortal.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Health Portal");
@@ -83,7 +83,7 @@ public static ArrayList<HealthServicesModel> HealthcareServicesList = new ArrayL
         selectedPatient = patientTableView.getSelectionModel().getSelectedItem();
         if (selectedPatient == null) return;
 
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Prescription.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Doctor/Prescription.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Create Prescription");
@@ -114,7 +114,7 @@ public static ArrayList<HealthServicesModel> HealthcareServicesList = new ArrayL
         selectedPatient = patientTableView.getSelectionModel().getSelectedItem();
         if (selectedPatient == null) return;
 
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/MedicalNotes.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Doctor/MedicalNotes.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Medical Notes");

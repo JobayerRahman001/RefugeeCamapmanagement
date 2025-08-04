@@ -58,7 +58,7 @@ public class VolunteerSignupController
         alert.showAndWait();
 
 
-        Parent root = FXMLLoader.load(getClass().getResource("/cse213/refugeecampfinalproject/VolunteerDashboard.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/cse213/refugeecampfinalproject/Volunteer/VolunteerDashboard.fxml"));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setTitle("Volunteer Dashboard");

@@ -68,7 +68,7 @@ public static ArrayList<RefugeeAllocationsAdminModel> allocationList = new Array
         alert.showAndWait();
 
 
-            Parent root = FXMLLoader.load(getClass().getResource("/cse213/refugeecampfinalproject/RefugeeDashboard.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/RefugeeDashboard.fxml"));
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.setTitle("Refugee Dashboard");

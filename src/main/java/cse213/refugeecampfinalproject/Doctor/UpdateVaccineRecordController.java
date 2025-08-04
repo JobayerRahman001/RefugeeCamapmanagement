@@ -63,7 +63,7 @@ public class UpdateVaccineRecordController
 
     @javafx.fxml.FXML
     public void gobacktohealthportalOnAction(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(getClass().getResource("/cse213/refugeecampfinalproject/HealthPortal.fxml"));
+        Parent home = FXMLLoader.load(getClass().getResource("/cse213/refugeecampfinalproject/Doctor/HealthPortal.fxml"));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Health Portal");

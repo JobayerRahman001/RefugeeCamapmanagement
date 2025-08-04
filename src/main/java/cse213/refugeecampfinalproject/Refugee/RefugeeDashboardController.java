@@ -65,7 +65,7 @@ public class RefugeeDashboardController
 
     @javafx.fxml.FXML
     public void assignedResourcesforRefOnClick(ActionEvent actionEvent) throws IOException {
-        Parent healthPortal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/AssignedResources.fxml")));
+        Parent healthPortal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/AssignedResources.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(healthPortal));
         stage.setTitle("Assigned Resources");
@@ -74,7 +74,7 @@ public class RefugeeDashboardController
 
     @javafx.fxml.FXML
     public void reportIssuesforRefOnClick(ActionEvent actionEvent) throws IOException {
-        Parent healthPortal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ReportIssues.fxml")));
+        Parent healthPortal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/ReportIssues.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(healthPortal));
         stage.setTitle("Report Issues");
@@ -83,7 +83,7 @@ public class RefugeeDashboardController
 
     @javafx.fxml.FXML
     public void healcareServiceforRefOnClick(ActionEvent actionEvent) throws IOException {
-        Parent healthPortal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/HealthcareServices.fxml")));
+        Parent healthPortal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/HealthcareServices.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(healthPortal));
         stage.setTitle("Healthcare Services");
@@ -92,7 +92,7 @@ public class RefugeeDashboardController
 
     @javafx.fxml.FXML
     public void inventoryReqforRefOnClick(ActionEvent actionEvent) throws IOException {
-        Parent healthPortal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourcesInventory.fxml")));
+        Parent healthPortal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/ResourcesInventory.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(healthPortal));
         stage.setTitle("Resources Inventory");
@@ -101,7 +101,7 @@ public class RefugeeDashboardController
 
     @javafx.fxml.FXML
     public void eductionServiceforRefOnClick(ActionEvent actionEvent) throws IOException {
-        Parent healthPortal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/EducationServices.fxml")));
+        Parent healthPortal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/EducationServices.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(healthPortal));
         stage.setTitle("Education Services");
@@ -110,7 +110,7 @@ public class RefugeeDashboardController
 
     @javafx.fxml.FXML
     public void addSkillsforRefOnClick(ActionEvent actionEvent) throws IOException {
-        Parent healthPortal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/RefugeeSkillsProfile.fxml")));
+        Parent healthPortal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/RefugeeSkillsProfile.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(healthPortal));
         stage.setTitle("Refugee Skills Profile");
