@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: fff8e1;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.Volunteer.VolunteerWorkLogsController">
+   <children>
+      <Label layoutX="200.0" layoutY="14.0" prefHeight="42.0" prefWidth="199.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="  Volunteer Task Log">
+         <font>
+            <Font name="Bookman Old Style" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="497.0" layoutY="358.0" mnemonicParsing="false" onAction="#backToHomeOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Go Back" />
+      <Button fx:id="LogTaskButton" layoutX="455.0" layoutY="146.0" mnemonicParsing="false" onAction="#LogTasksOnAction" prefHeight="34.0" prefWidth="114.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Submit" />
+      <Label layoutX="26.0" layoutY="110.0" prefHeight="26.0" prefWidth="132.0" text=" Select Completed Task: " />
+      <ComboBox fx:id="taskSelectorComboBox" layoutX="200.0" layoutY="110.0" prefHeight="26.0" prefWidth="341.0" />
+      <Label fx:id="confirmationLabel" layoutX="64.0" layoutY="220.0" prefHeight="107.0" prefWidth="466.0" style="-fx-background-color: white;" />
+      <Label layoutX="119.0" layoutY="150.0" prefHeight="26.0" prefWidth="39.0" text=" Time:" />
+      <TextField fx:id="taskTimeField" layoutX="200.0" layoutY="151.0" />
+   </children>
+</AnchorPane>

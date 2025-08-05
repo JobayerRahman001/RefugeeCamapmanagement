@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<<<<<<< HEAD:src/main/resources/cse213/refugeecampfinalproject/EducationPanel.fxml
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.DoctorAndEducationCoordinator.EducationPanelController">
+=======
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.Educator.EducationPanelController">
+>>>>>>> 3766be206684680eb274de4e03789a2b43595b2f:src/main/resources/cse213/refugeecampfinalproject/Educator/EducationPanel.fxml
+   <children>
+      <Label layoutX="207.0" layoutY="21.0" prefHeight="38.0" prefWidth="187.0" text="Education Panel">
+         <font>
+            <Font name="Bookman Old Style" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="422.0" layoutY="323.0" mnemonicParsing="false" onAction="#backToHomeOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Go back to home" />
+      <Button layoutX="63.0" layoutY="91.0" mnemonicParsing="false" onAction="#addprogramOnAction" prefHeight="38.0" prefWidth="138.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Add Program" />
+      <Button layoutX="63.0" layoutY="137.0" mnemonicParsing="false" onAction="#asignteacherOnAction" prefHeight="38.0" prefWidth="138.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Assign Teacher" />
+      <Button layoutX="63.0" layoutY="184.0" mnemonicParsing="false" onAction="#enrollmentstatusOnAction" prefHeight="38.0" prefWidth="138.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Enrollment States" />
+      <Button layoutX="63.0" layoutY="232.0" mnemonicParsing="false" onAction="#educatonapplicationOnAction" prefHeight="38.0" prefWidth="138.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Education Application" />
+      <Button layoutX="326.0" layoutY="91.0" mnemonicParsing="false" onAction="#updateprogramscheduleOnAction" prefHeight="38.0" prefWidth="176.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Update program Schedule" />
+      <Button layoutX="326.0" layoutY="137.0" mnemonicParsing="false" onAction="#evulateteacherperformanceOnAction" prefHeight="38.0" prefWidth="176.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Evulate Teacher Performance" />
+      <Button layoutX="326.0" layoutY="184.0" mnemonicParsing="false" onAction="#uplodestudymaterialOnAction" prefHeight="38.0" prefWidth="176.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Uplode Study Material" />
+      <Button layoutX="326.0" layoutY="232.0" mnemonicParsing="false" onAction="#archiveprogramOnAction" prefHeight="38.0" prefWidth="176.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" styleClass="-fx-border-color" text="Archive Program" />
+   </children>
+</AnchorPane>

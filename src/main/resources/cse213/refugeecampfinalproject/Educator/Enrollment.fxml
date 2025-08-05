@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<<<<<<< HEAD:src/main/resources/cse213/refugeecampfinalproject/Enrollment.fxml
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.DoctorAndEducationCoordinator.EnrollmentController">
+=======
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.Educator.EnrollmentController">
+>>>>>>> 3766be206684680eb274de4e03789a2b43595b2f:src/main/resources/cse213/refugeecampfinalproject/Educator/Enrollment.fxml
+   <children>
+      <Label layoutX="222.0" layoutY="17.0" text="Enrollment Stats">
+         <font>
+            <Font name="Bookman Old Style" size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="enrollmentTableView" layoutX="53.0" layoutY="54.0" prefHeight="157.0" prefWidth="295.0">
+        <columns>
+          <TableColumn fx:id="programnameColum" prefWidth="130.6666259765625" text="Program Name" />
+          <TableColumn fx:id="enrolledstudentColum" prefWidth="164.00003051757812" text="No. of Enrolled Student" />
+        </columns>
+      </TableView>
+      <Button layoutX="46.0" layoutY="259.0" mnemonicParsing="false" onAction="#loadOnAction" prefHeight="40.0" prefWidth="78.0" text="Load" />
+      <Button layoutX="359.0" layoutY="259.0" mnemonicParsing="false" onAction="#gobacktoeducationpanelOnAction" prefHeight="33.0" prefWidth="162.0" text="Go back to Education Panel" />
+   </children>
+</AnchorPane>

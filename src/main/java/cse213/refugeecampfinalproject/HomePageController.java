@@ -11,7 +11,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Objects;
 
 public class HomePageController
 {
@@ -47,7 +46,7 @@ public class HomePageController
 
     @FXML
     public void registerRefugeeOnClick(ActionEvent actionEvent) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("/cse213/refugeecampfinalproject/RefugeeRegister.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/RefugeeRegister.fxml"));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();

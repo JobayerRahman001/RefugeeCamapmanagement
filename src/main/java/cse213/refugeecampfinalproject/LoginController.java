@@ -1,6 +1,6 @@
 package cse213.refugeecampfinalproject;
 
-import cse213.refugeecampfinalproject.RefugeeandAdmin.Refugee;
+import cse213.refugeecampfinalproject.Refugee.Refugee;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -62,7 +62,7 @@ public class LoginController {
             for (Refugee r : registeredRefugees) {
                 if (r.getPasscode().equals(enteredPasscode)) {
                     LoggedInRefModel.setLoggedInRefugeeId(r.getId());
-                    Parent dashboard = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/RefugeeDashboard.fxml")));
+                    Parent dashboard = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/RefugeeDashboard.fxml")));
                     Stage stage = (Stage) userTypeComboBox.getScene().getWindow();
                     stage.setScene(new Scene(dashboard));
                     stage.setTitle("Refugee Dashboard");
@@ -76,11 +76,11 @@ public class LoginController {
 
         if (userPasscodes.containsKey(selectedUser) && userPasscodes.get(selectedUser).equals(enteredPasscode)) {
             String fxmlToLoad = switch (selectedUser) {
-                case "Camp Admin" -> "/cse213/refugeecampfinalproject/AdminDashboard.fxml";
-                case "Doctor" -> "/cse213/refugeecampfinalproject/HealthPortal.fxml";
-                case "Educator" -> "/cse213/refugeecampfinalproject/EducationPanel.fxml";
+                case "Camp Admin" -> "/cse213/refugeecampfinalproject/Admin/AdminDashboard.fxml";
+                case "Doctor" -> "/cse213/refugeecampfinalproject/Doctor/HealthPortal.fxml";
+                case "Educator" -> "/cse213/refugeecampfinalproject/Educator/EducationPanel.fxml";
                 case "Volunteer" -> "/cse213/refugeecampfinalproject/Volunteer.fxml";
-                case "Resources Manager" -> "/cse213/refugeecampfinalproject/ResourcesDashboard.fxml";
+                case "Resources Manager" -> "/cse213/refugeecampfinalproject/ResourcesManager/ResourcesDashboard.fxml";
                 case "Accountant" -> "/cse213/refugeecampfinalproject/FinanceDashboard.fxml";
                 case "UN Representative" -> "/cse213/refugeecampfinalproject/UNRepDashboard.fxml";
                 default -> null;

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<<<<<<< HEAD:src/main/resources/cse213/refugeecampfinalproject/Prescription.fxml
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.DoctorAndEducationCoordinator.PrescriptionController">
+=======
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.Doctor.PrescriptionController">
+>>>>>>> 3766be206684680eb274de4e03789a2b43595b2f:src/main/resources/cse213/refugeecampfinalproject/Doctor/Prescription.fxml
+   <children>
+      <Label layoutX="256.0" layoutY="24.0" text="Prescription">
+         <font>
+            <Font name="Bookman Old Style" size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="selectpatientComboBox" layoutX="58.0" layoutY="71.0" prefWidth="150.0" promptText="Select Patient" />
+      <TableView fx:id="medicintableview" layoutX="56.0" layoutY="119.0" prefHeight="165.0" prefWidth="350.0">
+        <columns>
+          <TableColumn fx:id="medicinenameColum" prefWidth="120.66665649414062" text="Medicine Name" />
+          <TableColumn fx:id="medicinetypeColum" prefWidth="123.33331298828125" text="Medicine Type" />
+            <TableColumn fx:id="stockColum" prefWidth="104.66668701171875" text="Stock" />
+        </columns>
+      </TableView>
+      <Label layoutX="28.0" layoutY="306.0" text="Dose" />
+      <Label layoutX="28.0" layoutY="357.0" text="Duration" />
+      <TextField fx:id="doseTextField" layoutX="91.0" layoutY="302.0" />
+      <TextField fx:id="durationTextField" layoutX="91.0" layoutY="353.0" />
+      <Button layoutX="370.0" layoutY="357.0" mnemonicParsing="false" onAction="#gobacktohealthportalOnAction" prefHeight="33.0" prefWidth="177.0" text="Go Back to Health Portal" />
+      <Button layoutX="370.0" layoutY="298.0" mnemonicParsing="false" onAction="#creatprecriptionOnAction" prefHeight="33.0" prefWidth="137.0" text="Creat Prescription" />
+      <Label fx:id="confirmationLabel" layoutX="425.0" layoutY="239.0" prefHeight="17.0" prefWidth="170.0" />
+   </children>
+</AnchorPane>

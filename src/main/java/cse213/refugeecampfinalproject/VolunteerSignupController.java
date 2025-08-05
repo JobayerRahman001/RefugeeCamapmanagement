@@ -1,5 +1,6 @@
 package cse213.refugeecampfinalproject;
 
+import cse213.refugeecampfinalproject.Volunteer.VolunteerModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -57,7 +58,7 @@ public class VolunteerSignupController
         alert.showAndWait();
 
 
-        Parent root = FXMLLoader.load(getClass().getResource("/cse213/refugeecampfinalproject/VolunteerDashboard.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/cse213/refugeecampfinalproject/Volunteer/VolunteerDashboard.fxml"));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setTitle("Volunteer Dashboard");

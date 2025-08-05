@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<<<<<<< HEAD:src/main/resources/cse213/refugeecampfinalproject/AssignTeacher.fxml
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.DoctorAndEducationCoordinator.AssignTeacherController">
+=======
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.Educator.AssignTeacherController">
+>>>>>>> 3766be206684680eb274de4e03789a2b43595b2f:src/main/resources/cse213/refugeecampfinalproject/Educator/AssignTeacher.fxml
+   <children>
+      <Label layoutX="242.0" layoutY="17.0" text="Assign Teacher">
+         <font>
+            <Font name="Bookman Old Style" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="displayMassege" layoutX="99.0" layoutY="325.0" prefHeight="37.0" prefWidth="379.0" />
+      <Label layoutX="71.0" layoutY="96.0" text="Select Program" />
+      <Label layoutX="71.0" layoutY="150.0" text="Select Teacher" />
+      <ComboBox fx:id="selectprogramComboBox" layoutX="167.0" layoutY="92.0" prefWidth="150.0" />
+      <ComboBox fx:id="selectTeacherComboBox" layoutX="167.0" layoutY="146.0" prefWidth="150.0" />
+      <Button layoutX="73.0" layoutY="221.0" mnemonicParsing="false" onAction="#assignTeacherOnAction" prefHeight="37.0" prefWidth="96.0" text="Assign Teacher" />
+      <Button layoutX="338.0" layoutY="223.0" mnemonicParsing="false" onAction="#gobacktoEducationPanelOnAction" prefHeight="37.0" prefWidth="165.0" text="Go Back to Education  Panel" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="527.0" prefWidth="755.0" style="-fx-background-color: fff8e1;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.Admin.AnalyticsController">
+   <children>
+      <TableView fx:id="FoodTableView" layoutX="401.0" layoutY="56.0" prefHeight="200.0" prefWidth="323.0" style="-fx-background-color: e0f7fa;">
+         <columns>
+            <TableColumn fx:id="itemNameTableColF" prefWidth="137.0" text="Item Name" />
+            <TableColumn fx:id="distributionTableColF" prefWidth="89.5" text="Distributed" />
+            <TableColumn fx:id="remainingTableColF" prefWidth="99.0" text="Remaining" />
+         </columns>
+      </TableView>
+      <TableView fx:id="healthcareTableView" layoutX="60.0" layoutY="56.0" prefHeight="200.0" prefWidth="278.0" style="-fx-background-color: e0f7fa;">
+         <columns>
+            <TableColumn fx:id="refugeeIDTableColH" prefWidth="86.0" text="Refugee ID" />
+            <TableColumn fx:id="typeTableCol" prefWidth="86.0" text="Type" />
+            <TableColumn fx:id="statusTableColH" prefWidth="105.0" text="Status" />
+         </columns>
+      </TableView>
+      <TableView fx:id="educationTableView" layoutX="14.0" layoutY="298.0" prefHeight="200.0" prefWidth="370.0" style="-fx-background-color: e0f7fa;">
+         <columns>
+            <TableColumn fx:id="refugeeIDTableColE" prefWidth="85.0" text="Refugee ID" />
+            <TableColumn fx:id="programTableCol" prefWidth="102.0" text="Program" />
+            <TableColumn fx:id="classTimeTableCol" prefWidth="83.0" text="Class Time" />
+            <TableColumn fx:id="statusTableColE" prefWidth="99.0" text="Status" />
+         </columns>
+      </TableView>
+      <TableView fx:id="resourcesTableView" layoutX="412.0" layoutY="298.0" prefHeight="200.0" prefWidth="323.0" style="-fx-background-color: e0f7fa;">
+         <columns>
+            <TableColumn fx:id="itemNameTableColR" prefWidth="137.0" text="Item Name" />
+            <TableColumn fx:id="distributedTableColR" prefWidth="89.5" text="Distributed" />
+            <TableColumn fx:id="remainingTableColR" prefWidth="99.0" text="Remaining" />
+         </columns>
+      </TableView>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="112.0" layoutY="25.0" prefHeight="31.0" prefWidth="154.0" text="Healthcare" textAlignment="CENTER">
+         <font>
+            <Font name="Bookman Old Style" size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="496.0" layoutY="267.0" prefHeight="31.0" prefWidth="154.0" text="Resources Inventory">
+         <font>
+            <Font name="Bookman Old Style" size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="112.0" layoutY="267.0" prefHeight="31.0" prefWidth="154.0" text="Education">
+         <font>
+            <Font name="Bookman Old Style" size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="485.0" layoutY="25.0" prefHeight="31.0" prefWidth="154.0" text="Food">
+         <font>
+            <Font name="Bookman Old Style" size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#goBackToDashboardOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Go back" />
+   </children>
+</AnchorPane>
