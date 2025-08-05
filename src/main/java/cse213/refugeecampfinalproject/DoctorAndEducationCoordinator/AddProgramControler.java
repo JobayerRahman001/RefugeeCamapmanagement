@@ -1,4 +1,4 @@
-package cse213.refugeecampfinalproject;
+package cse213.refugeecampfinalproject.DoctorAndEducationCoordinator;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class AddProgramControler
 {
@@ -27,8 +28,7 @@ public class AddProgramControler
     private Label displayMassegeLabel;
     @javafx.fxml.FXML
     private TextField studentcapacityTextField;
-
-    public static ArrayList<EducationProgramModel> existingPrograms = new ArrayList<>();
+    private ArrayList<EducationProgramModel> programList = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -41,29 +41,35 @@ public class AddProgramControler
         String programType = programtypecomboBox.getValue();
         String ageGroup = agegroupTextField.getText();
         String duration = durationTextField.getText();
-        String studentCapacity = studentcapacityTextField.getText();
+        int capacity;
         // Validate input fields
-        if (programName.isEmpty() || programType == null || ageGroup.isEmpty() || duration.isEmpty() || studentCapacity.isEmpty()) {
-            displayMassegeLabel.setText("Error: Please fill in all fields.");
+        if (programName.isEmpty() || programType == null || ageGroup.isEmpty() || duration.isEmpty() || studentcapacityTextField.getText().isEmpty()) {
+            displayMassegeLabel.setText("Please fill in all fields.");
+            return;
+        }
+        try {
+            capacity = Integer.parseInt(studentcapacityTextField.getText());
+        } catch (NumberFormatException e) {
+            displayMassegeLabel.setText("Capacity must be a number.");
             return;
         }
         // Check for existing duplicate program
-        for (EducationProgramModel programModel:existingPrograms) {
-            if (programModel.getProgramName().equalsIgnoreCase(programName) && programModel.getProgramType().equalsIgnoreCase(programType)) {
-                displayMassegeLabel.setText("Error: Program already exists.");
+        for (EducationProgramModel program : programList) {
+            if (program.getProgramName().equalsIgnoreCase(programName) && program.getProgramType().equals(programType)) {
+                displayMassegeLabel.setText("Program already exists.");
                 return;
             }
         }
-        EducationProgramModel newProgram = new EducationProgramModel(programName, programType, ageGroup, duration, Integer.parseInt(studentCapacity));
-        // Save the new program to the database (simulated here by adding to the list)
-        existingPrograms.add(newProgram);
-        // Display success message
-        displayMassegeLabel.setText("Program added successfully!");
+        // Save new program in system database (in this case, the list)
+        EducationProgramModel newProgram = new EducationProgramModel(programName, programType, ageGroup, duration, capacity);
+        programList.add(newProgram);
+        // Display confirmation message
+        displayMassegeLabel.setText("Program added successfully.");
     }
 
     @javafx.fxml.FXML
     public void gobacktoEducationPanelOnAction(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(getClass().getResource("/cse213/refugeecampfinalproject/EducationPanel.fxml"));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/EducationPanel.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Education Panel");

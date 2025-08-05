@@ -1,4 +1,4 @@
-package cse213.refugeecampfinalproject;
+package cse213.refugeecampfinalproject.DoctorAndEducationCoordinator;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +12,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class UplodeTestresultController
@@ -28,8 +27,7 @@ public class UplodeTestresultController
     @javafx.fxml.FXML
     private TextField filepathTextField;
 
-    ArrayList<HealthServicesModel> patientsList = new ArrayList<>();
-    public static ArrayList<HealthServicesModel> HealthcareServicesList = new ArrayList<>();
+
 
     @javafx.fxml.FXML
     public void initialize() {

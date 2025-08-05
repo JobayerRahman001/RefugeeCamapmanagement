@@ -1,0 +1,81 @@
+package cse213.refugeecampfinalproject.DoctorAndEducationCoordinator;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Objects;
+
+public class UpdateProgramScheduleController
+{
+    @javafx.fxml.FXML
+    private TextField enternewtimeTextField;
+    @javafx.fxml.FXML
+    private ComboBox<ProgramModel> selectprograamComboBox;
+    @javafx.fxml.FXML
+    private Label errorlabel;
+    @javafx.fxml.FXML
+    private TextField enternewdateTextField;
+
+    private ArrayList<ProgramModel> programList = new ArrayList<>();
+    @javafx.fxml.FXML
+    public void initialize() {
+        loadPrograms();
+    }
+    private void loadPrograms() {
+        // Example programs (in a real application, this would come from a database)
+        programList.add(new ProgramModel("Literacy Program", "Literacy", "Monday 10 AM - 12 PM"));
+        programList.add(new ProgramModel("Language Program", "Language", "Tuesday 1 PM - 3 PM"));
+        // Populate the combo box
+        selectprograamComboBox.getItems().addAll(programList);
+    }
+    @javafx.fxml.FXML
+    public void gobacktoeducationpanelOnAction(ActionEvent actionEvent) throws IOException {
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/EducationPanel.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(home));
+        stage.setTitle("Education Panel");
+        stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void submitupdatescheduleOnAction(ActionEvent actionEvent) {
+        ProgramModel selectedProgram = selectprograamComboBox.getValue();
+        String newDate = enternewdateTextField.getText();
+        String newTime = enternewtimeTextField.getText();
+        String newSchedule = newDate + " " + newTime;
+        // Validate selection
+        if (selectedProgram == null) {
+            errorlabel.setText("Please select a program.");
+            return;
+        }
+        // Validate new schedule
+        if (isScheduleClashing(selectedProgram, newSchedule)) {
+            errorlabel.setText("New schedule clashes with existing sessions.");
+            return;
+        }
+        // Update program schedule
+        selectedProgram.schedule(newSchedule);
+        // Notify assigned teachers and enrolled students (placeholder for actual notification logic)
+        notifyTeachersAndStudents(selectedProgram);
+        // Display success message
+        errorlabel.setText("Program schedule updated successfully.");
+    }
+    private boolean isScheduleClashing(ProgramModel program, String newSchedule) {
+        // This method should check if the new schedule clashes with existing sessions
+        // For simplicity, we will return false (no conflicts) in this example
+        return false;
+    }
+    private void notifyTeachersAndStudents(ProgramModel program) {
+        // Placeholder for logic to notify teachers and students about the schedule change
+        System.out.println("Notifying teachers and students about the new schedule for " + program.getProgramName());
+    }
+}

@@ -1,4 +1,4 @@
-package cse213.refugeecampfinalproject;
+package cse213.refugeecampfinalproject.DoctorAndEducationCoordinator;
 
 public class TeacherAssignmentModel {
     private TeacherModel teacher;

@@ -1,18 +1,18 @@
-package cse213.refugeecampfinalproject;
+package cse213.refugeecampfinalproject.DoctorAndEducationCoordinator;
 
 public class EducationProgramModel {
     private String programName;
-    private String programType;
+    private String programType; // Literacy, Language, Vocational
     private String ageGroup;
     private String duration;
-    private int studentCapacity;
+    private int capacity;
 
-    public EducationProgramModel(String programName, String programType, String ageGroup, String duration, int studentCapacity) {
+    public EducationProgramModel(String programName, String programType, String ageGroup, String duration, int capacity) {
         this.programName = programName;
         this.programType = programType;
         this.ageGroup = ageGroup;
         this.duration = duration;
-        this.studentCapacity = studentCapacity;
+        this.capacity = capacity;
     }
 
     public String getProgramName() {
@@ -47,12 +47,12 @@ public class EducationProgramModel {
         this.duration = duration;
     }
 
-    public int getStudentCapacity() {
-        return studentCapacity;
+    public int getCapacity() {
+        return capacity;
     }
 
-    public void setStudentCapacity(int studentCapacity) {
-        this.studentCapacity = studentCapacity;
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 
     @Override
@@ -62,7 +62,7 @@ public class EducationProgramModel {
                 ", programType='" + programType + '\'' +
                 ", ageGroup='" + ageGroup + '\'' +
                 ", duration='" + duration + '\'' +
-                ", studentCapacity=" + studentCapacity +
+                ", capacity=" + capacity +
                 '}';
     }
 }

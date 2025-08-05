@@ -1,4 +1,4 @@
-package cse213.refugeecampfinalproject;
+package cse213.refugeecampfinalproject.DoctorAndEducationCoordinator;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.ComboBox;
