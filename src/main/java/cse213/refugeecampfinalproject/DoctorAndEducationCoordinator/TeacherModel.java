@@ -1,4 +1,5 @@
 package cse213.refugeecampfinalproject.DoctorAndEducationCoordinator;
+
 public class TeacherModel {
         private String name;
         private String subject; // Optional: subject expertise

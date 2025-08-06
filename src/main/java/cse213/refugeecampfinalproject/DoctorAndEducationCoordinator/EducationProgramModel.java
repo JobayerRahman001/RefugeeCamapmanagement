@@ -1,6 +1,5 @@
 package cse213.refugeecampfinalproject.DoctorAndEducationCoordinator;
 
-
 public class EducationProgramModel {
     private String programName;
     private String programType; // Literacy, Language, Vocational

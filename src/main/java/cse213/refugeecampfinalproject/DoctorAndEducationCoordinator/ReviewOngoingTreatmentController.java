@@ -18,12 +18,12 @@ public class ReviewOngoingTreatmentController
     @javafx.fxml.FXML
     private TableColumn currentmedicationColum;
     @javafx.fxml.FXML
-    private TableView<> ongointTableview;
+    private TableView ongointTableview;
 
     @javafx.fxml.FXML
     public void initialize() {
         HealthcareServicesList.clear();
-        HealthcareServicesList.addAll(HealthcareServicesController.HealthcareServicesList)
+        HealthcareServicesList.addAll(HealthcareServicesController.HealthcareServicesList);
 
 
         patientTableView.getItems().clear();
