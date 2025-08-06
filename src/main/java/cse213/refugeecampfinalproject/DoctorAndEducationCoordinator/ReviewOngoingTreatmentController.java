@@ -1,8 +1,5 @@
-<<<<<<<< HEAD:src/main/java/cse213/refugeecampfinalproject/DoctorAndEducationCoordinator/ReviewOngoingTreatmentController.java
 package cse213.refugeecampfinalproject.DoctorAndEducationCoordinator;
-========
-package cse213.refugeecampfinalproject.Doctor;
->>>>>>>> 3766be206684680eb274de4e03789a2b43595b2f:src/main/java/cse213/refugeecampfinalproject/Doctor/ReviewOngoingTreatmentController.java
+
 
 import cse213.refugeecampfinalproject.RefugeeandAdmin.HealthcareServicesController;
 import javafx.event.ActionEvent;
@@ -22,12 +19,12 @@ public class ReviewOngoingTreatmentController
     @javafx.fxml.FXML
     private TableColumn currentmedicationColum;
     @javafx.fxml.FXML
-    private TableView<> ongointTableview;
+    private TableView ongointTableview;
 
     @javafx.fxml.FXML
     public void initialize() {
         HealthcareServicesList.clear();
-        HealthcareServicesList.addAll(HealthcareServicesController.HealthcareServicesList)
+        HealthcareServicesList.addAll(HealthcareServicesController.HealthcareServicesList);
 
 
         patientTableView.getItems().clear();

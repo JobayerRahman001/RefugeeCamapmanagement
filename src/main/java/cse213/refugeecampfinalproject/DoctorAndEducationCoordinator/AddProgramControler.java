@@ -1,8 +1,5 @@
-<<<<<<<< HEAD:src/main/java/cse213/refugeecampfinalproject/DoctorAndEducationCoordinator/AddProgramControler.java
 package cse213.refugeecampfinalproject.DoctorAndEducationCoordinator;
-========
-package cse213.refugeecampfinalproject.Educator;
->>>>>>>> 3766be206684680eb274de4e03789a2b43595b2f:src/main/java/cse213/refugeecampfinalproject/Educator/AddProgramControler.java
+
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -73,11 +70,11 @@ public class AddProgramControler
 
     @javafx.fxml.FXML
     public void gobacktoEducationPanelOnAction(ActionEvent actionEvent) throws IOException {
-<<<<<<<< HEAD:src/main/java/cse213/refugeecampfinalproject/DoctorAndEducationCoordinator/AddProgramControler.java
+
         Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/EducationPanel.fxml")));
-========
+
         Parent home = FXMLLoader.load(getClass().getResource("/cse213/refugeecampfinalproject/Educator/EducationPanel.fxml"));
->>>>>>>> 3766be206684680eb274de4e03789a2b43595b2f:src/main/java/cse213/refugeecampfinalproject/Educator/AddProgramControler.java
+
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Education Panel");

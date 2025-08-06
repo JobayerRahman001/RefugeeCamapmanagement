@@ -7,20 +7,25 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: fff8e1;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.Volunteer.VolunteerWorkLogsController">
    <children>
-      <Label layoutX="200.0" layoutY="14.0" prefHeight="42.0" prefWidth="199.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="  Volunteer Task Log">
+      <Label layoutX="200.0" layoutY="14.0" prefHeight="42.0" prefWidth="199.0" text="  Volunteer Task Log">
          <font>
             <Font name="Bookman Old Style" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="497.0" layoutY="358.0" mnemonicParsing="false" onAction="#backToHomeOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Go Back" />
-      <Button fx:id="LogTaskButton" layoutX="455.0" layoutY="146.0" mnemonicParsing="false" onAction="#LogTasksOnAction" prefHeight="34.0" prefWidth="114.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Submit" />
-      <Label layoutX="26.0" layoutY="110.0" prefHeight="26.0" prefWidth="132.0" text=" Select Completed Task: " />
-      <ComboBox fx:id="taskSelectorComboBox" layoutX="200.0" layoutY="110.0" prefHeight="26.0" prefWidth="341.0" />
-      <Label fx:id="confirmationLabel" layoutX="64.0" layoutY="220.0" prefHeight="107.0" prefWidth="466.0" style="-fx-background-color: white;" />
-      <Label layoutX="119.0" layoutY="150.0" prefHeight="26.0" prefWidth="39.0" text=" Time:" />
-      <TextField fx:id="taskTimeField" layoutX="200.0" layoutY="151.0" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backToHomeOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Go Back" />
+      <Button layoutX="69.0" layoutY="352.0" mnemonicParsing="false" onAction="#submitWorkLogOnClick" prefHeight="34.0" prefWidth="114.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Submit" />
+      <Label layoutX="26.0" layoutY="110.0" prefHeight="26.0" prefWidth="132.0" text="Volunteer ID" />
+      <ComboBox fx:id="ServiceAreaComboBox" layoutX="126.0" layoutY="194.0" prefHeight="27.0" prefWidth="185.0" style="-fx-background-color: e0f7fa;" />
+      <Label fx:id="VolWorkMsgLabel" layoutX="334.0" layoutY="122.0" prefHeight="220.0" prefWidth="211.0" wrapText="true" />
+      <TextField fx:id="VolIDTextField" layoutX="126.0" layoutY="111.0" style="-fx-background-color: e0f7fa;" />
+      <Label layoutX="26.0" layoutY="150.0" prefHeight="26.0" prefWidth="132.0" text="Volunteer name" />
+      <Label layoutX="26.0" layoutY="233.0" prefHeight="26.0" prefWidth="132.0" text="Task Completed" />
+      <Label layoutX="26.0" layoutY="309.0" prefHeight="26.0" prefWidth="132.0" text="Skills" />
+      <Label layoutX="26.0" layoutY="195.0" prefHeight="26.0" prefWidth="132.0" text="Service Area" />
+      <TextField fx:id="VolNameTextField" layoutX="126.0" layoutY="152.0" style="-fx-background-color: e0f7fa;" />
+      <TextField fx:id="TaskCompleteTextField" layoutX="126.0" layoutY="234.0" prefHeight="65.0" prefWidth="185.0" style="-fx-background-color: e0f7fa;" />
+      <TextField fx:id="VolSkillsTextField" layoutX="126.0" layoutY="310.0" prefHeight="14.0" prefWidth="149.0" style="-fx-background-color: e0f7fa;" />
    </children>
 </AnchorPane>
