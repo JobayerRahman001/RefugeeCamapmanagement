@@ -1,7 +1,7 @@
 package cse213.refugeecampfinalproject.DoctorAndEducationCoordinator;
 
 
-import cse213.refugeecampfinalproject.RefugeeandAdmin.HealthcareServicesController;
+import cse213.refugeecampfinalproject.Refugee.HealthcareServicesController;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;

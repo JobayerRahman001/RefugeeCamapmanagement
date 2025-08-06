@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:src/main/java/cse213/refugeecampfinalproject/DoctorAndEducationCoordinator/EducationPanelController.java
 package cse213.refugeecampfinalproject.DoctorAndEducationCoordinator;
-========
-package cse213.refugeecampfinalproject.Educator;
->>>>>>>> 3766be206684680eb274de4e03789a2b43595b2f:src/main/java/cse213/refugeecampfinalproject/Educator/EducationPanelController.java
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
