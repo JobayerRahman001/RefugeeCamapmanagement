@@ -16,11 +16,11 @@ import java.util.Objects;
 public class AssignTeacherController
 {
     @javafx.fxml.FXML
-    private ComboBox<TeacherModel> selectTeacherComboBox;
+    private ComboBox<String> selectTeacherComboBox;
     @javafx.fxml.FXML
     private Label displayMassege;
     @javafx.fxml.FXML
-    private ComboBox<ProgramModel> selectprogramComboBox;
+    private ComboBox<String> selectprogramComboBox;
 
     private ArrayList<TeacherModel> teacherList = new ArrayList<>();
     private ArrayList<ProgramModel> programList = new ArrayList<>();
@@ -34,32 +34,36 @@ public class AssignTeacherController
         teacherList.add(new TeacherModel("Mr.Salam Uddin", "T002", true));
         teacherList.add(new TeacherModel("Mr.AkramUjjaman", "T003", false)); // Not available
         // Populate the combo box
-        selectTeacherComboBox.getItems().addAll(teacherList);
+        for (TeacherModel teacherModel : teacherList){
+            selectTeacherComboBox.getItems().add(teacherModel.getName());
+        }
     }
     public void loadPrograms(){
         // Example programs (in a real application, this would come from a database)
         programList.add(new ProgramModel("Literacy Program", "Literacy", "Monday 10 AM - 12 PM"));
         programList.add(new ProgramModel("Language Program", "Language", "Tuesday 1 PM - 3 PM"));
         // Populate the combo box
-        selectprogramComboBox.getItems().addAll(programList);
+        for (ProgramModel programModel:programList){
+            selectprogramComboBox.getItems().add(programModel.getProgramName());
+        }
     }
 
     @javafx.fxml.FXML
     public void assignTeacherOnAction(ActionEvent actionEvent) {
-        TeacherModel selectedTeacher = selectTeacherComboBox.getValue();
-        ProgramModel selectedProgram = selectprogramComboBox.getValue();
+        String selectedTeacher = selectTeacherComboBox.getValue();
+        String selectedProgram = selectprogramComboBox.getValue();
         // Validate selection
         if (selectedTeacher == null || selectedProgram == null) {
             displayMassege.setText("Please select both a teacher and a program.");
             return;
         }
         // Check if the teacher is available
-        if (!selectedTeacher.isAvailable()) {
+        if (selectedTeacher.isEmpty()) {
             displayMassege.setText("Selected teacher is not available.");
             return;
         }
         // Check for scheduling conflicts (this is a simplified example)
-        if (isTeacherAssignedToConflictingSchedule(selectedTeacher, selectedProgram)) {
+        if (isTeacherAssignedToConflictingSchedule(selectedTeacher,selectedProgram)) {
             displayMassege.setText("Teacher is already assigned to a conflicting schedule.");
             return;
         }
@@ -70,9 +74,9 @@ public class AssignTeacherController
         }
         // Save assignment (in this example, we just display a message)
         // In a real application, you would save this to a database
-        displayMassege.setText("Teacher assigned successfully to " + selectedProgram.getProgramName());
+        displayMassege.setText("Teacher assigned successfully to " + selectedProgram);
     }
-    private boolean isTeacherAssignedToConflictingSchedule(TeacherModel teacher, ProgramModel program) {
+    private boolean isTeacherAssignedToConflictingSchedule(String teacher, String program) {
         // This method should check if the teacher is already assigned to a program with a conflicting schedule
         // For simplicity, we will return false (no conflicts) in this example
         return false;

@@ -1,9 +1,4 @@
-<<<<<<<< HEAD:src/main/java/cse213/refugeecampfinalproject/DoctorAndEducationCoordinator/TeacherModel.java
 package cse213.refugeecampfinalproject.DoctorAndEducationCoordinator;
-========
-package cse213.refugeecampfinalproject.Educator;
->>>>>>>> 3766be206684680eb274de4e03789a2b43595b2f:src/main/java/cse213/refugeecampfinalproject/Educator/TeacherModel.java
-
 public class TeacherModel {
         private String name;
         private String subject; // Optional: subject expertise

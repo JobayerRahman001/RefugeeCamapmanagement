@@ -1,9 +1,7 @@
-<<<<<<<< HEAD:src/main/java/cse213/refugeecampfinalproject/DoctorAndEducationCoordinator/EvaluateTeacherPerformanceController.java
 package cse213.refugeecampfinalproject.DoctorAndEducationCoordinator;
-========
-package cse213.refugeecampfinalproject.Educator;
->>>>>>>> 3766be206684680eb274de4e03789a2b43595b2f:src/main/java/cse213/refugeecampfinalproject/Educator/EvaluateTeacherPerformanceController.java
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -17,46 +15,36 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class EvaluateTeacherPerformanceController
 {
     @javafx.fxml.FXML
-    private TableColumn<TeacherPerformanceFeddbackDataModel,String> comentsummaryColum;
+    private TableColumn<FeedBackModel,String> comentsummaryColum;
     @javafx.fxml.FXML
-    private TableColumn<TeacherPerformanceFeddbackDataModel,Double> averageratingColum;
+    private TableColumn<FeedBackModel,Double> averageratingColum;
     @javafx.fxml.FXML
-    private TableColumn<TeacherPerformanceFeddbackDataModel,Integer> attendenceColum;
+    private TableColumn<FeedBackModel,Integer> attendenceColum;
     @javafx.fxml.FXML
-    private TableView<TeacherPerformanceFeddbackDataModel> evulateteachertableview;
+    private TableView<FeedBackModel> evulateteachertableview;
     @javafx.fxml.FXML
-    private TableColumn<TeacherPerformanceFeddbackDataModel,String> teachernameColum;
+    private TableColumn<FeedBackModel,String> teachernameColum;
     @javafx.fxml.FXML
     private Label statuslabel;
 
-    public static ArrayList<TeacherPerformanceFeddbackDataModel> feedbackDataList = new ArrayList<>();
+    private ArrayList<FeedBackModel> feedbackList = new ArrayList<>();
     @javafx.fxml.FXML
     public void initialize() {
-        // Set up table columns
+        // Set up the table columns
         teachernameColum.setCellValueFactory(new PropertyValueFactory<>("teacherName"));
         averageratingColum.setCellValueFactory(new PropertyValueFactory<>("averageRating"));
-        attendenceColum.setCellValueFactory(new PropertyValueFactory<>("attendance"));
+        attendenceColum.setCellValueFactory(new PropertyValueFactory<>("attendanceCount"));
         comentsummaryColum.setCellValueFactory(new PropertyValueFactory<>("commentsSummary"));
-        // Load feedback data
-        loadAllFeedback();
-    }
-    private void loadAllFeedback() {
-    // Simulated data fetching (in a real application, this would come from a database)
-        feedbackDataList.add(new TeacherPerformanceFeddbackDataModel("Jane Smith", 4.0, 85, "Good explanations, but could improve on feedback."));
-        feedbackDataList.add(new TeacherPerformanceFeddbackDataModel("John Doe", 4.5, 90, "Great teacher, very engaging."));
-        feedbackDataList.add(new TeacherPerformanceFeddbackDataModel("Alice Johnson", 3.5, 80, "Average performance, needs to be more interactive."));
-        // Populate the table with feedback data
-        evulateteachertableview.getItems().clear();
-        evulateteachertableview.getItems().addAll(feedbackDataList);
     }
 
     @javafx.fxml.FXML
     public void gobacktoeducationpanelOnAction(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(getClass().getResource("/cse213/refugeecampfinalproject/Educator/EducationPanel.fxml"));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/EducationPanel.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Education Panel");
@@ -65,7 +53,19 @@ public class EvaluateTeacherPerformanceController
 
     @javafx.fxml.FXML
     public void loadallfeedbackOnAction(ActionEvent actionEvent) {
-        loadAllFeedback();
-        statuslabel.setText("Feedback data loaded successfully.");
+        // Fetch feedback data (in a real application, this would come from a database)
+        fetchFeedbackData();
+        // Populate the TableView with the fetched data
+        ObservableList<FeedBackModel> observableList = FXCollections.observableArrayList(feedbackList);
+        evulateteachertableview.setItems(observableList);
     }
+    private void fetchFeedbackData() {
+        // Example feedback data (in a real application, this would come from a database)
+        feedbackList.clear(); // Clear previous data
+        feedbackList.add(new FeedBackModel("Alice", 4.5, 30, "Great teacher, very engaging."));
+        feedbackList.add(new FeedBackModel("Bob", 3.8, 25, "Good, but needs to improve on attendance."));
+        feedbackList.add(new FeedBackModel("Charlie", 4.0, 28, "Very knowledgeable and helpful."));
+        // Add more feedback as needed
+    }
+
 }

@@ -1,14 +1,11 @@
-<<<<<<<< HEAD:src/main/java/cse213/refugeecampfinalproject/DoctorAndEducationCoordinator/ReviewOngoingTreatmentController.java
 package cse213.refugeecampfinalproject.DoctorAndEducationCoordinator;
-========
-package cse213.refugeecampfinalproject.Doctor;
->>>>>>>> 3766be206684680eb274de4e03789a2b43595b2f:src/main/java/cse213/refugeecampfinalproject/Doctor/ReviewOngoingTreatmentController.java
-
 import cse213.refugeecampfinalproject.RefugeeandAdmin.HealthcareServicesController;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
+
+import static cse213.refugeecampfinalproject.Refugee.HealthcareServicesController.HealthcareServicesList;
 
 
 public class ReviewOngoingTreatmentController
