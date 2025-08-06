@@ -1,5 +1,6 @@
 package cse213.refugeecampfinalproject.DoctorAndEducationCoordinator;
 
+import cse213.refugeecampfinalproject.DoctorAndEducationCoordinator.EducationProgramModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -14,7 +15,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class AddProgramController
+public class AddProgramControler
 {
     @javafx.fxml.FXML
     private ComboBox<String> programtypecomboBox;
@@ -28,37 +29,43 @@ public class AddProgramController
     private Label displayMassegeLabel;
     @javafx.fxml.FXML
     private TextField studentcapacityTextField;
+    private ArrayList<EducationProgramModel> programList = new ArrayList<>();
 
-    ArrayList<EducationProgramModel> programList = new ArrayList<>();
     @javafx.fxml.FXML
     public void initialize() {
-        programtypecomboBox.getItems().addAll("Litarecy","Language","Vocational");
+        programtypecomboBox.getItems().addAll("Literacy", "Language", "Vocational");
     }
 
     @javafx.fxml.FXML
     public void submitFormOnAction(ActionEvent actionEvent) {
-        boolean flag = true;
         String programName = programNameTextField.getText();
         String programType = programtypecomboBox.getValue();
-        String agegroup = agegroupTextField.getText();
+        String ageGroup = agegroupTextField.getText();
         String duration = durationTextField.getText();
-        int capacity = Integer.parseInt(studentcapacityTextField.getText());
-        String capacitystr = Integer.toString(capacity);
-
-        if (programName.isEmpty() && programType==null && agegroup.isBlank() && duration.isEmpty() && capacitystr.isBlank()){
-            flag=false;
+        int capacity;
+        // Validate input fields
+        if (programName.isEmpty() || programType == null || ageGroup.isEmpty() || duration.isEmpty() || studentcapacityTextField.getText().isEmpty()) {
             displayMassegeLabel.setText("Please fill in all fields.");
             return;
-
         }
-        for (EducationProgramModel educationProgramModel : programList){
-            if (educationProgramModel.getProgramName().equalsIgnoreCase(programName) && educationProgramModel.getProgramType().equals(programType)){
+        try {
+            capacity = Integer.parseInt(studentcapacityTextField.getText());
+        } catch (NumberFormatException e) {
+            displayMassegeLabel.setText("Capacity must be a number.");
+            return;
+        }
+        // Check for existing duplicate program
+        for (EducationProgramModel program : programList) {
+            if (program.getProgramName().equalsIgnoreCase(programName) && program.getProgramType().equals(programType)) {
                 displayMassegeLabel.setText("Program already exists.");
                 return;
             }
         }
-        EducationProgramModel e = new EducationProgramModel(programName,programType,agegroup,duration,capacity);
-        programList.add(e);
+        // Save new program in system database (in this case, the list)
+        EducationProgramModel newProgram = new EducationProgramModel(programName, programType, ageGroup, duration, capacity);
+        programList.add(newProgram);
+        // Display confirmation message
+        displayMassegeLabel.setText("Program added successfully.");
     }
 
     @javafx.fxml.FXML

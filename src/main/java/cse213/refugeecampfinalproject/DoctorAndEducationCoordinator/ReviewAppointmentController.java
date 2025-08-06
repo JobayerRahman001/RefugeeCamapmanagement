@@ -1,7 +1,4 @@
 package cse213.refugeecampfinalproject.DoctorAndEducationCoordinator;
-
-
-
 import cse213.refugeecampfinalproject.Refugee.HealthServicesModel;
 import cse213.refugeecampfinalproject.Refugee.HealthcareServicesController;
 import javafx.event.ActionEvent;
