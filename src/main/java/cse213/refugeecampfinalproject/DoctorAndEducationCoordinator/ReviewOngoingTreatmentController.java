@@ -1,6 +1,5 @@
 package cse213.refugeecampfinalproject.DoctorAndEducationCoordinator;
 
-import cse213.refugeecampfinalproject.RefugeeandAdmin.HealthcareServicesController;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -22,12 +21,7 @@ public class ReviewOngoingTreatmentController
 
     @javafx.fxml.FXML
     public void initialize() {
-        HealthcareServicesList.clear();
-        HealthcareServicesList.addAll(HealthcareServicesController.HealthcareServicesList);
 
-
-        patientTableView.getItems().clear();
-        patientTableView.getItems().addAll(HealthcareServicesList);
     }
 
     @javafx.fxml.FXML
