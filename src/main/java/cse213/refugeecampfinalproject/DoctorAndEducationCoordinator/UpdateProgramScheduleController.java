@@ -19,7 +19,7 @@ public class UpdateProgramScheduleController
     @javafx.fxml.FXML
     private TextField enternewtimeTextField;
     @javafx.fxml.FXML
-    private ComboBox<ProgramModel> selectprograamComboBox;
+    private ComboBox<String> selectprograamComboBox;
     @javafx.fxml.FXML
     private Label errorlabel;
     @javafx.fxml.FXML
@@ -35,7 +35,9 @@ public class UpdateProgramScheduleController
         programList.add(new ProgramModel("Literacy Program", "Literacy", "Monday 10 AM - 12 PM"));
         programList.add(new ProgramModel("Language Program", "Language", "Tuesday 1 PM - 3 PM"));
         // Populate the combo box
-        selectprograamComboBox.getItems().addAll(programList);
+        for (ProgramModel pm : programList){
+            selectprograamComboBox.getItems().add(pm.getProgramName());
+        }
     }
     @javafx.fxml.FXML
     public void gobacktoeducationpanelOnAction(ActionEvent actionEvent) throws IOException {
@@ -48,7 +50,7 @@ public class UpdateProgramScheduleController
 
     @javafx.fxml.FXML
     public void submitupdatescheduleOnAction(ActionEvent actionEvent) {
-        ProgramModel selectedProgram = selectprograamComboBox.getValue();
+        String selectedProgram = selectprograamComboBox.getValue();
         String newDate = enternewdateTextField.getText();
         String newTime = enternewtimeTextField.getText();
         String newSchedule = newDate + " " + newTime;
@@ -63,19 +65,24 @@ public class UpdateProgramScheduleController
             return;
         }
         // Update program schedule
-        selectedProgram.schedule(newSchedule);
+        for (ProgramModel program : programList) {
+            if (program.getProgramName().equalsIgnoreCase(selectedProgram)) {
+                program.setSchedule(newSchedule);
+                break;
+            }
+        }
         // Notify assigned teachers and enrolled students (placeholder for actual notification logic)
         notifyTeachersAndStudents(selectedProgram);
         // Display success message
         errorlabel.setText("Program schedule updated successfully.");
     }
-    private boolean isScheduleClashing(ProgramModel program, String newSchedule) {
+    private boolean isScheduleClashing(String program, String newSchedule) {
         // This method should check if the new schedule clashes with existing sessions
         // For simplicity, we will return false (no conflicts) in this example
         return false;
     }
-    private void notifyTeachersAndStudents(ProgramModel program) {
+    private void notifyTeachersAndStudents(String program) {
         // Placeholder for logic to notify teachers and students about the schedule change
-        System.out.println("Notifying teachers and students about the new schedule for " + program.getProgramName());
+        System.out.println("Notifying teachers and students about the new schedule for " + program);
     }
 }

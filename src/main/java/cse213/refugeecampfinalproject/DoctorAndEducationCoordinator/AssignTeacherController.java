@@ -67,7 +67,7 @@ public class AssignTeacherController
             displayMassege.setText("Teacher is already assigned to a conflicting schedule.");
             return;
         }
-        
+
         // Save assignment (in this example, we just display a message)
         // In a real application, you would save this to a database
         displayMassege.setText("Teacher assigned successfully to " + selectedProgram);

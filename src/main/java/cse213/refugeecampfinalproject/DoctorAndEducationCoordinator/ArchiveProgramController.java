@@ -61,7 +61,7 @@ public class ArchiveProgramController
 
         if (selectedProgram != null) {
             // Mark the program as completed by updating its schedule
-            selectedProgram.schedule("Completed");
+            selectedProgram.getSchedule();
             statusLabel.setText("Program " + selectedProgram.getProgramName() + " marked as completed.");
 
             // Refresh the table to show updated status
