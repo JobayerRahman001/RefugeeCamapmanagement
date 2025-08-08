@@ -76,7 +76,7 @@ public static ArrayList<HealthServicesModel> HealthcareServicesList = new ArrayL
         }
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void createPrescriptionOnClick(ActionEvent actionEvent) throws IOException {
         HealthServicesModel selectedPatient = patientTableView.getSelectionModel().getSelectedItem();
         selectedPatient = patientTableView.getSelectionModel().getSelectedItem();
@@ -107,7 +107,7 @@ public static ArrayList<HealthServicesModel> HealthcareServicesList = new ArrayL
         }
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void addNotesOnClick(ActionEvent actionEvent) throws IOException {
         HealthServicesModel selectedPatient = patientTableView.getSelectionModel().getSelectedItem();
         selectedPatient = patientTableView.getSelectionModel().getSelectedItem();

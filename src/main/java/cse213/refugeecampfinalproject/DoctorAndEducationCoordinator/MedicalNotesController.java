@@ -1,6 +1,9 @@
-
 package cse213.refugeecampfinalproject.DoctorAndEducationCoordinator;
 
+import cse213.refugeecampfinalproject.Refugee.HealthServicesModel;
+import cse213.refugeecampfinalproject.Refugee.HealthcareServicesController;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -12,6 +15,7 @@ import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class MedicalNotesController {
@@ -25,10 +29,20 @@ public class MedicalNotesController {
     private TextArea remarksTextArea;
     @javafx.fxml.FXML
     private Label confirmationLabel;
-
+    public static ArrayList<HealthServicesModel> HealthcareServicesList = new ArrayList<>();
     @javafx.fxml.FXML
     public void initialize() {
-        patientCombobox.getItems().addAll("");
+
+        HealthcareServicesList.clear();
+        HealthcareServicesList.addAll(HealthcareServicesController.HealthcareServicesList);
+
+        HealthcareServicesList.add(new HealthServicesModel("R01", null, "fever", "Sun 2pm", null, null, null, null, null, "Pending"));
+        HealthcareServicesList.add(new HealthServicesModel("R05", null, "sore throat", "Wed 5pm", null, null, null, null, null, "Pending"));
+
+        for (HealthServicesModel healthModel : HealthcareServicesList){
+            patientCombobox.getItems().add(healthModel.getRefugeeID());
+        }
+
     }
 
     @javafx.fxml.FXML
@@ -41,8 +55,21 @@ public class MedicalNotesController {
             confirmationLabel.setText("Please fill in all fields.");
             return;
         }
-        MedicalNoteModel medicalNote = new MedicalNoteModel(selectedPatient, diagnosis, prescribedMedicine, remarks);
+        saveMedicalNotes(selectedPatient, diagnosis, prescribedMedicine, remarks);
+        //ObservableList<HealthServicesModel> observableList = FXCollections.observableArrayList(HealthcareServicesList);
+
+        //MedicalNoteModel medicalNote = new MedicalNoteModel(selectedPatient, diagnosis, prescribedMedicine, remarks);
         confirmationLabel.setText("Medical notes saved successfully!");
+        patientCombobox.setValue(null);
+        diagnosisTextArea.clear();
+        prescribmedicinTextArea.clear();
+        remarksTextArea.clear();
+    }
+    private void saveMedicalNotes(String patient, String diagnosis, String prescribedMedicine, String remarks) {
+        System.out.println("Saving medical notes for " + patient);
+        System.out.println("Diagnosis: " + diagnosis);
+        System.out.println("Prescribed Medicine: " + prescribedMedicine);
+        System.out.println("Remarks: " + remarks);
     }
 
     @javafx.fxml.FXML

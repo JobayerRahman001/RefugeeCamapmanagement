@@ -32,17 +32,13 @@ public class ArchiveProgramController
 
     @javafx.fxml.FXML
     public void initialize() {
-        // Set up the table columns
         programnameColum.setCellValueFactory(new PropertyValueFactory<>("programName"));
         programtypeColum.setCellValueFactory(new PropertyValueFactory<>("programType"));
-        // Load completed programs into the table
         loadCompletedPrograms();
     }
     private void loadCompletedPrograms() {
-        // Example completed programs (in a real application, this would come from a database)
         archiveModellist.add(new ArchiveModel("Literacy Program", "Literacy", "Completed",false));
         archiveModellist.add(new ArchiveModel("Language Program", "Language", "Completed",false));
-        // Populate the TableView
         ObservableList<ArchiveModel> observableList = FXCollections.observableArrayList(archiveModellist);
         archiveprogramTableView.setItems(observableList);
     }
@@ -60,11 +56,8 @@ public class ArchiveProgramController
         ArchiveModel selectedProgram = archiveprogramTableView.getSelectionModel().getSelectedItem();
 
         if (selectedProgram != null) {
-            // Mark the program as completed by updating its schedule
             selectedProgram.getSchedule();
             statusLabel.setText("Program " + selectedProgram.getProgramName() + " marked as completed.");
-
-            // Refresh the table to show updated status
             loadCompletedPrograms();
         } else {
             statusLabel.setText("Please select a program to mark as completed.");
@@ -75,12 +68,9 @@ public class ArchiveProgramController
     public void archiveprogramOnAction(ActionEvent actionEvent) {
         ArchiveModel selectedProgram = archiveprogramTableView.getSelectionModel().getSelectedItem();
         if (selectedProgram != null) {
-            // Archive the selected program
             selectedProgram.isArchived();
             statusLabel.setText("Program " + selectedProgram.getProgramName() + " has been archived.");
-            // Notify stakeholders (placeholder for actual notification logic)
             notifyStakeholders(selectedProgram);
-            // Refresh the table view
             loadCompletedPrograms();
         } else {
             statusLabel.setText("Please select a program to archive.");

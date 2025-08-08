@@ -53,19 +53,16 @@ public class EvaluateTeacherPerformanceController
 
     @javafx.fxml.FXML
     public void loadallfeedbackOnAction(ActionEvent actionEvent) {
-        // Fetch feedback data (in a real application, this would come from a database)
         fetchFeedbackData();
-        // Populate the TableView with the fetched data
         ObservableList<FeedBackModel> observableList = FXCollections.observableArrayList(feedbackList);
         evulateteachertableview.setItems(observableList);
     }
     private void fetchFeedbackData() {
-        // Example feedback data (in a real application, this would come from a database)
         feedbackList.clear(); // Clear previous data
         feedbackList.add(new FeedBackModel("Alice", 4.5, 30, "Great teacher, very engaging."));
         feedbackList.add(new FeedBackModel("Bob", 3.8, 25, "Good, but needs to improve on attendance."));
         feedbackList.add(new FeedBackModel("Charlie", 4.0, 28, "Very knowledgeable and helpful."));
-        // Add more feedback as needed
+
     }
 
 }

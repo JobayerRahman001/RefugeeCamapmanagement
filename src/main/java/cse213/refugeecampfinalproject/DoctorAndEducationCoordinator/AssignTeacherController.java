@@ -52,29 +52,25 @@ public class AssignTeacherController
     public void assignTeacherOnAction(ActionEvent actionEvent) {
         String selectedTeacher = selectTeacherComboBox.getValue();
         String selectedProgram = selectprogramComboBox.getValue();
-        // Validate selection
+
         if (selectedTeacher == null || selectedProgram == null) {
             displayMassege.setText("Please select both a teacher and a program.");
             return;
         }
-        // Check if the teacher is available
         if (selectedTeacher.isEmpty()) {
             displayMassege.setText("Selected teacher is not available.");
             return;
         }
-        // Check for scheduling conflicts (this is a simplified example)
+
         if (isTeacherAssignedToConflictingSchedule(selectedTeacher,selectedProgram)) {
             displayMassege.setText("Teacher is already assigned to a conflicting schedule.");
             return;
         }
 
-        // Save assignment (in this example, we just display a message)
-        // In a real application, you would save this to a database
+
         displayMassege.setText("Teacher assigned successfully to " + selectedProgram);
     }
     private boolean isTeacherAssignedToConflictingSchedule(String teacher, String program) {
-        // This method should check if the teacher is already assigned to a program with a conflicting schedule
-        // For simplicity, we will return false (no conflicts) in this example
         return false;
     }
 

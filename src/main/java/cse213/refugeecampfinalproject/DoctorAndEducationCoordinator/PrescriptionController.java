@@ -1,5 +1,7 @@
 package cse213.refugeecampfinalproject.DoctorAndEducationCoordinator;
 
+import cse213.refugeecampfinalproject.Refugee.HealthServicesModel;
+import cse213.refugeecampfinalproject.Refugee.HealthcareServicesController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -31,22 +33,31 @@ public class PrescriptionController
 
     @javafx.fxml.FXML
     private Label confirmationLabel;
-    public static ArrayList<MedicineModel> medicineInventory = new ArrayList<>();
+    public static ArrayList<MedicineModel> medicineList = new ArrayList<>();
+    public static ArrayList<HealthServicesModel> HealthcareServicesList = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void initialize() {
-        if (medicineInventory.isEmpty()) {
-            medicineInventory.add(new MedicineModel("Paracetamol", "Pain Relief", 50));
-            medicineInventory.add(new MedicineModel("Ibuprofen", "Anti-inflammatory", 30));
-            medicineInventory.add(new MedicineModel("Amoxicillin", "Antibiotic", 40));
+        if (medicineList.isEmpty()) {
+            medicineList.add(new MedicineModel("Paracetamol", "Pain Relief", 50));
+            medicineList.add(new MedicineModel("Ibuprofen", "Anti-inflammatory", 30));
+            medicineList.add(new MedicineModel("Amoxicillin", "Antibiotic", 40));
             medicinenameColum.setCellValueFactory(new PropertyValueFactory<>("medicineName"));
             medicinetypeColum.setCellValueFactory(new PropertyValueFactory<>("medicineType"));
             stockColum.setCellValueFactory(new PropertyValueFactory<>("stock"));
             // Populate medicine table
             medicintableview.getItems().clear();
-            medicintableview.getItems().addAll(medicineInventory);
+            medicintableview.getItems().addAll(medicineList);
             // Populate patient combo box (dummy data)
-            selectpatientComboBox.getItems().addAll("R001", "R002", "R003", "R004", "R005");
+            HealthcareServicesList.clear();
+            HealthcareServicesList.addAll(HealthcareServicesController.HealthcareServicesList);
+
+            HealthcareServicesList.add(new HealthServicesModel("R01", null, "fever", "Sun 2pm", null, null, null, null, null, "Pending"));
+            HealthcareServicesList.add(new HealthServicesModel("R05", null, "sore throat", "Wed 5pm", null, null, null, null, null, "Pending"));
+
+            for (HealthServicesModel healthModel : HealthcareServicesList) {
+                selectpatientComboBox.getItems().add(healthModel.getRefugeeID());
+            }
         }
     }
     @javafx.fxml.FXML
@@ -55,29 +66,40 @@ public class PrescriptionController
         String selectedPatient = selectpatientComboBox.getValue();
         String dose = doseTextField.getText();
         String duration = durationTextField.getText();
-        // Validate all fields are filled
-        if (selectedMedicine == null || selectedPatient == null || dose.isEmpty() || duration.isEmpty()) {
+
+        if (selectedMedicine == null || selectedPatient == null || dose.isBlank() || duration.isBlank()) {
             confirmationLabel.setText("Error: Please complete all fields!");
             return;
         }
-        // Check medicine availability
+
+
         if (selectedMedicine.getStock() <= 0) {
             confirmationLabel.setText("Error: Medicine out of stock!");
             return;
         }
-        // Validate dose and duration format (simple validation)
-        if (!dose.matches("^[0-9]+(\\.[0-9]+)?$") || !duration.matches("^[0-9]+$")) {
-            confirmationLabel.setText("Error: Invalid dose or duration format!");
+
+
+        if (!dose.replace(".", "").chars().allMatch(Character::isDigit)) {
+            confirmationLabel.setText("Error: Dose must be numeric (e.g., 1.5)!");
             return;
         }
-        // Create and save prescription (you would connect this to your database)
-        // For now we'll just reduce the stock
+        if (!duration.chars().allMatch(Character::isDigit)) {
+            confirmationLabel.setText("Error: Duration must be a whole number!");
+            return;
+        }
+
         selectedMedicine.setStock(selectedMedicine.getStock() - 1);
         medicintableview.refresh();
-        // Show success message
-        confirmationLabel.setText("Prescription created successfully for " + selectedPatient +
-                "\nMedicine: " + selectedMedicine.getMedicineName() +
-                "\nDose: " + dose + "\nDuration: " + duration + " days");
+
+
+        confirmationLabel.setText(
+                "Prescription created successfully!\n" +
+                        "Patient ID: " + selectedPatient +
+                        "\nMedicine: " + selectedMedicine.getMedicineName() +
+                        "\nDose: " + dose +
+                        "\nDuration: " + duration + " days\n" +
+                        "Prescription sent to pharmacy & patient profile."
+        );
 
     }
 

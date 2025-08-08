@@ -1,5 +1,7 @@
 package cse213.refugeecampfinalproject.DoctorAndEducationCoordinator;
 
+import cse213.refugeecampfinalproject.Refugee.HealthServicesModel;
+import cse213.refugeecampfinalproject.Refugee.HealthcareServicesController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -10,6 +12,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Objects;
 
 public class UpdateVaccineRecordController
 {
@@ -29,8 +33,18 @@ public class UpdateVaccineRecordController
     @javafx.fxml.FXML
     private Label confirmationLabel;
 
+    public static ArrayList<HealthServicesModel> HealthcareServicesList = new ArrayList<>();
+
     @javafx.fxml.FXML
     public void initialize() {
+        HealthcareServicesList.clear();
+        HealthcareServicesList.addAll(HealthcareServicesController.HealthcareServicesList);
+
+        HealthcareServicesList.add(new HealthServicesModel("R01", null, "fever", "Sun 2pm", null, null, null, null, null, "Pending"));
+        HealthcareServicesList.add(new HealthServicesModel("R05", null, "sore throat", "Wed 5pm", null, null, null, null, null, "Pending"));
+for (HealthServicesModel healthservice : HealthcareServicesList){
+    selectPatientComboBox.setValue(healthservice.getRefugeeID());
+}
 
     }
 
@@ -41,21 +55,17 @@ public class UpdateVaccineRecordController
         String dose = doseTextField.getText();
         LocalDate date = datepicker.getValue();
         String batchNo = batchNoTextField.getText();
-        // Validate fields
+
         if (selectedPatient == null || vaccineName.isEmpty() || dose.isEmpty() || date == null || batchNo.isEmpty()) {
             confirmationLabel.setText("Error: Please fill in all fields.");
             return;
         }
-        // Validate date format (this is handled by the DatePicker, but you can add additional checks if needed)
         if (date.isAfter(LocalDate.now())) {
             confirmationLabel.setText("Error: Date cannot be in the future.");
             return;
         }
-        // Create a new VaccineRecord instance (you may need to create this model class)
-        VaccineRecordModel vaccineRecord = new VaccineRecordModel(selectedPatient, vaccineName, dose, date, batchNo);
-        // Here you would typically save the vaccine record to your database
-        // For example: saveVaccineRecordToDatabase(vaccineRecord);
-        // Show success message
+       VaccineRecordModel vaccineRecord = new VaccineRecordModel(selectedPatient, vaccineName, dose, date, batchNo);
+
         confirmationLabel.setText("Vaccine record updated successfully for " + selectedPatient + "!");
         vaccinoutputTextArea.setText("Vaccine Name: " + vaccineName + "\nDose: " + dose + "\nDate: " + date + "\nBatch No: " + batchNo);
 
@@ -63,7 +73,7 @@ public class UpdateVaccineRecordController
 
     @javafx.fxml.FXML
     public void gobacktohealthportalOnAction(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(getClass().getResource("/cse213/refugeecampfinalproject/Doctor/HealthPortal.fxml"));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/DoctorAndEducationCoordinator/HealthPortal.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Health Portal");

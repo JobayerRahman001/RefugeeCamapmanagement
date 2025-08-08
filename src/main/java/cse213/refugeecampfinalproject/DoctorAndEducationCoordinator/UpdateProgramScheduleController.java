@@ -54,35 +54,32 @@ public class UpdateProgramScheduleController
         String newDate = enternewdateTextField.getText();
         String newTime = enternewtimeTextField.getText();
         String newSchedule = newDate + " " + newTime;
-        // Validate selection
+
         if (selectedProgram == null) {
             errorlabel.setText("Please select a program.");
             return;
         }
-        // Validate new schedule
+
         if (isScheduleClashing(selectedProgram, newSchedule)) {
             errorlabel.setText("New schedule clashes with existing sessions.");
             return;
         }
-        // Update program schedule
+
         for (ProgramModel program : programList) {
             if (program.getProgramName().equalsIgnoreCase(selectedProgram)) {
                 program.setSchedule(newSchedule);
                 break;
             }
         }
-        // Notify assigned teachers and enrolled students (placeholder for actual notification logic)
         notifyTeachersAndStudents(selectedProgram);
-        // Display success message
         errorlabel.setText("Program schedule updated successfully.");
     }
     private boolean isScheduleClashing(String program, String newSchedule) {
-        // This method should check if the new schedule clashes with existing sessions
-        // For simplicity, we will return false (no conflicts) in this example
+
         return false;
     }
     private void notifyTeachersAndStudents(String program) {
-        // Placeholder for logic to notify teachers and students about the schedule change
+
         System.out.println("Notifying teachers and students about the new schedule for " + program);
     }
 }

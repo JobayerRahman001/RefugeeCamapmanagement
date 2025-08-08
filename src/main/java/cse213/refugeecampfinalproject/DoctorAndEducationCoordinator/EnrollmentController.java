@@ -29,7 +29,7 @@ public class EnrollmentController
     private ArrayList<EnrollmentModel> enrollmentData = new ArrayList<>();
     @javafx.fxml.FXML
     public void initialize() {
-        // Set up the table columns
+
         programnameColum.setCellValueFactory(new PropertyValueFactory<>("programName"));
         enrolledstudentColum.setCellValueFactory(new PropertyValueFactory<>("enrolledStudents"));
     }
@@ -45,18 +45,15 @@ public class EnrollmentController
 
     @javafx.fxml.FXML
     public void loadOnAction(ActionEvent actionEvent) {
-        // Fetch enrollment numbers for all active programs
         fetchEnrollmentData();
-        // Populate the TableView with the fetched data
         ObservableList<EnrollmentModel> observableList = FXCollections.observableArrayList(enrollmentData);
         enrollmentTableView.setItems(observableList);
     }
     private void fetchEnrollmentData() {
-        // Example data (in a real application, this would come from a database)
         enrollmentData.clear(); // Clear previous data
         enrollmentData.add(new EnrollmentModel("Literacy Program", 25));
         enrollmentData.add(new EnrollmentModel("Language Program", 30));
         enrollmentData.add(new EnrollmentModel("Vocational Program", 15));
-        // Add more programs as needed
+
     }
 }
