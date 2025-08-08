@@ -7,11 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< HEAD:src/main/resources/cse213/refugeecampfinalproject/ReviewAppointment.fxml
 <AnchorPane prefHeight="405.0" prefWidth="680.0" style="-fx-background-color: fff8e1;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.DoctorAndEducationCoordinator.ReviewAppointmentController">
-=======
-<AnchorPane prefHeight="405.0" prefWidth="680.0" style="-fx-background-color: fff8e1;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.Doctor.ReviewAppointmentController">
->>>>>>> 3766be206684680eb274de4e03789a2b43595b2f:src/main/resources/cse213/refugeecampfinalproject/Doctor/ReviewAppointment.fxml
    <children>
       <TableView fx:id="patientTableView" layoutX="65.0" layoutY="80.0" prefHeight="207.0" prefWidth="565.0" style="-fx-background-color: e0f7fa;">
         <columns>
