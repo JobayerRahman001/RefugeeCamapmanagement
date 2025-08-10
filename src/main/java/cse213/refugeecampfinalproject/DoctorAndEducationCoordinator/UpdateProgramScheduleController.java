@@ -75,11 +75,9 @@ public class UpdateProgramScheduleController
         errorlabel.setText("Program schedule updated successfully.");
     }
     private boolean isScheduleClashing(String program, String newSchedule) {
-
         return false;
     }
     private void notifyTeachersAndStudents(String program) {
-
         System.out.println("Notifying teachers and students about the new schedule for " + program);
     }
 }

@@ -50,7 +50,7 @@ public class EnrollmentController
         enrollmentTableView.setItems(observableList);
     }
     private void fetchEnrollmentData() {
-        enrollmentData.clear(); // Clear previous data
+        enrollmentData.clear();
         enrollmentData.add(new EnrollmentModel("Literacy Program", 25));
         enrollmentData.add(new EnrollmentModel("Language Program", 30));
         enrollmentData.add(new EnrollmentModel("Vocational Program", 15));

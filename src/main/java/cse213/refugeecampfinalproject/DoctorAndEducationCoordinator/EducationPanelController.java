@@ -26,34 +26,74 @@ public class EducationPanelController
     }
 
     @javafx.fxml.FXML
-    public void updateprogramscheduleOnAction(ActionEvent actionEvent) {
+    public void updateprogramscheduleOnAction(ActionEvent actionEvent) throws IOException {
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/DoctorAndEducationCoordinator/UpdateProgramSchedule.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(home));
+        stage.setTitle("Update Program Schedule");
+        stage.show();
     }
 
     @javafx.fxml.FXML
-    public void enrollmentstatusOnAction(ActionEvent actionEvent) {
+    public void enrollmentstatusOnAction(ActionEvent actionEvent) throws IOException {
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/DoctorAndEducationCoordinator/Enrollment.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(home));
+        stage.setTitle("Enrollment");
+        stage.show();
     }
 
     @javafx.fxml.FXML
-    public void educatonapplicationOnAction(ActionEvent actionEvent) {
+    public void educatonapplicationOnAction(ActionEvent actionEvent) throws IOException {
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/DoctorAndEducationCoordinator/AproveEducationApplication.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(home));
+        stage.setTitle("Aprove Education Application");
+        stage.show();
     }
 
     @javafx.fxml.FXML
-    public void archiveprogramOnAction(ActionEvent actionEvent) {
+    public void archiveprogramOnAction(ActionEvent actionEvent) throws IOException {
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/DoctorAndEducationCoordinator/ArchiveProgram.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(home));
+        stage.setTitle("Archive Program");
+        stage.show();
     }
 
     @javafx.fxml.FXML
-    public void evulateteacherperformanceOnAction(ActionEvent actionEvent) {
+    public void evulateteacherperformanceOnAction(ActionEvent actionEvent) throws IOException {
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/DoctorAndEducationCoordinator/EvaluateTeacherPerformance.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(home));
+        stage.setTitle("Evaluate Teacher Performance");
+        stage.show();
     }
 
     @javafx.fxml.FXML
-    public void uplodestudymaterialOnAction(ActionEvent actionEvent) {
+    public void uplodestudymaterialOnAction(ActionEvent actionEvent) throws IOException {
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/DoctorAndEducationCoordinator/UplodeStudyMaterial.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(home));
+        stage.setTitle("Uplode Study Material");
+        stage.show();
     }
 
     @javafx.fxml.FXML
-    public void addprogramOnAction(ActionEvent actionEvent) {
+    public void addprogramOnAction(ActionEvent actionEvent) throws IOException {
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/DoctorAndEducationCoordinator/AddProgram.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(home));
+        stage.setTitle("Add Program");
+        stage.show();
     }
 
     @javafx.fxml.FXML
-    public void asignteacherOnAction(ActionEvent actionEvent) {
+    public void asignteacherOnAction(ActionEvent actionEvent) throws IOException {
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/DoctorAndEducationCoordinator/AssignTeacher.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(home));
+        stage.setTitle("Assign Teacher");
+        stage.show();
     }
 }

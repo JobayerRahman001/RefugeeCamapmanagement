@@ -77,7 +77,6 @@ public class ArchiveProgramController
         }
     }
     private void notifyStakeholders(ArchiveModel program) {
-        // Placeholder for logic to notify stakeholders about the program archival
         System.out.println("Notifying stakeholders about the archival of " + program.getProgramName());
     }
 

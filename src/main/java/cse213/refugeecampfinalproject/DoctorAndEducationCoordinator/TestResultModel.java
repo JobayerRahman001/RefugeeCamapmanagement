@@ -1,8 +1,14 @@
 package cse213.refugeecampfinalproject.DoctorAndEducationCoordinator;
-public class TestResultModel {
-    private String patientID, reportType, filePath, date;
 
-    public TestResultModel(String patientID, String reportType, String filePath, String date) {
+import java.io.File;
+import java.time.LocalDate;
+
+public class TestResultModel {
+    private String patientID, reportType;
+    private File filePath;
+    private LocalDate date;
+
+    public TestResultModel(String patientID, String reportType, File filePath, LocalDate date) {
         this.patientID = patientID;
         this.reportType = reportType;
         this.filePath = filePath;
@@ -25,19 +31,19 @@ public class TestResultModel {
         this.reportType = reportType;
     }
 
-    public String getFilePath() {
+    public File getFilePath() {
         return filePath;
     }
 
-    public void setFilePath(String filePath) {
+    public void setFilePath(File filePath) {
         this.filePath = filePath;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
@@ -46,8 +52,8 @@ public class TestResultModel {
         return "TestResultModel{" +
                 "patientID='" + patientID + '\'' +
                 ", reportType='" + reportType + '\'' +
-                ", filePath='" + filePath + '\'' +
-                ", date='" + date + '\'' +
+                ", filePath=" + filePath +
+                ", date=" + date +
                 '}';
     }
 }

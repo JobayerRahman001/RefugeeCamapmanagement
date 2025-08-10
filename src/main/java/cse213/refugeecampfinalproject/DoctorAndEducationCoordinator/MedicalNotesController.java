@@ -56,9 +56,6 @@ public class MedicalNotesController {
             return;
         }
         saveMedicalNotes(selectedPatient, diagnosis, prescribedMedicine, remarks);
-        //ObservableList<HealthServicesModel> observableList = FXCollections.observableArrayList(HealthcareServicesList);
-
-        //MedicalNoteModel medicalNote = new MedicalNoteModel(selectedPatient, diagnosis, prescribedMedicine, remarks);
         confirmationLabel.setText("Medical notes saved successfully!");
         patientCombobox.setValue(null);
         diagnosisTextArea.clear();

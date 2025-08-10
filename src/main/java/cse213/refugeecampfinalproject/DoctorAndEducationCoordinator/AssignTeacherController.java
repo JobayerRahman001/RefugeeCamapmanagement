@@ -32,17 +32,16 @@ public class AssignTeacherController
     public void loadTeachers(){
         teacherList.add(new TeacherModel("Mr.Ali Akbar", "T001", true));
         teacherList.add(new TeacherModel("Mr.Salam Uddin", "T002", true));
-        teacherList.add(new TeacherModel("Mr.AkramUjjaman", "T003", false)); // Not available
-        // Populate the combo box
+        teacherList.add(new TeacherModel("Mr.AkramUjjaman", "T003", false));
+
         for (TeacherModel teacherModel : teacherList){
             selectTeacherComboBox.getItems().add(teacherModel.getName());
         }
     }
     public void loadPrograms(){
-        // Example programs (in a real application, this would come from a database)
         programList.add(new ProgramModel("Literacy Program", "Literacy", "Monday 10 AM - 12 PM"));
         programList.add(new ProgramModel("Language Program", "Language", "Tuesday 1 PM - 3 PM"));
-        // Populate the combo box
+
         for (ProgramModel programModel:programList){
             selectprogramComboBox.getItems().add(programModel.getProgramName());
         }

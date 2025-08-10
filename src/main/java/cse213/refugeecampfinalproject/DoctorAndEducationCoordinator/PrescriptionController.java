@@ -45,10 +45,10 @@ public class PrescriptionController
             medicinenameColum.setCellValueFactory(new PropertyValueFactory<>("medicineName"));
             medicinetypeColum.setCellValueFactory(new PropertyValueFactory<>("medicineType"));
             stockColum.setCellValueFactory(new PropertyValueFactory<>("stock"));
-            // Populate medicine table
+
             medicintableview.getItems().clear();
             medicintableview.getItems().addAll(medicineList);
-            // Populate patient combo box (dummy data)
+
             HealthcareServicesList.clear();
             HealthcareServicesList.addAll(HealthcareServicesController.HealthcareServicesList);
 
