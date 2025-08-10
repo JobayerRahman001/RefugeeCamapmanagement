@@ -9,8 +9,6 @@ public class ResourceRequestsModel {
     private String reason;
     private String status;
 
-    public static ArrayList<ResourceRequestsModel> ResourceRequestsList = new ArrayList<>();
-
     public ResourceRequestsModel(String refugeeID, String requestType, String quantity, String reason, String status) {
         this.refugeeID = refugeeID;
         this.requestType = requestType;

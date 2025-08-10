@@ -3,6 +3,7 @@ package cse213.refugeecampfinalproject;
 import cse213.refugeecampfinalproject.Refugee.Refugee;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
@@ -44,7 +45,7 @@ public class LoginController {
     public void initialize() {
         //ComboBox
 
-        userTypeComboBox.getItems().addAll("Refugee", "Camp Admin", "Doctor", "Educator", "Volunteer", "Resources Manager", "Accountant", "UN Representative");
+        userTypeComboBox.getItems().addAll("Refugee", "Camp Admin", "Doctor", "Educator", "Volunteer", "Resources Manager", "Accountant and Logistics Coordinator", "UN Representative");
         registeredRefugees.add(new Refugee("R01", "Ali Khan", "1234", 35, "Male", "5", "Bangladeshi"));
         registeredRefugees.add(new Refugee("R02", "Sara Noor", "5678", 28, "Female", "4", "Rohingya"));
     }
@@ -75,22 +76,65 @@ public class LoginController {
         }
 
         if (userPasscodes.containsKey(selectedUser) && userPasscodes.get(selectedUser).equals(enteredPasscode)) {
-            String fxmlToLoad = switch (selectedUser) {
-                case "Camp Admin" -> "/cse213/refugeecampfinalproject/Admin/AdminDashboard.fxml";
-                case "Doctor" -> "/cse213/refugeecampfinalproject/Doctor/HealthPortal.fxml";
-                case "Educator" -> "/cse213/refugeecampfinalproject/Educator/EducationPanel.fxml";
-                case "Volunteer" -> "/cse213/refugeecampfinalproject/Volunteer.fxml";
-                case "Resources Manager" -> "/cse213/refugeecampfinalproject/ResourcesManager/ResourcesDashboard.fxml";
-                case "Accountant" -> "/cse213/refugeecampfinalproject/FinanceDashboard.fxml";
-                case "UN Representative" -> "/cse213/refugeecampfinalproject/UNRepDashboard.fxml";
-                default -> null;
-            };
+            if (selectedUser.equals("Camp Admin")) {
+                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Admin/AdminDashboard.fxml")));
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(home));
+                stage.setTitle("Admin Dashboard");
+                stage.show();
+                return;
+            }
 
-            if (fxmlToLoad != null) {
-                Parent dashboard = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(fxmlToLoad)));
-                Stage stage = (Stage) userTypeComboBox.getScene().getWindow();
-                stage.setScene(new Scene(dashboard));
-                stage.setTitle(selectedUser + " Dashboard");
+            if (selectedUser.equals("Doctor")) {
+                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Doctor/HealthPortal.fxml")));
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(home));
+                stage.setTitle("Health Portal");
+                stage.show();
+                return;
+            }
+
+            if (selectedUser.equals("Educator")) {
+                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Educator/EducationPanel.fxml")));
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(home));
+                stage.setTitle("Education Panel");
+                stage.show();
+                return;
+            }
+
+            if (selectedUser.equals("Volunteer")) {
+                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Volunteer/VolunteerDashboard.fxml")));
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(home));
+                stage.setTitle("Volunteer Dashboard");
+                stage.show();
+                return;
+            }
+
+            if (selectedUser.equals("Resources Manager")) {
+                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourcesManager/ResourcesDashboard.fxml")));
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(home));
+                stage.setTitle("Resources Dashboard");
+                stage.show();
+                return;
+            }
+
+            if (selectedUser.equals("Accountant and Logistics Coordinator")) {
+                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/AccountantAndLogistics/FinanceDashboard.fxml")));
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(home));
+                stage.setTitle("Finance Dashboard");
+                stage.show();
+                return;
+            }
+
+            if (selectedUser.equals("UN Representative")) {
+                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/UNHCR/UNRepDashboard.fxml")));
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(home));
+                stage.setTitle("UN Rep Dashboard");
                 stage.show();
             }
         } else {
@@ -100,7 +144,7 @@ public class LoginController {
 
     @javafx.fxml.FXML
     public void backToHomeOnClick(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/homepage.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("homepage.fxml")));
         Stage stage = (Stage) userTypeComboBox.getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Home");

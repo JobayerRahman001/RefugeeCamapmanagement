@@ -35,8 +35,8 @@ public class VolunteerPerformanceManagementAdminController
     @javafx.fxml.FXML
     private TableColumn<VolunteerModel, String> volIDTableCol;
 
-public static ArrayList<VolunteerModel>VolunteerList = new ArrayList<>();
-public static ArrayList<VolunteerWorkLogsModel>VolunteerWorkLogsList = VolunteerWorkLogsController.VolunteerWorkLogsList;
+    public static ArrayList<VolunteerModel>VolunteerList = new ArrayList<>();
+    public static ArrayList<VolunteerWorkLogsModel>VolunteerWorkLogsList = VolunteerWorkLogsController.VolunteerWorkLogsList;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -89,13 +89,13 @@ public static ArrayList<VolunteerWorkLogsModel>VolunteerWorkLogsList = Volunteer
 
         //dummy data
         if(selected.getVolID().equals("V01")) {
-            volunteerWorkTableView.getItems().add(new VolunteerWorkLogsModel("Education", "Completed 3 sessions", "Teaching"));
+            volunteerWorkTableView.getItems().add(new VolunteerWorkLogsModel(null, "Education", "Completed 3 sessions", "Teaching"));
         }else if(selected.getVolID().equals("V02")) {
-            volunteerWorkTableView.getItems().add(new VolunteerWorkLogsModel("Healthcare", "Completed health checkups", "First-aid, CPR"));
+            volunteerWorkTableView.getItems().add(new VolunteerWorkLogsModel(null, "Healthcare", "Completed health checkups", "First-aid, CPR"));
         }else if(selected.getVolID().equals("V03")) {
-            volunteerWorkTableView.getItems().add(new VolunteerWorkLogsModel("Food", "Completed serving 5 meals", "Cooking"));
+            volunteerWorkTableView.getItems().add(new VolunteerWorkLogsModel(null, "Food", "Completed serving 5 meals", "Cooking"));
         }else {
-            volunteerWorkTableView.getItems().add(new VolunteerWorkLogsModel(selected.getVolServiceArea(), "0 Tasks Completed", selected.getVolSkills()));
+            volunteerWorkTableView.getItems().add(new VolunteerWorkLogsModel(null, selected.getVolServiceArea(), "0 Tasks Completed", selected.getVolSkills()));
         }
         volunteerWorkTableView.getItems().addAll(VolunteerWorkLogsList);
     }
