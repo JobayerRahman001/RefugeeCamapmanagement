@@ -10,8 +10,6 @@ public class IssueReportsModel {
     private String location;
     private String status;
 
-public static ArrayList<IssueReportsModel> IssueReportsList = new ArrayList<>();
-
     public IssueReportsModel(String refugeeID, String category, String details, String urgency, String location, String status) {
         this.refugeeID = refugeeID;
         this.category = category;

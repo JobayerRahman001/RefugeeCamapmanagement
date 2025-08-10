@@ -40,7 +40,7 @@ public class VolunteerWorkLogsController
 
     @javafx.fxml.FXML
     public void backToHomeOnClick(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("VolunteerDashboardController.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Volunteer/VolunteerDashboard.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Volunteer Dashboard");
@@ -54,12 +54,14 @@ public class VolunteerWorkLogsController
             return;
         }
 
+        String volID = VolIDTextField.getText().trim();
         String ServiceArea = ServiceAreaComboBox.getValue();
         String tasks = TaskCompleteTextField.getText().trim();
         String skills = VolSkillsTextField.getText().trim();
 
-        VolunteerWorkLogsModel vwlm = new VolunteerWorkLogsModel(ServiceArea, tasks, skills);
+        VolunteerWorkLogsModel vwlm = new VolunteerWorkLogsModel(volID,ServiceArea, tasks, skills);
 
         VolunteerWorkLogsList.add(vwlm);
+        VolWorkMsgLabel.setText("Success");
     }
 }

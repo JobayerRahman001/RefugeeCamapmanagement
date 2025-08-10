@@ -1,14 +1,24 @@
 package cse213.refugeecampfinalproject.Volunteer;
 
 public class VolunteerWorkLogsModel {
+    private String volID;
     private String VolServiceArea;
     private String task;
     private String Volskills;
 
-    public VolunteerWorkLogsModel(String volServiceArea, String task, String volskills) {
+    public VolunteerWorkLogsModel(String volID, String volServiceArea, String task, String volskills) {
+        this.volID = volID;
         VolServiceArea = volServiceArea;
         this.task = task;
         Volskills = volskills;
+    }
+
+    public String getVolID() {
+        return volID;
+    }
+
+    public void setVolID(String volID) {
+        this.volID = volID;
     }
 
     public String getVolServiceArea() {
@@ -38,7 +48,8 @@ public class VolunteerWorkLogsModel {
     @Override
     public String toString() {
         return "VolunteerWorkLogsModel{" +
-                "VolServiceArea='" + VolServiceArea + '\'' +
+                "volID='" + volID + '\'' +
+                ", VolServiceArea='" + VolServiceArea + '\'' +
                 ", task='" + task + '\'' +
                 ", Volskills='" + Volskills + '\'' +
                 '}';

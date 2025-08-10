@@ -1,7 +1,9 @@
 package cse213.refugeecampfinalproject.Admin;
 
 import cse213.refugeecampfinalproject.Refugee.AssignedResourcesModel;
+import cse213.refugeecampfinalproject.Refugee.RefugeeDashboardTableViewEntriesModel;
 import cse213.refugeecampfinalproject.Refugee.ResourceRequestsModel;
+import cse213.refugeecampfinalproject.Refugee.ResourcesInventoryController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -17,6 +19,8 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Objects;
+
+import static cse213.refugeecampfinalproject.Refugee.ResourcesInventoryController.ResourceRequestsList;
 
 public class RequestsReceivedAdminController {
     @javafx.fxml.FXML
@@ -40,7 +44,6 @@ public class RequestsReceivedAdminController {
     @javafx.fxml.FXML
     private Label ResourceRequestsMsgLabel;
 
-    public static ArrayList<ResourceRequestsModel> ResourceRequestsList = new ArrayList<>();
     public static ArrayList<AllResourcesModel> InventoryList = new ArrayList<>();
 
     @javafx.fxml.FXML
@@ -63,8 +66,6 @@ public class RequestsReceivedAdminController {
         inventoryTableView.getItems().clear();
         inventoryTableView.getItems().addAll(InventoryList);
 
-        ResourceRequestsList.clear();
-        ResourceRequestsList.addAll(ResourceRequestsModel.ResourceRequestsList);
         //dummy data
         ResourceRequestsList.add(new ResourceRequestsModel("R01", "Jacket", "2", "cold", "Pending"));
         ResourceRequestsList.add(new ResourceRequestsModel("R05", "Female Attire", "1", "-", "Pending"));
@@ -75,8 +76,8 @@ public class RequestsReceivedAdminController {
         reasonTableCol.setCellValueFactory(new PropertyValueFactory<>("reason"));
         statusTableCol.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-        requestsReceivedTableView.getItems().clear();
-        requestsReceivedTableView.getItems().addAll(ResourceRequestsList);
+        requestsReceivedTableView.setItems(ResourcesInventoryController.ResourceRequestsList);
+
     }
 
     @javafx.fxml.FXML

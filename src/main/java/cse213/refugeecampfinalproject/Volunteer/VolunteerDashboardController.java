@@ -24,4 +24,49 @@ public class VolunteerDashboardController
         stage.setTitle("Home");
         stage.show();
     }
+
+    @javafx.fxml.FXML
+    public void VolunteerSafetySupplyOnClick(ActionEvent actionEvent) throws IOException {
+        Parent healthPortal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Volunteer/VolunteerSafetyAndSupply.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(healthPortal));
+        stage.setTitle("Safety and Supply");
+        stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void VolunteerFeedbackOnClick(ActionEvent actionEvent) throws IOException {
+        Parent healthPortal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Volunteer/VolunteerFeedback.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(healthPortal));
+        stage.setTitle("Feedback");
+        stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void VolunteerEditSkillsOnClick(ActionEvent actionEvent) throws IOException {
+        Parent healthPortal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Volunteer/VolunteerEditSkills.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(healthPortal));
+        stage.setTitle("Edit Skills");
+        stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void VolunteerWorkLogsOnClick(ActionEvent actionEvent) throws IOException {
+        Parent healthPortal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Volunteer/VolunteerWorkLogs.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(healthPortal));
+        stage.setTitle("Work Logs");
+        stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void VolunteerManageShiftsOnClick(ActionEvent actionEvent) throws IOException {
+        Parent healthPortal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Volunteer/VolunteerManageShifts.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(healthPortal));
+        stage.setTitle("Manage Shifts");
+        stage.show();
+    }
 }

@@ -18,6 +18,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Objects;
 
+import static cse213.refugeecampfinalproject.Refugee.ReportIssuesController.IssueReportsList;
+import static cse213.refugeecampfinalproject.Refugee.ResourcesInventoryController.ResourceRequestsList;
+
 public class RefugeeDashboardController
 {
     @javafx.fxml.FXML
@@ -33,12 +36,10 @@ public class RefugeeDashboardController
 
     ArrayList<HealthServicesModel> appointments = HealthcareServicesController.HealthcareServicesList;
     ArrayList<EducationServicesModel> education = EducationServicesController.EducacationServicesList;
-    ArrayList<ResourceRequestsModel> resources = ResourcesInventoryController.ResourceRequestsList;
-    ArrayList<IssueReportsModel> reports = ReportIssuesController.IssueReportsList;
 
     @javafx.fxml.FXML
     public void initialize() {
-        for (HealthServicesModel hsm : HealthcareServicesController.HealthcareServicesList) {
+        for (HealthServicesModel hsm : appointments) {
             String date = hsm.getAppointmentTime() != null ? hsm.getAppointmentTime() : hsm.getCounsellingTime();
             String details = hsm.getSymptoms() != null ? hsm.getSymptoms() : hsm.getConcerns();
             dashboardentries.add(new RefugeeDashboardTableViewEntriesModel(
@@ -48,10 +49,10 @@ public class RefugeeDashboardController
         for (EducationServicesModel esm : education) {
             dashboardentries.add(new RefugeeDashboardTableViewEntriesModel(esm.getProgramName(), esm.getTiming(), esm.getAge()));
         }
-        for (ResourceRequestsModel rsm: resources) {
+        for (ResourceRequestsModel rsm: ResourceRequestsList) {
             dashboardentries.add(new RefugeeDashboardTableViewEntriesModel(rsm.getRequestType(), LocalDate.now().toString(), String.valueOf(rsm.getQuantity())));
         }
-        for (IssueReportsModel rim : reports) {
+        for (IssueReportsModel rim : IssueReportsList) {
             dashboardentries.add(new RefugeeDashboardTableViewEntriesModel(rim.getCategory(),LocalDate.now().toString(), rim.getLocation()));
         }
 

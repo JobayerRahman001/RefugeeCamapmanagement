@@ -1,5 +1,7 @@
 package cse213.refugeecampfinalproject.Admin;
 
+import cse213.refugeecampfinalproject.Refugee.ReportIssuesController;
+import cse213.refugeecampfinalproject.Refugee.ResourcesInventoryController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -13,6 +15,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
+
+import static cse213.refugeecampfinalproject.Refugee.ReportIssuesController.IssueReportsList;
 
 public class ReportsReceivedAdminController {
     @javafx.fxml.FXML
@@ -30,12 +34,9 @@ public class ReportsReceivedAdminController {
     @javafx.fxml.FXML
     private TableView<IssueReportsModel> reportsReceivedTableView;
 
-    public static ArrayList<IssueReportsModel> IssueReportsList = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void initialize() {
-        IssueReportsList.clear();
-        IssueReportsList.addAll(IssueReportsModel.IssueReportsList);
         //dummy data
         IssueReportsList.add(new IssueReportsModel("R01", "Water", "Unclean", "Medium", "Block C", "Pending"));
         IssueReportsList.add(new IssueReportsModel("R05", "Other", "bullying", "Immediate", "Block A", "Pending"));
@@ -47,8 +48,7 @@ public class ReportsReceivedAdminController {
         locationTableCol.setCellValueFactory(new PropertyValueFactory<>("location"));
         statusTableCol.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-        reportsReceivedTableView.getItems().clear();
-        reportsReceivedTableView.getItems().addAll(IssueReportsList);
+        reportsReceivedTableView.setItems(IssueReportsList);
     }
 
     @javafx.fxml.FXML
