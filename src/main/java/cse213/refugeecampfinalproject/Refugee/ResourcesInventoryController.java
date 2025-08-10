@@ -1,6 +1,8 @@
 package cse213.refugeecampfinalproject.Refugee;
 
 import cse213.refugeecampfinalproject.LoggedInRefModel;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -33,7 +35,8 @@ public class ResourcesInventoryController
         requestTypeComboBox.getItems().addAll("Shirt", "Jacket", "Blanket", "Shawl", "Female Attire", "Male Attire", "Children Attire", "Extra Food", "Medicine");
     }
 
-public static ArrayList<ResourceRequestsModel>ResourceRequestsList = new ArrayList<>();
+    public static ObservableList<ResourceRequestsModel> ResourceRequestsList =
+            FXCollections.observableArrayList();
 
     @javafx.fxml.FXML
     public void sendInventoryReqOnClick(ActionEvent actionEvent) {
