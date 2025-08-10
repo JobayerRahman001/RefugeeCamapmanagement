@@ -79,14 +79,14 @@ public class PrescriptionController
         }
 
 
-        if (!dose.replace(".", "").chars().allMatch(Character::isDigit)) {
-            confirmationLabel.setText("Error: Dose must be numeric (e.g., 1.5)!");
-            return;
-        }
-        if (!duration.chars().allMatch(Character::isDigit)) {
-            confirmationLabel.setText("Error: Duration must be a whole number!");
-            return;
-        }
+//        if (!dose.replace(".", "").chars().allMatch(Character::isDigit)) {
+//            confirmationLabel.setText("Error: Dose must be numeric (e.g., 1.5)!");
+//            return;
+//        }
+//        if (!duration.chars().allMatch(Character::isDigit)) {
+//            confirmationLabel.setText("Error: Duration must be a whole number!");
+//            return;
+//        }
 
         selectedMedicine.setStock(selectedMedicine.getStock() - 1);
         medicintableview.refresh();
