@@ -86,7 +86,7 @@ public class LoginController {
             }
 
             if (selectedUser.equals("Doctor")) {
-                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("HealthPortal.fxml")));
+                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Doctor/HealthPortal.fxml")));
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(home));
                 stage.setTitle("Health Portal");
@@ -95,7 +95,7 @@ public class LoginController {
             }
 
             if (selectedUser.equals("Educator")) {
-                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("EducationPanel.fxml")));
+                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Educator/EducationPanel.fxml")));
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(home));
                 stage.setTitle("Education Panel");
@@ -104,7 +104,7 @@ public class LoginController {
             }
 
             if (selectedUser.equals("Volunteer")) {
-                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("VolunteerDashboard.fxml")));
+                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Volunteer/VolunteerDashboard.fxml")));
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(home));
                 stage.setTitle("Volunteer Dashboard");
@@ -113,7 +113,7 @@ public class LoginController {
             }
 
             if (selectedUser.equals("Resources Manager")) {
-                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ResourcesDashboard.fxml")));
+                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourcesManager/ResourcesDashboard.fxml")));
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(home));
                 stage.setTitle("Resources Dashboard");
@@ -122,7 +122,7 @@ public class LoginController {
             }
 
             if (selectedUser.equals("Accountant and Logistics Coordinator")) {
-                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("FinanceDashboard.fxml")));
+                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/AccountantAndLogistics/FinanceDashboard.fxml")));
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(home));
                 stage.setTitle("Finance Dashboard");
@@ -131,7 +131,7 @@ public class LoginController {
             }
 
             if (selectedUser.equals("UN Representative")) {
-                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("UNRepDashboard.fxml")));
+                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/UNHCR/UNRepDashboard.fxml")));
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(home));
                 stage.setTitle("UN Rep Dashboard");
