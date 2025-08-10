@@ -1,16 +1,20 @@
-package cse213.refugeecampfinalproject;
+package cse213.refugeecampfinalproject.AccountantAndLogistics;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
-
-import static cse213.refugeecampfinalproject.AccountantAndLogistics.DeliveryScheduleModel.getScheduledDeliveries;
-import static cse213.refugeecampfinalproject.AccountantAndLogistics.DeliveryScheduleModel.scheduledDeliveries;
+import java.util.Objects;
 
 public class DeliverySchedulingController
 {
@@ -87,6 +91,11 @@ public class DeliverySchedulingController
 
 
     @javafx.fxml.FXML
-    public void gobacktoaccountlogisticdashboardOnAction(ActionEvent actionEvent) {
+    public void gobacktoaccountlogisticdashboardOnAction(ActionEvent actionEvent) throws IOException {
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/AccountantLogisticsCoordinator.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(home));
+        stage.setTitle("Accountant Logistics Coordinator Controller");
+        stage.show();
     }
 }

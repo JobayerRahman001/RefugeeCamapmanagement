@@ -18,10 +18,10 @@ public class FinanceDashboardController
 
     @javafx.fxml.FXML
     public void backToHomeOnClick(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/homepage.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/AccountantLogisticsCoordinator.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
-        stage.setTitle("Home");
+        stage.setTitle("Accountant Logistics Coordinator Controller");
         stage.show();
     }
 }
