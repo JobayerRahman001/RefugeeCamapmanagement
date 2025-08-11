@@ -2,6 +2,7 @@ package cse213.refugeecampfinalproject.Admin;
 
 import cse213.refugeecampfinalproject.Refugee.AssignedResourcesModel;
 import cse213.refugeecampfinalproject.Refugee.Refugee;
+import cse213.refugeecampfinalproject.Refugee.RefugeeRegisterController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -51,7 +52,6 @@ public class ShelterManagementController
     private Label shelterManagementMsgLabel;
 
     ArrayList<ShelterManagementModel>shelterList = new ArrayList<>();
-    ArrayList<Refugee>RefugeeList = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -65,9 +65,9 @@ public class ShelterManagementController
         shelterList.add(new ShelterManagementModel(null, "S006", "Block B", 6));
         shelterList.add(new ShelterManagementModel(null, "S007", "Block C", 7));
 
-        RefugeeList.add(new Refugee("R01", "Amina", "1234", 32, "Female", "4", "Bangladeshi"));
-        RefugeeList.add(new Refugee("R02", "Roy", "5678", 45, "Male", "5", "Yemen"));
-        RefugeeList.add(new Refugee("R03", "Sohel", "9101", 37, "Male", "4", "Rohingya"));
+        RefugeeRegisterController.RefugeeList.add(new Refugee("R01", "Amina", "1234", 32, "Female", "4", "Bangladeshi"));
+        RefugeeRegisterController.RefugeeList.add(new Refugee("R02", "Roy", "5678", 45, "Male", "5", "Yemen"));
+        RefugeeRegisterController.RefugeeList.add(new Refugee("R03", "Sohel", "9101", 37, "Male", "4", "Rohingya"));
 
         newRefugeeIDTableCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         newRefugeeNameTableCol.setCellValueFactory(new PropertyValueFactory<>("refName"));
@@ -149,7 +149,7 @@ public class ShelterManagementController
         availableSheltersTableView.getItems().addAll(shelterList);
 
         newRefugeeTableView.getItems().clear();
-        newRefugeeTableView.getItems().addAll(RefugeeList);
+        newRefugeeTableView.getItems().addAll(RefugeeRegisterController.RefugeeList);
 
         assignedShelterTableView.getItems().clear();
     }
