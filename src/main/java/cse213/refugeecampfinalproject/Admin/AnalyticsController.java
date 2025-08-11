@@ -55,8 +55,6 @@ public class AnalyticsController
     @javafx.fxml.FXML
     private TableColumn<AnalyticsModel, String> itemNameTableColR;
 
-public static ArrayList<HealthServicesModel> appointments = HealthcareServicesController.HealthcareServicesList;
-public static ArrayList<EducationServicesModel> education = EducationServicesController.EducacationServicesList;
 public static ArrayList<AnalyticsModel> resources = new ArrayList<>();
 public static ArrayList<AnalyticsModel> food = new ArrayList<>();
 
@@ -84,7 +82,7 @@ public static ArrayList<AnalyticsModel> food = new ArrayList<>();
         refugeeIDTableColH.setCellValueFactory(new PropertyValueFactory<>("refugeeID"));
         typeTableCol.setCellValueFactory(new PropertyValueFactory<>("type"));
         statusTableColH.setCellValueFactory(new PropertyValueFactory<>("status"));
-        for (HealthServicesModel hsm : appointments) {
+        for (HealthServicesModel hsm : HealthcareServicesController.HealthcareServicesList) {
             healthcareTableView.getItems().add(new AnalyticsModel(hsm.getRefugeeID(), hsm.getHealthcareServiceType(), hsm.getStatus(), null, null, null, null, null));
         }
 
@@ -92,7 +90,7 @@ public static ArrayList<AnalyticsModel> food = new ArrayList<>();
         programTableCol.setCellValueFactory(new PropertyValueFactory<>("program"));
         classTimeTableCol.setCellValueFactory(new PropertyValueFactory<>("classTimes"));
         statusTableColE.setCellValueFactory(new PropertyValueFactory<>("status"));
-        for (EducationServicesModel esm : education) {
+        for (EducationServicesModel esm : EducationServicesController.EducationServicesList) {
             educationTableView.getItems().add(new AnalyticsModel(esm.getRefugeeID(), null, "Enrolled", esm.getProgramName(), null, null, null, null));
         }
 

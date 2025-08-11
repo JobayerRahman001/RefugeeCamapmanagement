@@ -33,8 +33,7 @@ public class ReportIssuesController
     @javafx.fxml.FXML
     private TextField refIDTextField;
 
-    public static ObservableList<IssueReportsModel> IssueReportsList =
-            FXCollections.observableArrayList();
+    public static ObservableList<IssueReportsModel> IssueReportsList = FXCollections.observableArrayList();
 
     @javafx.fxml.FXML
     public void initialize() {

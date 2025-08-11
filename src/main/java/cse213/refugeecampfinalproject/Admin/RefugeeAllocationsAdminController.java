@@ -1,5 +1,6 @@
 package cse213.refugeecampfinalproject.Admin;
 
+import cse213.refugeecampfinalproject.Refugee.RefugeeRegisterController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -34,7 +35,6 @@ public class RefugeeAllocationsAdminController {
     @javafx.fxml.FXML
     private TableColumn<RefugeeAllocationsAdminModel, String> clothesTableCol;
 
-public static ArrayList<RefugeeAllocationsAdminModel> allocationList = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -47,7 +47,7 @@ public static ArrayList<RefugeeAllocationsAdminModel> allocationList = new Array
         refugeeIDTableCol.setCellValueFactory(new PropertyValueFactory<>("refugeeID"));
 
         RefugeeAllocatiionsTableView.getItems().clear();
-        if(allocationList.isEmpty()) {
+        if(RefugeeRegisterController.allocationList.isEmpty()) {
             //dummy data
             RefugeeAllocatiionsTableView.getItems().addAll(new RefugeeAllocationsAdminModel("R001", "", "", "", ""));
             RefugeeAllocatiionsTableView.getItems().addAll(new RefugeeAllocationsAdminModel("R002", "", "", "", ""));
@@ -62,7 +62,7 @@ public static ArrayList<RefugeeAllocationsAdminModel> allocationList = new Array
         }
 
 
-        RefugeeAllocatiionsTableView.getItems().addAll(allocationList);
+        RefugeeAllocatiionsTableView.getItems().addAll(RefugeeRegisterController.allocationList);
     }
 
     @javafx.fxml.FXML

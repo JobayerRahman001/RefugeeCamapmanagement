@@ -34,19 +34,17 @@ public class RefugeeDashboardController
 
     ObservableList<RefugeeDashboardTableViewEntriesModel> dashboardentries = FXCollections.observableArrayList();
 
-    ArrayList<HealthServicesModel> appointments = HealthcareServicesController.HealthcareServicesList;
-    ArrayList<EducationServicesModel> education = EducationServicesController.EducacationServicesList;
 
     @javafx.fxml.FXML
     public void initialize() {
-        for (HealthServicesModel hsm : appointments) {
+        for (HealthServicesModel hsm : HealthcareServicesController.HealthcareServicesList) {
             String date = hsm.getAppointmentTime() != null ? hsm.getAppointmentTime() : hsm.getCounsellingTime();
             String details = hsm.getSymptoms() != null ? hsm.getSymptoms() : hsm.getConcerns();
             dashboardentries.add(new RefugeeDashboardTableViewEntriesModel(
                     hsm.getHealthcareServiceType(), date, details
             ));
         }
-        for (EducationServicesModel esm : education) {
+        for (EducationServicesModel esm : EducationServicesController.EducationServicesList) {
             dashboardentries.add(new RefugeeDashboardTableViewEntriesModel(esm.getProgramName(), esm.getTiming(), esm.getAge()));
         }
         for (ResourceRequestsModel rsm: ResourceRequestsList) {
