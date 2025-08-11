@@ -1,5 +1,7 @@
 package cse213.refugeecampfinalproject.Refugee;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -11,7 +13,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class AssignedResourcesController {
@@ -24,7 +25,7 @@ public class AssignedResourcesController {
     @javafx.fxml.FXML
     private TableColumn<AssignedResourcesModel, String> resourcesDetailsTableCol;
 
-public static ArrayList<AssignedResourcesModel> assignedList = new ArrayList<>();
+public static ObservableList<AssignedResourcesModel> assignedList = FXCollections.observableArrayList();
 
     @javafx.fxml.FXML
     public void initialize() {

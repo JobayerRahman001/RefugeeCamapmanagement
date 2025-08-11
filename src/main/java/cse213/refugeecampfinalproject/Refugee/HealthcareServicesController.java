@@ -1,6 +1,9 @@
 package cse213.refugeecampfinalproject.Refugee;
 
 import cse213.refugeecampfinalproject.LoggedInRefModel;
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -41,7 +44,7 @@ public class HealthcareServicesController {
         refAppointmentTimeComboBox.getItems().addAll("Sun 2pm", "Mon 5pm", "Tue 4pm", "Wed 2pm", "Thu 11am");
         refCounsellingTimeComboBox.getItems().addAll("Sun 12pm", "Mon 3pm", "Tue 4pm", "Wed 10am", "Thu 1pm");
     }
-public static ArrayList<HealthServicesModel> HealthcareServicesList = new ArrayList<>();
+public static ObservableList<HealthServicesModel> HealthcareServicesList = FXCollections.observableArrayList();
 
     @javafx.fxml.FXML
     public void backToHomeOnClick(ActionEvent actionEvent) throws IOException {

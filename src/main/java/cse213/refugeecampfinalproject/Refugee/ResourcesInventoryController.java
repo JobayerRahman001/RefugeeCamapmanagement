@@ -35,8 +35,7 @@ public class ResourcesInventoryController
         requestTypeComboBox.getItems().addAll("Shirt", "Jacket", "Blanket", "Shawl", "Female Attire", "Male Attire", "Children Attire", "Extra Food", "Medicine");
     }
 
-    public static ObservableList<ResourceRequestsModel> ResourceRequestsList =
-            FXCollections.observableArrayList();
+    public static ObservableList<ResourceRequestsModel> ResourceRequestsList = FXCollections.observableArrayList();
 
     @javafx.fxml.FXML
     public void sendInventoryReqOnClick(ActionEvent actionEvent) {

@@ -1,6 +1,9 @@
 package cse213.refugeecampfinalproject.Refugee;
 
 import cse213.refugeecampfinalproject.LoggedInRefModel;
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -31,7 +34,7 @@ public class EducationServicesController {
         ageGroupComboBox.getItems().addAll("5 to 10 years", "11 to 17 years", "18+");
     }
 
-    public static ArrayList<EducationServicesModel> EducacationServicesList = new ArrayList<>();
+    public static ObservableList<EducationServicesModel> EducationServicesList = FXCollections.observableArrayList();
 
     @javafx.fxml.FXML
     public void enrollEducationOnClick(ActionEvent actionEvent) {
@@ -55,14 +58,14 @@ public class EducationServicesController {
             case "Bangla Language" -> "Wed-Fri 11:00 AM";
             default -> null;
         };
-        for (EducationServicesModel ESM : EducacationServicesList) {
+        for (EducationServicesModel ESM : EducationServicesList) {
             if (ESM.getTiming().equals(timing)) {
                 edServiceMsgLabel.setText("Class time conflict");
                 return;
             }
         }
         EducationServicesModel newEnrollment = new EducationServicesModel(selectedRefugeeID, selectedAgeGroup, selectedProgram, timing);
-        EducacationServicesList.add(newEnrollment);
+        EducationServicesList.add(newEnrollment);
 
         edServiceMsgLabel.setText("Enrolled in" + selectedProgram + timing);
     }

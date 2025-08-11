@@ -63,8 +63,8 @@ public static ObservableList<RefugeeAllocationsAdminModel> allocationList = FXCo
 
         RefugeeList.add(r);
         RefugeeAllocationsAdminModel newallocation = new RefugeeAllocationsAdminModel(id, "", "", "", "");
-        RefugeeAllocationsAdminController.allocationList.clear();
-        RefugeeAllocationsAdminController.allocationList.add(newallocation);
+        RefugeeRegisterController.allocationList.clear();
+        RefugeeRegisterController.allocationList.add(newallocation);
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Registration Successful");
