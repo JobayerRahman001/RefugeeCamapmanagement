@@ -1,5 +1,6 @@
 package cse213.refugeecampfinalproject.Admin;
 
+import cse213.refugeecampfinalproject.Volunteer.VolunteerDashboardController;
 import cse213.refugeecampfinalproject.Volunteer.VolunteerModel;
 import cse213.refugeecampfinalproject.Volunteer.VolunteerWorkLogsController;
 import cse213.refugeecampfinalproject.Volunteer.VolunteerWorkLogsModel;
@@ -35,9 +36,6 @@ public class VolunteerPerformanceManagementAdminController
     @javafx.fxml.FXML
     private TableColumn<VolunteerModel, String> volIDTableCol;
 
-    public static ArrayList<VolunteerModel>VolunteerList = new ArrayList<>();
-    public static ArrayList<VolunteerWorkLogsModel>VolunteerWorkLogsList = VolunteerWorkLogsController.VolunteerWorkLogsList;
-
     @javafx.fxml.FXML
     public void initialize() {
         volIDTableCol.setCellValueFactory(new PropertyValueFactory<>("volID"));
@@ -47,13 +45,13 @@ public class VolunteerPerformanceManagementAdminController
         tasksTableCol.setCellValueFactory(new PropertyValueFactory<>("task"));
 
         volunteerIdentifyTableView.getItems().clear();
-        if(VolunteerList.isEmpty()) {
+        if(VolunteerDashboardController.VolunteerList.isEmpty()) {
             //dummy data
             volunteerIdentifyTableView.getItems().addAll(new VolunteerModel("V01", "Mahmud", null, null, true));
             volunteerIdentifyTableView.getItems().addAll(new VolunteerModel("V02", "Mita", null, null, true));
             volunteerIdentifyTableView.getItems().addAll(new VolunteerModel("V03", "Rahim", null, null, true));
         }
-        volunteerIdentifyTableView.getItems().addAll(VolunteerList);
+        volunteerIdentifyTableView.getItems().addAll(VolunteerDashboardController.VolunteerList);
 
         volunteerWorkTableView.getItems().clear();
 
@@ -97,7 +95,7 @@ public class VolunteerPerformanceManagementAdminController
         }else {
             volunteerWorkTableView.getItems().add(new VolunteerWorkLogsModel(null, selected.getVolServiceArea(), "0 Tasks Completed", selected.getVolSkills()));
         }
-        volunteerWorkTableView.getItems().addAll(VolunteerWorkLogsList);
+        volunteerWorkTableView.getItems().addAll(VolunteerWorkLogsController.VolunteerWorkLogsList);
     }
 
     @javafx.fxml.FXML
@@ -105,7 +103,7 @@ public class VolunteerPerformanceManagementAdminController
         VolunteerModel selected = volunteerIdentifyTableView.getSelectionModel().getSelectedItem();
         if (selected != null) {
             volunteerIdentifyTableView.getItems().remove(selected);
-            VolunteerList.remove(selected);
+            VolunteerDashboardController.VolunteerList.remove(selected);
             volunteerWorkTableView.getItems().clear();
         }
     }
