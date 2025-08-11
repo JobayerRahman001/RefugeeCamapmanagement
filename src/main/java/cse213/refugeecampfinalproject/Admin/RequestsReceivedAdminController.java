@@ -44,7 +44,7 @@ public class RequestsReceivedAdminController {
     @javafx.fxml.FXML
     private Label ResourceRequestsMsgLabel;
 
-    public static ArrayList<AllResourcesModel> InventoryList = new ArrayList<>();
+    ArrayList<AllResourcesModel> InventoryList = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void initialize() {

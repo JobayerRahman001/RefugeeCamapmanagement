@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
 
+import static cse213.refugeecampfinalproject.Refugee.RefugeeRegisterController.RefugeeList;
+
 public class LoginController {
     @javafx.fxml.FXML
     private ComboBox<String> userTypeComboBox;
@@ -25,30 +27,18 @@ public class LoginController {
     private Label loginMsgLabel;
 
     //dummy refugee list
-    private final ArrayList<Refugee> registeredRefugees = new ArrayList<>();
-
-    private static final HashMap<String, String> userPasscodes = new HashMap<>();
-
-    static {
-        // Static passcodes for fixed users
-        userPasscodes.put("Camp Admin", "User2");
-        userPasscodes.put("Doctor", "User3");
-        userPasscodes.put("Educator", "User4");
-        userPasscodes.put("Volunteer", "User5");
-        userPasscodes.put("Resources Manager", "User6");
-        userPasscodes.put("Accountant", "User7");
-        userPasscodes.put("UN Representative", "User8");
-    }
 
 
     @javafx.fxml.FXML
     public void initialize() {
         //ComboBox
-
         userTypeComboBox.getItems().addAll("Refugee", "Camp Admin", "Doctor", "Educator", "Volunteer", "Resources Manager", "Accountant and Logistics Coordinator", "UN Representative");
-        registeredRefugees.add(new Refugee("R01", "Ali Khan", "1234", 35, "Male", "5", "Bangladeshi"));
-        registeredRefugees.add(new Refugee("R02", "Sara Noor", "5678", 28, "Female", "4", "Rohingya"));
+        if (RefugeeList.isEmpty()) {
+            RefugeeList.add(new Refugee("R01", "Ali Khan", "1234", 35, "Male", "5", "Bangladeshi"));
+            RefugeeList.add(new Refugee("R02", "Sara Noor", "5678", 28, "Female", "4", "Rohingya"));
+        }
     }
+
     @javafx.fxml.FXML
     public void loginOnClick(ActionEvent actionEvent) throws IOException {
         String selectedUser = userTypeComboBox.getValue();
@@ -60,7 +50,7 @@ public class LoginController {
         }
 
         if (selectedUser.equals("Refugee")) {
-            for (Refugee r : registeredRefugees) {
+            for (Refugee r : RefugeeList) {
                 if (r.getPasscode().equals(enteredPasscode)) {
                     LoggedInRefModel.setLoggedInRefugeeId(r.getId());
                     Parent dashboard = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/RefugeeDashboard.fxml")));
@@ -74,9 +64,8 @@ public class LoginController {
             loginMsgLabel.setText("Invalid refugee passcode.");
             return;
         }
-
-        if (userPasscodes.containsKey(selectedUser) && userPasscodes.get(selectedUser).equals(enteredPasscode)) {
-            if (selectedUser.equals("Camp Admin")) {
+        if (selectedUser.equals("Camp Admin")) {
+            if (passcode.getText().equals("User2")) {
                 Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Admin/AdminDashboard.fxml")));
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(home));
@@ -84,17 +73,21 @@ public class LoginController {
                 stage.show();
                 return;
             }
+        }
 
-            if (selectedUser.equals("Doctor")) {
+        if (selectedUser.equals("Doctor")) {
+            if (passcode.getText().equals("User3")) {
                 Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Doctor/HealthPortal.fxml")));
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(home));
-                stage.setTitle("Health Portal");
+                stage.setTitle("Admin Dashboard");
                 stage.show();
                 return;
             }
+        }
 
-            if (selectedUser.equals("Educator")) {
+        if (selectedUser.equals("Educator")) {
+            if (passcode.getText().equals("User4")) {
                 Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Educator/EducationPanel.fxml")));
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(home));
@@ -102,8 +95,10 @@ public class LoginController {
                 stage.show();
                 return;
             }
+        }
 
-            if (selectedUser.equals("Volunteer")) {
+        if (selectedUser.equals("Volunteer")) {
+            if (passcode.getText().equals("User5")) {
                 Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Volunteer/VolunteerDashboard.fxml")));
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(home));
@@ -111,8 +106,10 @@ public class LoginController {
                 stage.show();
                 return;
             }
+        }
 
-            if (selectedUser.equals("Resources Manager")) {
+        if (selectedUser.equals("Resources Manager")) {
+            if (passcode.getText().equals("User6")) {
                 Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourcesManager/ResourcesDashboard.fxml")));
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(home));
@@ -120,17 +117,21 @@ public class LoginController {
                 stage.show();
                 return;
             }
+        }
 
-            if (selectedUser.equals("Accountant and Logistics Coordinator")) {
-                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/AccountantAndLogistics/FinanceDashboard.fxml")));
+        if (selectedUser.equals("Accountant and Logistics Coordinator")) {
+            if (passcode.getText().equals("User7")) {
+                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/AccountantAndLogistics/AccountantLogisticsCoordinator.fxml")));
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(home));
-                stage.setTitle("Finance Dashboard");
+                stage.setTitle("Accountant and Logistics Coordinator Dashboard");
                 stage.show();
                 return;
             }
+        }
 
-            if (selectedUser.equals("UN Representative")) {
+        if (selectedUser.equals("UN Representative")) {
+            if (passcode.getText().equals("User8")) {
                 Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/UNHCR/UNRepDashboard.fxml")));
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(home));

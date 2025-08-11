@@ -1,5 +1,8 @@
 package cse213.refugeecampfinalproject.Volunteer;
 
+import cse213.refugeecampfinalproject.Refugee.RefugeeDashboardTableViewEntriesModel;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -12,6 +15,8 @@ import java.util.Objects;
 
 public class VolunteerDashboardController
 {
+    public static ObservableList<VolunteerModel> VolunteerList = FXCollections.observableArrayList();
+
     @javafx.fxml.FXML
     public void initialize() {
     }
