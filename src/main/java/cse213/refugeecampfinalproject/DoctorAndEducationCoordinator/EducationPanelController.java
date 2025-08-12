@@ -27,7 +27,7 @@ public class EducationPanelController
 
     @javafx.fxml.FXML
     public void updateprogramscheduleOnAction(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/DoctorAndEducationCoordinator/UpdateProgramSchedule.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Educator/UpdateProgramSchedule.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Update Program Schedule");
@@ -36,7 +36,7 @@ public class EducationPanelController
 
     @javafx.fxml.FXML
     public void enrollmentstatusOnAction(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/DoctorAndEducationCoordinator/Enrollment.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Educator/Enrollment.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Enrollment");
@@ -45,7 +45,7 @@ public class EducationPanelController
 
     @javafx.fxml.FXML
     public void educatonapplicationOnAction(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/DoctorAndEducationCoordinator/AproveEducationApplication.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Educator/AproveEducationApplication.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Aprove Education Application");
@@ -54,7 +54,7 @@ public class EducationPanelController
 
     @javafx.fxml.FXML
     public void archiveprogramOnAction(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/DoctorAndEducationCoordinator/ArchiveProgram.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Educator/ArchiveProgram.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Archive Program");
@@ -63,7 +63,7 @@ public class EducationPanelController
 
     @javafx.fxml.FXML
     public void evulateteacherperformanceOnAction(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/DoctorAndEducationCoordinator/EvaluateTeacherPerformance.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Educator/EvaluateTeacherPerformance.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Evaluate Teacher Performance");
@@ -72,7 +72,7 @@ public class EducationPanelController
 
     @javafx.fxml.FXML
     public void uplodestudymaterialOnAction(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/DoctorAndEducationCoordinator/UplodeStudyMaterial.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Educator/UplodeStudyMaterial.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Uplode Study Material");
@@ -81,7 +81,7 @@ public class EducationPanelController
 
     @javafx.fxml.FXML
     public void addprogramOnAction(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/DoctorAndEducationCoordinator/AddProgram.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Educator/AddProgram.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Add Program");
@@ -90,7 +90,7 @@ public class EducationPanelController
 
     @javafx.fxml.FXML
     public void asignteacherOnAction(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/DoctorAndEducationCoordinator/AssignTeacher.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Educator/AssignTeacher.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Assign Teacher");

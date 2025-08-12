@@ -1,4 +1,4 @@
-package cse213.refugeecampfinalproject;
+package cse213.refugeecampfinalproject.Refugee;
 
 public class LoggedInRefModel {
     public static String loggedInRefugeeId;
