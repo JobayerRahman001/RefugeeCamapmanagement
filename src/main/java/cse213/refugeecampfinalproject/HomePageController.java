@@ -38,7 +38,7 @@ public class HomePageController
 
     @FXML
     public void volunteerSignupOnClick(ActionEvent actionEvent) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("/cse213/refugeecampfinalproject/VolunteerSignup.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/cse213/refugeecampfinalproject/Volunteer/VolunteerSignup.fxml"));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();

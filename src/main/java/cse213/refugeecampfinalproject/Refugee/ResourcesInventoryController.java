@@ -1,6 +1,5 @@
 package cse213.refugeecampfinalproject.Refugee;
 
-import cse213.refugeecampfinalproject.LoggedInRefModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,7 +13,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class ResourcesInventoryController

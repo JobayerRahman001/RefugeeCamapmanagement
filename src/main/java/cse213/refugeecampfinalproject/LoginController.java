@@ -1,5 +1,6 @@
 package cse213.refugeecampfinalproject;
 
+import cse213.refugeecampfinalproject.Refugee.LoggedInRefModel;
 import cse213.refugeecampfinalproject.Refugee.Refugee;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -12,8 +13,6 @@ import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Objects;
 
 import static cse213.refugeecampfinalproject.Refugee.RefugeeRegisterController.RefugeeList;
