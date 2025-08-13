@@ -9,27 +9,39 @@ import javafx.scene.control.TableView;
 public class ResourceDistributeRationsController
 {
     @javafx.fxml.FXML
-    private TableColumn FamilyNameColumn;
-    @javafx.fxml.FXML
-    private TableView familyTableView;
-    @javafx.fxml.FXML
-    private TableColumn FamilyIDColumn;
-    @javafx.fxml.FXML
-    private Button distributeButton;
-    @javafx.fxml.FXML
-    private TableColumn MembersColumn;
-    @javafx.fxml.FXML
     private Label messageLabel;
+    @javafx.fxml.FXML
+    private TableView DistributionTableView;
+    @javafx.fxml.FXML
+    private ComboBox QuantityComboBox;
+    @javafx.fxml.FXML
+    private ComboBox itemComboBox;
+    @javafx.fxml.FXML
+    private TableColumn FoodDistributeTableCol;
+    @javafx.fxml.FXML
+    private TableColumn RefIDTableCol;
+    @javafx.fxml.FXML
+    private TableColumn FamSizeTableCol;
+    @javafx.fxml.FXML
+    private TableColumn WaterTableCol;
 
     @javafx.fxml.FXML
     public void initialize() {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void distributeButtonOnAction(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void backToHomeOnClick(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void distributeRationsOnClick(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void backToDashboardOnClick(ActionEvent actionEvent) {
     }
 }
