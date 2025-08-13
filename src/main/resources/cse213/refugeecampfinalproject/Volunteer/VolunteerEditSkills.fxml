@@ -8,30 +8,24 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: fff8e1;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.Volunteer.VolunteerEditSkillsController">
+
+<AnchorPane prefHeight="400.0" prefWidth="556.0" style="-fx-background-color: #fff8e1;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.Volunteer.VolunteerEditSkillsController">
    <children>
-      <Label layoutX="234.0" layoutY="24.0" prefHeight="42.0" prefWidth="114.0" text="  Edit Skills">
+      <Label layoutX="217.0" layoutY="35.0" prefHeight="42.0" prefWidth="114.0" text="  Edit Skills">
          <font>
             <Font name="Bookman Old Style" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="32.0" layoutY="33.0" mnemonicParsing="false" onAction="#backToHomeOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Go Back" />
-      <Label fx:id="InputLabel" layoutX="41.0" layoutY="91.0" text="Input new skill: " />
-      <TextField fx:id="newSkillField" layoutX="136.0" layoutY="87.0" prefHeight="26.0" prefWidth="266.0" />
-<<<<<<< HEAD
-      <Button fx:id="addSkillButton" layoutX="427.0" layoutY="86.0" mnemonicParsing="false" onAction="#addSkillButtonOnAction" prefHeight="26.0" prefWidth="90.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Add new skill" />
-      <Button fx:id="saveButton" layoutX="488.0" layoutY="351.0" mnemonicParsing="false" onAction="#saveButtonOnAction" prefHeight="34.0" prefWidth="90.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Save" />
-      <Label fx:id="validationLabel" layoutX="150.0" layoutY="175.0" prefHeight="110.0" prefWidth="238.0" style="-fx-background-color: white;" />
-      <TableView fx:id="skillsTable" layoutX="427.0" layoutY="124.0" prefHeight="200.0" prefWidth="148.0" style="-fx-background-color: e0f7fa;">
-=======
-      <Button fx:id="addSkillButton" layoutX="427.0" layoutY="86.0" mnemonicParsing="false" onAction="#addSkillButoonOnAction" prefHeight="26.0" prefWidth="90.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Add new skill" />
-      <Button fx:id="saveButton" layoutX="472.0" layoutY="352.0" mnemonicParsing="false" onAction="#saveButtonOnACtion" prefHeight="34.0" prefWidth="90.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Save" />
-      <Label fx:id="validationLabel" layoutX="115.0" layoutY="175.0" prefHeight="110.0" prefWidth="238.0" />
-      <TableView fx:id="availableShiftsTable" layoutX="427.0" layoutY="124.0" prefHeight="200.0" prefWidth="148.0" style="-fx-background-color: e0f7fa;">
->>>>>>> 191bccd2b0b6d56f81e502df2bf06d564733374d
+      <Button layoutX="42.0" layoutY="43.0" mnemonicParsing="false" onAction="#backToHomeOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Go Back" />
+      <Label fx:id="InputLabel" layoutX="51.0" layoutY="101.0" text="Input new skill: " />
+      <TextField fx:id="newSkillField" layoutX="146.0" layoutY="97.0" prefHeight="26.0" prefWidth="266.0" />
+      <TableView fx:id="skillsTable" layoutX="32.0" layoutY="140.0" prefHeight="190.0" prefWidth="185.0" style="-fx-background-color: #e0f7fa;">
          <columns>
-            <TableColumn fx:id="skillNameColumn" prefWidth="147.20001220703125" text="Skill" />
+            <TableColumn fx:id="skillNameColumn" prefWidth="184.80000076293945" text="Skill" />
          </columns>
       </TableView>
+      <Label fx:id="validationLabel" layoutX="238.0" layoutY="174.0" prefHeight="73.0" prefWidth="240.0" style="-fx-background-color: white;" />
+      <Button fx:id="addSkillButton" layoutX="313.0" layoutY="133.0" mnemonicParsing="false" onAction="#addSkillButtonOnAction" prefHeight="26.0" prefWidth="90.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Add new skill" />
+      <Button fx:id="saveButton" layoutX="238.0" layoutY="265.0" mnemonicParsing="false" onAction="#saveButtonOnAction" prefHeight="34.0" prefWidth="90.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Save" />
    </children>
 </AnchorPane>
