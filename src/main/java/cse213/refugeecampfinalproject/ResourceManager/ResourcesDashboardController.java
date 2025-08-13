@@ -24,4 +24,58 @@ public class ResourcesDashboardController
         stage.setTitle("Home");
         stage.show();
     }
+
+    @javafx.fxml.FXML
+    public void WaterLogsOnClick(ActionEvent actionEvent) throws IOException {
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourcesManager/ResourceWaterLogs.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(home));
+        stage.setTitle("Water Logs");
+        stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void RestockInventoryOnClick(ActionEvent actionEvent) throws IOException {
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourcesManager/ResourceInventoryRestock.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(home));
+        stage.setTitle("Restock Inventory");
+        stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void AssignSanitationOnClick(ActionEvent actionEvent) throws IOException {
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourcesManager/ResourceSanitationStaff.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(home));
+        stage.setTitle("Assign Sanitaion");
+        stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void RepairRequestsOnClick(ActionEvent actionEvent) throws IOException {
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourcesManager/ResourceRepairRequests.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(home));
+        stage.setTitle("Repair Requests");
+        stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void DisposeGoodsOnClick(ActionEvent actionEvent) throws IOException {
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourcesManager/ResourceInventorySpoiledGoods.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(home));
+        stage.setTitle("Dispose Spoiled Goods");
+        stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void DistributeRationsOnClick(ActionEvent actionEvent) throws IOException {
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourcesManager/ResourceDistributeRations.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(home));
+        stage.setTitle("Distribute Rations");
+        stage.show();
+    }
 }

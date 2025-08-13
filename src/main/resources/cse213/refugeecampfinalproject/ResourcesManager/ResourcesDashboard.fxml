@@ -5,14 +5,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.ResourceManager.ResourcesDashboardController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: fff8e1;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.ResourceManager.ResourcesDashboardController">
    <children>
-      <Label layoutX="152.0" layoutY="31.0" prefHeight="38.0" prefWidth="252.0" text="Resources Dashboard">
+      <Label alignment="CENTER" layoutX="174.0" layoutY="34.0" prefHeight="38.0" prefWidth="252.0" text="Resources Dashboard">
          <font>
             <Font name="Bookman Old Style" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="439.0" layoutY="320.0" mnemonicParsing="false" onAction="#backToHomeOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Go back to home" />
+      <Button layoutX="453.0" layoutY="341.0" mnemonicParsing="false" onAction="#backToHomeOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Go back to home" />
+      <Button layoutX="48.0" layoutY="109.0" mnemonicParsing="false" onAction="#DistributeRationsOnClick" prefHeight="51.0" prefWidth="134.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Distribute Rations" />
+      <Button layoutX="418.0" layoutY="113.0" mnemonicParsing="false" onAction="#DisposeGoodsOnClick" prefHeight="51.0" prefWidth="156.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Dispose Spoiled Goods" />
+      <Button layoutX="48.0" layoutY="228.0" mnemonicParsing="false" onAction="#RepairRequestsOnClick" prefHeight="51.0" prefWidth="134.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Repair Requests" />
+      <Button layoutX="233.0" layoutY="113.0" mnemonicParsing="false" onAction="#AssignSanitationOnClick" prefHeight="51.0" prefWidth="134.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Assign Sanitation " />
+      <Button layoutX="248.0" layoutY="228.0" mnemonicParsing="false" onAction="#WaterLogsOnClick" prefHeight="51.0" prefWidth="134.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Water Logs" />
+      <Button layoutX="441.0" layoutY="228.0" mnemonicParsing="false" onAction="#RestockInventoryOnClick" prefHeight="51.0" prefWidth="134.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Restock Inventory" />
    </children>
 </AnchorPane>
