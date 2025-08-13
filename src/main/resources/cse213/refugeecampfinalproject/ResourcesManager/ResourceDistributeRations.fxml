@@ -18,7 +18,7 @@
                </font>
             </Label>
             <Button layoutX="23.0" layoutY="22.0" mnemonicParsing="false" onAction="#backToDashboardOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Go Back" />
-            <Button layoutX="415.0" layoutY="256.0" mnemonicParsing="false" onAction="#distributeRationsOnClick" prefHeight="34.0" prefWidth="114.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Distribute" />
+            <Button layoutX="230.0" layoutY="355.0" mnemonicParsing="false" onAction="#distributeRationsOnClick" prefHeight="34.0" prefWidth="114.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Distribute" />
             <TableView fx:id="DistributionTableView" layoutX="29.0" layoutY="109.0" prefHeight="200.0" prefWidth="323.0" style="-fx-background-color: e0f7fa;">
                <columns>
                   <TableColumn fx:id="RefIDTableCol" prefWidth="71.20001220703125" text="Refugee ID" />
@@ -27,11 +27,17 @@
                   <TableColumn fx:id="WaterTableCol" prefWidth="75.0" text="Water" />
                </columns>
             </TableView>
-            <Label layoutX="365.0" layoutY="201.0" text="Quantity:" />
+            <Label layoutX="295.0" layoutY="325.0" text="Quantity:" />
             <Label fx:id="messageLabel" layoutX="324.0" layoutY="314.0" prefHeight="75.0" prefWidth="251.0" />
-            <ComboBox fx:id="itemComboBox" layoutX="431.0" layoutY="138.0" prefWidth="150.0" style="-fx-background-color: e0f7fa;" />
-            <Label layoutX="362.0" layoutY="142.0" prefHeight="27.0" prefWidth="62.0" text="Item:" />
-            <ComboBox fx:id="QuantityComboBox" layoutX="431.0" layoutY="197.0" prefWidth="150.0" style="-fx-background-color: e0f7fa;" />
+            <ComboBox fx:id="itemComboBox" layoutX="98.0" layoutY="321.0" prefWidth="150.0" style="-fx-background-color: e0f7fa;" />
+            <Label layoutX="29.0" layoutY="320.0" prefHeight="27.0" prefWidth="62.0" text="Item:" />
+            <ComboBox fx:id="QuantityComboBox" layoutX="361.0" layoutY="321.0" prefWidth="150.0" style="-fx-background-color: e0f7fa;" />
+            <TableView fx:id="StockTableView" layoutX="376.0" layoutY="109.0" prefHeight="200.0" prefWidth="210.0" style="-fx-background-color: e0f7fa;">
+               <columns>
+                  <TableColumn fx:id="ItemTableCol" prefWidth="86.5" text="Item" />
+                  <TableColumn fx:id="AvailabilityTableCol" prefWidth="122.0" text="Available Quantity" />
+               </columns>
+            </TableView>
          </children>
       </AnchorPane>
    </children>

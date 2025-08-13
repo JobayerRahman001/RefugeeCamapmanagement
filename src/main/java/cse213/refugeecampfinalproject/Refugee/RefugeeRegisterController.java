@@ -39,7 +39,7 @@ public class RefugeeRegisterController
         //ComboBox
         refGenderComboBox.getItems().addAll( "Male", "Female", "Prefer Not to say");
     }
-    public static ObservableList<Refugee> RefugeeList = FXCollections.observableArrayList();
+public static ObservableList<Refugee> RefugeeList = FXCollections.observableArrayList();
 public static ObservableList<RefugeeAllocationsAdminModel> allocationList = FXCollections.observableArrayList();
 
     @javafx.fxml.FXML
