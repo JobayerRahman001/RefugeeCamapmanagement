@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.ResourcesManager.ResourceMedicalDonationsLogController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: fff8e1;">
+         <children>
+            <Label layoutX="181.0" layoutY="12.0" prefHeight="42.0" prefWidth="195.0" text="Medical Donations">
+               <font>
+                  <Font name="Bookman Old Style" size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="21.0" layoutY="19.0" mnemonicParsing="false" onAction="#backToHomeOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Go Back" />
+            <Label fx:id="statusLabel" layoutX="181.0" layoutY="222.0" prefHeight="27.0" prefWidth="224.0" />
+            <TableView fx:id="donationsTable" layoutX="51.0" layoutY="120.0" prefHeight="158.0" prefWidth="390.0">
+              <columns>
+                <TableColumn fx:id="itemNameCol" prefWidth="68.0" text="Item Name" />
+                <TableColumn fx:id="quantityCol" prefWidth="64.79998779296875" text="Quantity" />
+                  <TableColumn fx:id="expiryCol" prefWidth="76.800048828125" text="Expiry Date" />
+                  <TableColumn fx:id="recipientCol" prefWidth="106.39996337890625" text="Priority Recipient" />
+                  <TableColumn fx:id="lowStockCol" prefWidth="72.80002441406248" text="Low Stock" />
+              </columns>
+            </TableView>
+            <Button fx:id="updateInventoryBtn" layoutX="429.0" layoutY="306.0" mnemonicParsing="false" onAction="#updateInventoryBtnOnAction" text="Update Inventory" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

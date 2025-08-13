@@ -8,12 +8,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.ResourceManager.ResourceWaterLogsController">
    <children>
       <AnchorPane layoutY="3.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: fff8e1;">
          <children>
-            <Label layoutX="181.0" layoutY="12.0" prefHeight="42.0" prefWidth="195.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text=" Water Safety &amp; Logs">
+            <Label layoutX="181.0" layoutY="12.0" prefHeight="42.0" prefWidth="195.0" text=" Water Safety &amp; Logs">
                <font>
                   <Font name="Bookman Old Style" size="18.0" />
                </font>
