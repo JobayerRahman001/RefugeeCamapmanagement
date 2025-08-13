@@ -22,6 +22,14 @@ public class FundNewInitiativesController
 
     @javafx.fxml.FXML
     public void approveprogramOnAction(ActionEvent actionEvent) {
+        if (currentProgram == null) {
+            showAlert("Error", "No program to approve. Start a program first.");
+            return;
+        }
+
+        currentProgram.approve();
+        statusLabel.setText("Program approved: " + currentProgram.getProgramName());
+    
     }
 
     @javafx.fxml.FXML

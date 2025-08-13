@@ -4,6 +4,10 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class DailyFundBalanceController
 {
     @javafx.fxml.FXML
@@ -17,12 +21,26 @@ public class DailyFundBalanceController
     @javafx.fxml.FXML
     private TextField lastupdatedTextField;
 
+    private dailyFundBalanceModel balanceData;
     @javafx.fxml.FXML
     public void initialize() {
+        fundheadinglabel.setText("Today's Fund Balance");
+
     }
 
     @javafx.fxml.FXML
     public void viewtodaybalanceOnAction(ActionEvent actionEvent) {
+        String now = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
+        balanceData = new dailyFundBalanceModel(15000.50, "now", true);
+
+        boolean fresh = LocalDate.parse(balanceData.getLastUpdated().substring(0, 10))
+                .isEqual(LocalDate.now());
+        balanceData.setFresh(fresh);
+
+        avilableBalanceTextField.setText(String.format("%.2f", balanceData.getAvailableBalance()));
+        lastupdatedTextField.setText(balanceData.getLastUpdated());
+        datafreshnesslabel.setText(fresh ? "Data is up-to-date" : "Data is outdated");
+        statuslabel.setText("Balance data retrieved successfully.");
     }
 
     @javafx.fxml.FXML
