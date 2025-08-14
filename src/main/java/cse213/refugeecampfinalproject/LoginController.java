@@ -120,7 +120,7 @@ public class LoginController {
 
         if (selectedUser.equals("Accountant and Logistics Coordinator")) {
             if (passcode.getText().equals("User7")) {
-                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/AccountantAndLogistics/AccountantLogisticsCoordinator.fxml")));
+                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/AccountantAndLogistics/FinanceDashboard.fxml")));
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(home));
                 stage.setTitle("Accountant and Logistics Coordinator Dashboard");

@@ -71,8 +71,7 @@ public class ResourceMedicalDonationsLogController {
 
     @javafx.fxml.FXML
     public void backToHomeOnClick(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(
-                "/cse213/refugeecampfinalproject/ResourcesManager/ResourcesDashboard.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourcesManager/ResourcesDashboard.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Resources Dashboard");

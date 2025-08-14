@@ -80,7 +80,7 @@ public class MonitorGrantDisbursementModelSchedulesController{
 
     @javafx.fxml.FXML
     public void gobacktoaccountlogisticdashboardOnAction(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/AccountantLogisticsCoordinator.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/FinanceDashboard.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Accountant Logistics Coordinator Controller");

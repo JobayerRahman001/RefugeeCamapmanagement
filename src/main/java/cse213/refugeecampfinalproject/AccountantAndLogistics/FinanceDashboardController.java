@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
-public class AccountantLogisticsCoordinatorController
+public class FinanceDashboardController
 {
     @javafx.fxml.FXML
     public void initialize() {
