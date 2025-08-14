@@ -35,26 +35,52 @@ public class EducationServicesController {
 
     @javafx.fxml.FXML
     public void enrollEducationOnClick(ActionEvent actionEvent) {
-        if (refugeeIDTextField.getText().isEmpty()||ageGroupComboBox.getValue() == null || programNameComboBox.getValue() == null) {
+        if (refugeeIDTextField.getText().isEmpty() || ageGroupComboBox.getValue() == null || programNameComboBox.getValue() == null) {
             edServiceMsgLabel.setText("Please select Age Group and Program Name and enter your ID to enroll");
             return;
         }
         String selectedAgeGroup = ageGroupComboBox.getValue();
         String selectedProgram = programNameComboBox.getValue();
         String selectedRefugeeID = refugeeIDTextField.getText().trim();
-        if(!selectedRefugeeID.equals(LoggedInRefModel.getLoggedInRefugeeId())){
+        if (!selectedRefugeeID.equals(LoggedInRefModel.getLoggedInRefugeeId())) {
             edServiceMsgLabel.setText("Please enter your own refugee ID!");
             return;
         }
 
-        String timing = switch (selectedProgram) {
-            case "Vocational Training", "5 to 10 years" -> "Sun-Tue 10:00 AM";
-            case "English Language" -> "Mon-Wed 2:00 PM";
-            case "Basic Literacy" -> "Tue-Thu 9:00 AM";
-            case "Basic Schooling" -> "Daily 8:00 AM";
-            case "Bangla Language" -> "Wed-Fri 11:00 AM";
-            default -> null;
-        };
+        String timing = "";
+
+        if (selectedProgram.equals("Vocational Training") && selectedAgeGroup.equals("5 to 10 years")) {
+            timing = "Sun-Tue 10:00 AM";
+        } else if (selectedProgram.equals("Vocational Training") && selectedAgeGroup.equals("11 to 17 years")) {
+            timing = "Sun-Tue 12:00 PM";
+        } else if (selectedProgram.equals("Vocational Training") && selectedAgeGroup.equals("18+")) {
+            timing = "Sun-Tue 4:00 PM";
+        } else if (selectedProgram.equals("English Language") && selectedAgeGroup.equals("5 to 10 years")) {
+            timing = "Mon-Wed 9:00 AM";
+        } else if (selectedProgram.equals("English Language") && selectedAgeGroup.equals("11 to 17 years")) {
+            timing = "Mon-Wed 2:00 PM";
+        } else if (selectedProgram.equals("English Language") && selectedAgeGroup.equals("18+")) {
+            timing = "Mon-Wed 4:00 PM";
+        } else if (selectedProgram.equals("Basic Literacy") && selectedAgeGroup.equals("5 to 10 years")) {
+            timing = "Tue-Thu 8:00 AM";
+        } else if (selectedProgram.equals("Basic Literacy") && selectedAgeGroup.equals("11 to 17 years")) {
+            timing = "Tue-Thu 9:00 AM";
+        } else if (selectedProgram.equals("Basic Literacy") && selectedAgeGroup.equals("18+")) {
+            timing = "Tue-Thu 3:00 PM";
+        } else if (selectedProgram.equals("Basic Schooling") && selectedAgeGroup.equals("5 to 10 years")) {
+            timing = "Daily 8:00 AM";
+        } else if (selectedProgram.equals("Basic Schooling") && selectedAgeGroup.equals("11 to 17 years")) {
+            timing = "Daily 10:00 AM";
+        } else if (selectedProgram.equals("Basic Schooling") && selectedAgeGroup.equals("18+")) {
+            timing = "Daily 2:00 PM";
+        } else if (selectedProgram.equals("Bangla Language") && selectedAgeGroup.equals("5 to 10 years")) {
+            timing = "Wed-Fri 8:00 AM";
+        } else if (selectedProgram.equals("Bangla Language") && selectedAgeGroup.equals("11 to 17 years")) {
+            timing = "Wed-Fri 11:00 AM";
+        } else if (selectedProgram.equals("Bangla Language") && selectedAgeGroup.equals("18+")) {
+            timing = "Wed-Fri 3:00 PM";
+        }
+
         for (EducationServicesModel ESM : EducationServicesList) {
             if (ESM.getTiming().equals(timing)) {
                 edServiceMsgLabel.setText("Class time conflict");
@@ -64,7 +90,7 @@ public class EducationServicesController {
         EducationServicesModel newEnrollment = new EducationServicesModel(selectedRefugeeID, selectedAgeGroup, selectedProgram, timing);
         EducationServicesList.add(newEnrollment);
 
-        edServiceMsgLabel.setText("Enrolled in" + selectedProgram + timing);
+        edServiceMsgLabel.setText("Enrolled in " + selectedProgram + " at " + timing);
     }
 
     @javafx.fxml.FXML

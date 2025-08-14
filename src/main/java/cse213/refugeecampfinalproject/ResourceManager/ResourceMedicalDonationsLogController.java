@@ -1,4 +1,4 @@
-package cse213.refugeecampfinalproject.ResourcesManager;
+package cse213.refugeecampfinalproject.ResourceManager;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -38,11 +39,11 @@ public class ResourceMedicalDonationsLogController {
     @javafx.fxml.FXML
     public void initialize() {
         // Set up TableView columns
-        itemNameCol.setCellValueFactory(cell -> cell.getValue().itemNameProperty());
-        quantityCol.setCellValueFactory(cell -> cell.getValue().quantityProperty().asObject());
-        expiryCol.setCellValueFactory(cell -> cell.getValue().expiryDateProperty());
-        recipientCol.setCellValueFactory(cell -> cell.getValue().recipientProperty());
-        lowStockCol.setCellValueFactory(cell -> cell.getValue().lowStockProperty());
+        itemNameCol.setCellValueFactory(new PropertyValueFactory<>("itemName"));
+        quantityCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        expiryCol.setCellValueFactory(new PropertyValueFactory<>("expiryDate"));
+        recipientCol.setCellValueFactory(new PropertyValueFactory<>("recipient"));
+        lowStockCol.setCellValueFactory(new PropertyValueFactory<>("lowStock"));
 
         // Sample data
         donationList.addAll(

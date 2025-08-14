@@ -14,7 +14,7 @@
       </Label>
       <Button layoutX="456.0" layoutY="341.0" mnemonicParsing="false" onAction="#backToHomeOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Go back to home" />
       <Button layoutX="56.0" layoutY="95.0" mnemonicParsing="false" onAction="#viewAppointmentOnAction" prefHeight="47.0" prefWidth="161.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="View Appointment" />
-      <Button layoutX="56.0" layoutY="215.0" mnemonicParsing="false" onAction="#updatevaccinrecordOnAction" prefHeight="47.0" prefWidth="161.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Update Vaccin Record" />
+      <Button layoutX="56.0" layoutY="215.0" mnemonicParsing="false" onAction="#updatevaccinrecordOnAction" prefHeight="47.0" prefWidth="161.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Update Vaccine Record" />
       <Button layoutX="293.0" layoutY="95.0" mnemonicParsing="false" onAction="#reviewongoingOnAction" prefHeight="47.0" prefWidth="198.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Review Ongoing Treatment" />
       <Button layoutX="293.0" layoutY="218.0" mnemonicParsing="false" onAction="#testresultOnAction" prefHeight="47.0" prefWidth="198.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Test Result" />
    </children>

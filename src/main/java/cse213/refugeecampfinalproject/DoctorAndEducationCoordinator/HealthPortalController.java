@@ -33,16 +33,6 @@ public class HealthPortalController {
         stage.show();
     }
 
-
-    @javafx.fxml.FXML
-    public void creatpreacriptionOnAction(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Doctor/Prescription.fxml")));
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(home));
-        stage.setTitle("Prescription");
-        stage.show();
-    }
-
     @javafx.fxml.FXML
     public void testresultOnAction(ActionEvent actionEvent) throws IOException {
         Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Doctor/UplodeTestresult.fxml")));
@@ -67,33 +57,6 @@ public class HealthPortalController {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Review Appointments");
-        stage.show();
-    }
-
-    @javafx.fxml.FXML
-    public void referhospitalOnAction(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Doctor/ReviewAppointment.fxml")));
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(home));
-        stage.setTitle("Review Appointments");
-        stage.show();
-    }
-
-    @javafx.fxml.FXML
-    public void schedulefollowupOnAction(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Doctor/ReviewAppointment.fxml")));
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(home));
-        stage.setTitle("Review Appointments");
-        stage.show();
-    }
-
-    @javafx.fxml.FXML
-    public void addmedicalnotesOnAction(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Doctor/MedicalNotes.fxml")));
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(home));
-        stage.setTitle("Medical Notes");
         stage.show();
     }
 }
