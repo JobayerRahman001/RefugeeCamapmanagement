@@ -1,4 +1,4 @@
-package cse213.refugeecampfinalproject.ResourcesManager;
+package cse213.refugeecampfinalproject.ResourceManager;
 
 public class Donation {
 

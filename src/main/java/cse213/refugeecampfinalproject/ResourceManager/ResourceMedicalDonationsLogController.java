@@ -1,4 +1,4 @@
-package cse213.refugeecampfinalproject.ResourcesManager;
+package cse213.refugeecampfinalproject.ResourceManager;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -33,7 +33,7 @@ public class ResourceMedicalDonationsLogController {
     @javafx.fxml.FXML
     private Label statusLabel;
 
-    private final ObservableList<Donation> donationList = FXCollections.observableArrayList();
+    private final ObservableList<cse213.refugeecampfinalproject.ResourcesManager.Donation> donationList = FXCollections.observableArrayList();
 
     @javafx.fxml.FXML
     public void initialize() {

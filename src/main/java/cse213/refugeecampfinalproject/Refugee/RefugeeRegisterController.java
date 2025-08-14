@@ -55,7 +55,7 @@ public static ObservableList<RefugeeAllocationsAdminModel> allocationList = FXCo
         String refNationality = refNationalityTextField.getText().trim();
         String passcode = refPasscodeField.getText().trim();
 
-        //Generation of unique ID and passcode for refugees at registration
+        //Refugee ID generation from list
         String id = "REF" + (RefugeeList.size()+1);
 
 
