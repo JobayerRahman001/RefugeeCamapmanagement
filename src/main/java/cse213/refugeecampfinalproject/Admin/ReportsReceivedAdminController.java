@@ -63,7 +63,7 @@ public class ReportsReceivedAdminController {
     @javafx.fxml.FXML
     public void addressReportsOnClick(ActionEvent actionEvent) {
         IssueReportsModel selected = reportsReceivedTableView.getSelectionModel().getSelectedItem();
-        if (selected != null && !selected.getStatus().equalsIgnoreCase("Addressed")) {
+        if (selected != null && !selected.getStatus().equals("Addressed")) {
             selected.setStatus("Addressed");
             reportsReceivedTableView.refresh();
         }

@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Objects;
 
 public class RefugeeSkillsProfileController
@@ -73,26 +74,17 @@ public class RefugeeSkillsProfileController
         String previousJob = addPrevJobTextField.getText().trim();
         String certificates = certificateTextField.getText().trim();
 
-        ArrayList<String> matchedProgramsList = new ArrayList<>();
-        ArrayList<String> requiredSkillsList = new ArrayList<>();
+        RefugeeSkillsModel skillsEntry = new RefugeeSkillsModel(skills, previousJob, certificates, null, null);
+        RefugeeSkillsList.add(skillsEntry);
+        skillProfileTableView.getItems().setAll(RefugeeSkillsList);
 
-        for(RefugeeSkillsModel refugeeSkillsModel : availablePrograms) {
-            if (skills.contains(refugeeSkillsModel.getRequiredSkills().toLowerCase())) {
-                matchedProgramsList.add(refugeeSkillsModel.getMatchedPrograms());
-                requiredSkillsList.add(refugeeSkillsModel.getRequiredSkills());
+        for(RefugeeSkillsModel refugeePrograms : availablePrograms) {
+            String reqProgramSkills = refugeePrograms.getRequiredSkills().toLowerCase(Locale.ROOT);
+            if(skills.toLowerCase().contains(reqProgramSkills)) {
+                RefugeeSkillsModel matchedProgram = new RefugeeSkillsModel(null, null, null, refugeePrograms.getMatchedPrograms(), refugeePrograms.getRequiredSkills());
+                possibleWorkTableView.getItems().add(matchedProgram);
             }
         }
-
-        String matchedPrograms = String.join(", ", matchedProgramsList);
-        String requiredSkills = String.join(", ", requiredSkillsList);
-
-        RefugeeSkillsModel profileEntry = new RefugeeSkillsModel(skills, previousJob, certificates, matchedPrograms, requiredSkills);
-
-        RefugeeSkillsList.add(profileEntry);
-        skillProfileTableView.getItems().clear();
-        skillProfileTableView.getItems().addAll(RefugeeSkillsList);
-        possibleWorkTableView.getItems().clear();;
-        possibleWorkTableView.getItems().addAll(profileEntry);
     }
 
     @javafx.fxml.FXML

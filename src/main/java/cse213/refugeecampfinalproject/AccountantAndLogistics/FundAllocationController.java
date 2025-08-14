@@ -64,7 +64,7 @@ public class FundAllocationController
                     amount,
                     LocalDateTime.now()
             );
-            FundAllocationModel.allocateFunds(allocation);
+            //FundAllocationModel.allocateFunds(allocation);
         } catch (NumberFormatException ignored) {
         }
     }
@@ -83,7 +83,7 @@ public class FundAllocationController
 
     @javafx.fxml.FXML
     public void GoBacktoAccountantLogisticsCoordinatorOnAction(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/FinanceDashboard.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/AccountantAndLogisticsDashboard.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Accountant & Logistics Coordinator");
