@@ -1,5 +1,6 @@
 package cse213.refugeecampfinalproject.ResourcesManager;
 
+import cse213.refugeecampfinalproject.ResourcesManager.Donation;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -8,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -37,14 +39,14 @@ public class ResourceMedicalDonationsLogController {
 
     @javafx.fxml.FXML
     public void initialize() {
-        // Set up TableView columns
-        itemNameCol.setCellValueFactory(cell -> cell.getValue().itemNameProperty());
-        quantityCol.setCellValueFactory(cell -> cell.getValue().quantityProperty().asObject());
-        expiryCol.setCellValueFactory(cell -> cell.getValue().expiryDateProperty());
-        recipientCol.setCellValueFactory(cell -> cell.getValue().recipientProperty());
-        lowStockCol.setCellValueFactory(cell -> cell.getValue().lowStockProperty());
 
-        // Sample data
+        itemNameCol.setCellValueFactory(new PropertyValueFactory<>("itemName"));
+        quantityCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        expiryCol.setCellValueFactory(new PropertyValueFactory<>("expiryDate"));
+        recipientCol.setCellValueFactory(new PropertyValueFactory<>("recipient"));
+        lowStockCol.setCellValueFactory(new PropertyValueFactory<>("lowStock"));
+
+
         donationList.addAll(
                 new Donation("Bandages", 50, "2025-12-31", "Clinic A", false),
                 new Donation("Paracetamol", 10, "2025-06-30", "Elderly", true),
@@ -59,10 +61,10 @@ public class ResourceMedicalDonationsLogController {
     public void updateInventoryBtnOnAction(ActionEvent event) {
         Donation selected = donationsTable.getSelectionModel().getSelectedItem();
         if (selected != null) {
-            // Example: increase quantity by 10
+
             selected.setQuantity(selected.getQuantity() + 10);
             statusLabel.setText("Updated quantity for: " + selected.getItemName());
-            donationsTable.refresh();
+            donationsTable.refresh(); // needed since Donation is not using JavaFX properties
         } else {
             statusLabel.setText("Please select an item first.");
         }

@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.ResourcesManager.ResourceMedicalDonationsLogController">
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: fff8e1;">
@@ -18,8 +17,8 @@
                </font>
             </Label>
             <Button layoutX="21.0" layoutY="19.0" mnemonicParsing="false" onAction="#backToHomeOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Go Back" />
-            <Label fx:id="statusLabel" layoutX="181.0" layoutY="222.0" prefHeight="27.0" prefWidth="224.0" />
-            <TableView fx:id="donationsTable" layoutX="51.0" layoutY="120.0" prefHeight="158.0" prefWidth="390.0">
+            <Label fx:id="statusLabel" layoutX="69.0" layoutY="305.0" prefHeight="27.0" prefWidth="224.0" />
+            <TableView fx:id="donationsTable" layoutX="105.0" layoutY="95.0" prefHeight="158.0" prefWidth="390.0">
               <columns>
                 <TableColumn fx:id="itemNameCol" prefWidth="68.0" text="Item Name" />
                 <TableColumn fx:id="quantityCol" prefWidth="64.79998779296875" text="Quantity" />
