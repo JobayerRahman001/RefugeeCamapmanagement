@@ -100,7 +100,7 @@ public class DonationsController
         selectedDonation.setCategory(category);
         selectedDonation.setAllocatedAmount(updatedAllocatedAmount);
         selectedDonation.setDonatedAmount(updatedDonatedAmount);
-        selectedDonation.setBudget(String.valueOf(enteredBudget));
+        selectedDonation.setBudget(enteredBudget);
         selectedDonation.setStatus("Allocated");
 
         donationsTableView.refresh();

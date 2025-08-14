@@ -82,6 +82,7 @@ public static ArrayList<AnalyticsModel> food = new ArrayList<>();
         refugeeIDTableColH.setCellValueFactory(new PropertyValueFactory<>("refugeeID"));
         typeTableCol.setCellValueFactory(new PropertyValueFactory<>("type"));
         statusTableColH.setCellValueFactory(new PropertyValueFactory<>("status"));
+
         for (HealthServicesModel hsm : HealthcareServicesController.HealthcareServicesList) {
             healthcareTableView.getItems().add(new AnalyticsModel(hsm.getRefugeeID(), hsm.getHealthcareServiceType(), hsm.getStatus(), null, null, null, null, null));
         }
@@ -90,6 +91,7 @@ public static ArrayList<AnalyticsModel> food = new ArrayList<>();
         programTableCol.setCellValueFactory(new PropertyValueFactory<>("program"));
         classTimeTableCol.setCellValueFactory(new PropertyValueFactory<>("classTimes"));
         statusTableColE.setCellValueFactory(new PropertyValueFactory<>("status"));
+
         for (EducationServicesModel esm : EducationServicesController.EducationServicesList) {
             educationTableView.getItems().add(new AnalyticsModel(esm.getRefugeeID(), null, "Enrolled", esm.getProgramName(), null, null, null, null));
         }

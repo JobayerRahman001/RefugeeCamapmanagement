@@ -92,7 +92,7 @@ public class RequestsReceivedAdminController {
     @javafx.fxml.FXML
     public void rejectRequestsOnClick(ActionEvent actionEvent) {
         ResourceRequestsModel selected = requestsReceivedTableView.getSelectionModel().getSelectedItem();
-        if (selected != null && !selected.getStatus().equalsIgnoreCase("Rejected")) {
+        if (selected != null && !selected.getStatus().equals("Rejected")) {
             selected.setStatus("Rejected");
             requestsReceivedTableView.refresh();
         }
@@ -101,11 +101,11 @@ public class RequestsReceivedAdminController {
     @javafx.fxml.FXML
     public void approveRequestsOnClick(ActionEvent actionEvent) {
         ResourceRequestsModel selected = requestsReceivedTableView.getSelectionModel().getSelectedItem();
-        if (selected != null && !selected.getStatus().equalsIgnoreCase("Approved")) {
+        if (selected != null && !selected.getStatus().equals("Approved")) {
             String requestedItem = selected.getRequestType();
             int requestedQty = Integer.parseInt(selected.getQuantity());
             for (AllResourcesModel items : InventoryList) {
-                if (items.getResourceName().equalsIgnoreCase(requestedItem)) {
+                if (items.getResourceName().equals(requestedItem)) {
                     int availableQty = Integer.parseInt(items.getAvailableQuantity());
                     if (requestedQty <= availableQty) {
                         int updatedQty = availableQty - requestedQty;

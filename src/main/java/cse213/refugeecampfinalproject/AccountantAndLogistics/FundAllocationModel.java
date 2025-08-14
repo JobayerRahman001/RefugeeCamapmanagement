@@ -8,9 +8,6 @@ public class FundAllocationModel {
     private double amount;
     private LocalDateTime allocationDate;
 
-    private static double availableBudget = 50000.0;
-
-
     public FundAllocationModel(String programName, String purpose, double amount, LocalDateTime allocationDate) {
         this.programName = programName;
         this.purpose = purpose;
@@ -59,15 +56,4 @@ public class FundAllocationModel {
                 ", allocationDate=" + allocationDate +
                 '}';
     }
-//    public static boolean allocateFunds(FundAllocationModel allocation) {
-//        if (allocation.amount <= availableBudget) {
-//            availableBudget -= allocation.amount;
-//            // In a real app, save to database here
-//            System.out.println("[LOG] Allocated " + allocation.amount + " to " +
-//                    allocation.programName + " for " + allocation.purpose +
-//                    " at " + allocation.allocationDate);
-//            return true;
-//        }
-//        return false;
-//    }
 }

@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class FundAllocationController
@@ -30,11 +31,11 @@ public class FundAllocationController
     @javafx.fxml.FXML
     private TextField logisticsallocationTextField;
 
+    private static double availableBudget = 50000;
+
     @javafx.fxml.FXML
     public void initialize() {
-        budgetcheckLabel.setText("Available Budget: " + getAvailableBudget());
-
-
+        budgetcheckLabel.setText("Available Budget: " + availableBudget);
     }
 
     @javafx.fxml.FXML
@@ -44,7 +45,6 @@ public class FundAllocationController
             return;
         }
 
-        // Allocate for each department
         allocateToDepartment("Health", "Department Support", healthallocationTextField);
         allocateToDepartment("Education", "Department Support", educationallocationTextField);
         allocateToDepartment("Logistics", "Department Support", logisticsallocationTextField);
@@ -64,13 +64,12 @@ public class FundAllocationController
                     amount,
                     LocalDateTime.now()
             );
-            FundAllocationModel.allocateFunds(allocation);
+            //FundAllocationModel.allocateFunds(allocation);
         } catch (NumberFormatException ignored) {
         }
     }
 
     private double getAvailableBudget() {
-        // Accessing static variable via dummy method
         try {
             java.lang.reflect.Field field = FundAllocationModel.class.getDeclaredField("availableBudget");
             field.setAccessible(true);
@@ -84,7 +83,7 @@ public class FundAllocationController
 
     @javafx.fxml.FXML
     public void GoBacktoAccountantLogisticsCoordinatorOnAction(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/AccountantLogisticsCoordinator.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/AccountantAndLogisticsDashboard.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Accountant & Logistics Coordinator");

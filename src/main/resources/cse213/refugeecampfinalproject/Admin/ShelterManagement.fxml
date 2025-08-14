@@ -20,7 +20,7 @@
             <TableColumn fx:id="newRefugeeFamSizeTableCol" prefWidth="82.5" text="Family Size" />
         </columns>
       </TableView>
-      <TableView fx:id="assignedShelterTableView" layoutX="443.0" layoutY="241.0" prefHeight="200.0" prefWidth="234.0" style="-fx-background-color: e0f7fa;">
+      <TableView fx:id="assignedShelterTableView" layoutX="435.0" layoutY="240.0" prefHeight="200.0" prefWidth="234.0" style="-fx-background-color: e0f7fa;">
          <columns>
             <TableColumn fx:id="assignedShelterRefTableCol" prefWidth="117.0" text="Refugee ID" />
             <TableColumn fx:id="assignedShelterTableCol" prefWidth="116.0" text="Assigned Shelter ID" />
@@ -38,11 +38,11 @@
       <Label layoutX="70.0" layoutY="288.0" prefHeight="27.0" prefWidth="77.0" text="Refugee ID" />
       <Label layoutX="70.0" layoutY="340.0" prefHeight="27.0" prefWidth="77.0" text="Shelter ID" />
       <Button layoutX="102.0" layoutY="385.0" mnemonicParsing="false" onAction="#assignShelterOnClick" prefHeight="38.0" prefWidth="91.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Assign" />
-      <Label fx:id="shelterManagementMsgLabel" layoutX="232.0" layoutY="377.0" prefHeight="58.0" prefWidth="203.0" />
-      <Button layoutX="159.0" layoutY="8.0" mnemonicParsing="false" onAction="#manageSheltersonClick" prefHeight="38.0" prefWidth="220.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Manage Shelters">
+      <Label fx:id="shelterManagementMsgLabel" layoutX="222.0" layoutY="375.0" prefHeight="58.0" prefWidth="203.0" />
+      <Label layoutX="242.0" layoutY="10.0" prefHeight="38.0" prefWidth="183.0" text="Manage Shelters">
          <font>
             <Font name="Bookman Old Style" size="18.0" />
          </font>
-      </Button>
+      </Label>
    </children>
 </AnchorPane>

@@ -81,16 +81,17 @@ public class VolunteerPerformanceManagementAdminController
     @javafx.fxml.FXML
     public void showPerformanceOnClick(ActionEvent actionEvent) {
         VolunteerModel selected = volunteerIdentifyTableView.getSelectionModel().getSelectedItem();
-        if(selected == null) return;
+        if(selected == null)
+            return;
 
         volunteerWorkTableView.getItems().clear();
 
         //dummy data
         if(selected.getVolID().equals("V01")) {
             volunteerWorkTableView.getItems().add(new VolunteerWorkLogsModel(null, "Education", "Completed 3 sessions", "Teaching"));
-        }else if(selected.getVolID().equals("V02")) {
+        } if(selected.getVolID().equals("V02")) {
             volunteerWorkTableView.getItems().add(new VolunteerWorkLogsModel(null, "Healthcare", "Completed health checkups", "First-aid, CPR"));
-        }else if(selected.getVolID().equals("V03")) {
+        }if(selected.getVolID().equals("V03")) {
             volunteerWorkTableView.getItems().add(new VolunteerWorkLogsModel(null, "Food", "Completed serving 5 meals", "Cooking"));
         }else {
             volunteerWorkTableView.getItems().add(new VolunteerWorkLogsModel(null, selected.getVolServiceArea(), "0 Tasks Completed", selected.getVolSkills()));
