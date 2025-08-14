@@ -3,8 +3,16 @@ package cse213.refugeecampfinalproject.UNHCR;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.util.Objects;
 
 public class AnnualFudingPlanController
 {
@@ -27,7 +35,7 @@ public class AnnualFudingPlanController
     @javafx.fxml.FXML
     private TableColumn allocatedammountColum;
 
-    private ObservableList<SectorAllocationModel> sectorData = FXCollections.observableArrayList();
+    private ObservableList<annualFundingModel> sectorData = FXCollections.observableArrayList();
 
     @javafx.fxml.FXML
     public void initialize() { sectornameColum.setCellValueFactory(new PropertyValueFactory<>("sectorName"));
@@ -55,9 +63,9 @@ public class AnnualFudingPlanController
 
             // Step 2: Add data to TableView
             sectorData.clear();
-            sectorData.add(new SectorAllocationModel("Education", educationAllocation));
-            sectorData.add(new SectorAllocationModel("Health", healthAllocation));
-            sectorData.add(new SectorAllocationModel("Other", otherAllocation));
+            sectorData.add(new annualFundingModel("Education", educationAllocation));
+            sectorData.add(new annualFundingModel("Health", healthAllocation));
+            sectorData.add(new annualFundingModel("Other", otherAllocation));
 
             // Step 3: Check total allocations match total fund
             double sumAllocations = educationAllocation + healthAllocation + otherAllocation;
@@ -88,6 +96,11 @@ public class AnnualFudingPlanController
     }
 
     @javafx.fxml.FXML
-    public void gobacktoundashboardOnAction(ActionEvent actionEvent) {
+    public void gobacktoundashboardOnAction(ActionEvent actionEvent) throws IOException {
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/homepage.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(home));
+        stage.setTitle("Home");
+        stage.show();
     }
 }

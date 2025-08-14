@@ -1,38 +1,57 @@
 package cse213.refugeecampfinalproject.Volunteer;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.scene.control.*;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
-public class VolunteerEditSkillsController
-{
-    @javafx.fxml.FXML
-    private javafx.scene.control.TextField newSkillField;
-    @javafx.fxml.FXML
-    private javafx.scene.control.Label validationLabel;
-    @javafx.fxml.FXML
-    private javafx.scene.control.Button saveButton;
-    @javafx.fxml.FXML
-    private javafx.scene.control.Label InputLabel;
-    @javafx.fxml.FXML
-    private javafx.scene.control.Button addSkillButton;
-    @javafx.fxml.FXML
-    private javafx.scene.control.TableColumn<String, String> skillNameColumn;
-    @javafx.fxml.FXML
-    private javafx.scene.control.TableView<String> skillsTable;
+import java.io.IOException;
+import java.util.Objects;
 
-    private javafx.collections.ObservableList<String> skills = javafx.collections.FXCollections.observableArrayList();
+public class VolunteerEditSkillsController {
 
-    @javafx.fxml.FXML
+    @FXML
+    private Label validationLabel;
+    @FXML
+    private TextField newSkillField;
+    @FXML
+    private Button saveButton;
+    @FXML
+    private Button addSkillButton;
+    @FXML
+    private TableView<VolunteerSkillsModel> skillsTable;
+    @FXML
+    private TableColumn<VolunteerSkillsModel, String> skillNameColumn;
+
+    private final ObservableList<VolunteerSkillsModel> skillsList = FXCollections.observableArrayList();
+
+    @FXML
     public void initialize() {
-        skillNameColumn.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue()));
 
-        skills.addAll("First Aid Certified", "Fluency in Arabic");
+        skillNameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getSkill()));
 
-        skillsTable.setItems(skills);
+
+        skillsList.addAll(
+                new VolunteerSkillsModel("First Aid Certified"),
+                new VolunteerSkillsModel("Fluency in Arabic")
+        );
+
+        skillsTable.setItems(skillsList);
     }
 
-    @javafx.fxml.FXML
-    public void addSkillButtonOnAction(javafx.event.ActionEvent actionEvent) {
+    @FXML
+    public void addSkillOnClick(ActionEvent actionEvent) {
         String newSkill = newSkillField.getText().trim();
 
         if (newSkill.isEmpty()) {
@@ -40,33 +59,35 @@ public class VolunteerEditSkillsController
             return;
         }
 
-        if (skills.contains(newSkill)) {
+        boolean exists = skillsList.stream().anyMatch(s -> s.getSkill().equalsIgnoreCase(newSkill));
+        if (exists) {
             validationLabel.setText("Skill already exists.");
             return;
         }
 
-        skills.add(newSkill);
+        skillsList.add(new VolunteerSkillsModel(newSkill));
         newSkillField.clear();
         validationLabel.setText("Skill added.");
+        skillsTable.refresh();
     }
 
-    @javafx.fxml.FXML
-    public void saveButtonOnAction(javafx.event.ActionEvent actionEvent) {
-        if (skills.isEmpty()) {
+    @FXML
+    public void saveOnClick(ActionEvent actionEvent) {
+        if (skillsList.isEmpty()) {
             validationLabel.setText("Please add at least one skill before saving.");
             return;
         }
 
-        // Save logic here (e.g., update volunteer profile or persist data)
 
         validationLabel.setText("Profile updated successfully.");
     }
 
-    @javafx.fxml.FXML
-    public void backToHomeOnClick(javafx.event.ActionEvent actionEvent) throws java.io.IOException {
-        javafx.scene.Parent home = javafx.fxml.FXMLLoader.load(java.util.Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Volunteer/VolunteerDashboard.fxml")));
-        javafx.stage.Stage stage = (javafx.stage.Stage) ((javafx.scene.Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(new javafx.scene.Scene(home));
+    @FXML
+    public void backToDashboardOnClick(ActionEvent actionEvent) throws IOException {
+        Parent dashboard = FXMLLoader.load(Objects.requireNonNull(
+                getClass().getResource("/cse213/refugeecampfinalproject/Volunteer/VolunteerDashboard.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(dashboard));
         stage.setTitle("Volunteer Dashboard");
         stage.show();
     }

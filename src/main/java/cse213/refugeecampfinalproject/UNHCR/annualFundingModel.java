@@ -1,10 +1,10 @@
 package cse213.refugeecampfinalproject.UNHCR;
 
-public class SectorAllocationModel {
+public class annualFundingModel {
     private String sectorName;
     private double allocatedAmount;
 
-    public SectorAllocationModel(String sectorName, double allocatedAmount) {
+    public annualFundingModel(String sectorName, double allocatedAmount) {
         this.sectorName = sectorName;
         this.allocatedAmount = allocatedAmount;
     }

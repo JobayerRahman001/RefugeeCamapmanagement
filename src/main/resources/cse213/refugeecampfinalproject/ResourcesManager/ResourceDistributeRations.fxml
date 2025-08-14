@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -18,26 +19,24 @@
                </font>
             </Label>
             <Button layoutX="23.0" layoutY="22.0" mnemonicParsing="false" onAction="#backToDashboardOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Go Back" />
-            <Button layoutX="230.0" layoutY="355.0" mnemonicParsing="false" onAction="#distributeRationsOnClick" prefHeight="34.0" prefWidth="114.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Distribute" />
-            <TableView fx:id="DistributionTableView" layoutX="29.0" layoutY="109.0" prefHeight="200.0" prefWidth="323.0" style="-fx-background-color: e0f7fa;">
+            <Button layoutX="230.0" layoutY="338.0" mnemonicParsing="false" onAction="#distributeRationsOnClick" prefHeight="34.0" prefWidth="114.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Distribute" />
+            <TableView fx:id="DistributionTableView" layoutX="22.0" layoutY="73.0" prefHeight="200.0" prefWidth="218.0" style="-fx-background-color: e0f7fa;">
                <columns>
-                  <TableColumn fx:id="RefIDTableCol" prefWidth="71.20001220703125" text="Refugee ID" />
-                  <TableColumn fx:id="FamSizeTableCol" text="Family Size" />
-                  <TableColumn fx:id="FoodDistributeTableCol" prefWidth="95.5" text="Food" />
-                  <TableColumn fx:id="WaterTableCol" prefWidth="75.0" text="Water" />
+                  <TableColumn fx:id="RefIDTableCol" prefWidth="97.5" text="Refugee ID" />
+                  <TableColumn fx:id="FamSizeTableCol" prefWidth="119.5" text="Family Size" />
                </columns>
             </TableView>
-            <Label layoutX="295.0" layoutY="325.0" text="Quantity:" />
-            <Label fx:id="messageLabel" layoutX="324.0" layoutY="314.0" prefHeight="75.0" prefWidth="251.0" />
-            <ComboBox fx:id="itemComboBox" layoutX="98.0" layoutY="321.0" prefWidth="150.0" style="-fx-background-color: e0f7fa;" />
-            <Label layoutX="29.0" layoutY="320.0" prefHeight="27.0" prefWidth="62.0" text="Item:" />
-            <ComboBox fx:id="QuantityComboBox" layoutX="361.0" layoutY="321.0" prefWidth="150.0" style="-fx-background-color: e0f7fa;" />
-            <TableView fx:id="StockTableView" layoutX="376.0" layoutY="109.0" prefHeight="200.0" prefWidth="210.0" style="-fx-background-color: e0f7fa;">
+            <Label layoutX="290.0" layoutY="308.0" text="Serving Size" />
+            <Label fx:id="messageLabel" layoutX="338.0" layoutY="52.0" prefHeight="42.0" prefWidth="248.0" />
+            <ComboBox fx:id="itemComboBox" layoutX="98.0" layoutY="304.0" prefWidth="150.0" style="-fx-background-color: e0f7fa;" />
+            <Label layoutX="29.0" layoutY="303.0" prefHeight="27.0" prefWidth="62.0" text="Item:" />
+            <TableView fx:id="StockTableView" layoutX="369.0" layoutY="73.0" prefHeight="200.0" prefWidth="210.0" style="-fx-background-color: e0f7fa;">
                <columns>
                   <TableColumn fx:id="ItemTableCol" prefWidth="86.5" text="Item" />
-                  <TableColumn fx:id="AvailabilityTableCol" prefWidth="122.0" text="Available Quantity" />
+                  <TableColumn fx:id="AvailabilityTableCol" prefWidth="122.0" text="Serving Size" />
                </columns>
             </TableView>
+            <TextField fx:id="servingsSizeTextField" layoutX="376.0" layoutY="304.0" style="-fx-background-color: e0f7fa;" />
          </children>
       </AnchorPane>
    </children>

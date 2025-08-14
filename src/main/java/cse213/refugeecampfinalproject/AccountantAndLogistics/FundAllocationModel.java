@@ -59,15 +59,15 @@ public class FundAllocationModel {
                 ", allocationDate=" + allocationDate +
                 '}';
     }
-    public static boolean allocateFunds(FundAllocationModel allocation) {
-        if (allocation.amount <= availableBudget) {
-            availableBudget -= allocation.amount;
-            // In a real app, save to database here
-            System.out.println("[LOG] Allocated " + allocation.amount + " to " +
-                    allocation.programName + " for " + allocation.purpose +
-                    " at " + allocation.allocationDate);
-            return true;
-        }
-        return false;
-    }
+//    public static boolean allocateFunds(FundAllocationModel allocation) {
+//        if (allocation.amount <= availableBudget) {
+//            availableBudget -= allocation.amount;
+//            // In a real app, save to database here
+//            System.out.println("[LOG] Allocated " + allocation.amount + " to " +
+//                    allocation.programName + " for " + allocation.purpose +
+//                    " at " + allocation.allocationDate);
+//            return true;
+//        }
+//        return false;
+//    }
 }

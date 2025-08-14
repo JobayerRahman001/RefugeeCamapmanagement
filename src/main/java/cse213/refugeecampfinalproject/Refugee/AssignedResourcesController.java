@@ -29,21 +29,6 @@ public static ObservableList<AssignedResourcesModel> assignedList = FXCollection
 
     @javafx.fxml.FXML
     public void initialize() {
-    }
-
-    @javafx.fxml.FXML
-    public void backtoDashboardOnClick(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/RefugeeDashboard.fxml")));
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(home));
-        stage.setTitle("Refugee Dashboard");
-        stage.show();
-    }
-
-    @javafx.fxml.FXML
-    public void viewAssignedResourcesOnClick(ActionEvent actionEvent) {
-
-
         // Dummy data
         assignedList.add(new AssignedResourcesModel("Shelter", "Block-C, Unit 12B", "2025-07-20"));
         assignedList.add(new AssignedResourcesModel("Food Ration", "Weekly Package: Rice, Lentils, Oil", "2025-07-21"));
@@ -58,5 +43,14 @@ public static ObservableList<AssignedResourcesModel> assignedList = FXCollection
 
         assignedResourcesTableView.getItems().clear();
         assignedResourcesTableView.getItems().addAll(assignedList);
+    }
+
+    @javafx.fxml.FXML
+    public void backtoDashboardOnClick(ActionEvent actionEvent) throws IOException {
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/RefugeeDashboard.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(home));
+        stage.setTitle("Refugee Dashboard");
+        stage.show();
     }
 }
