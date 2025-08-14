@@ -64,7 +64,7 @@ public class ResourceMedicalDonationsLogController {
 
             selected.setQuantity(selected.getQuantity() + 10);
             statusLabel.setText("Updated quantity for: " + selected.getItemName());
-            donationsTable.refresh(); // needed since Donation is not using JavaFX properties
+            donationsTable.refresh();
         } else {
             statusLabel.setText("Please select an item first.");
         }

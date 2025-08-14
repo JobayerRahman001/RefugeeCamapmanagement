@@ -105,12 +105,13 @@ public class ResourceWaterLogsController {
         }
     }
 
-    @FXML
+    @javafx.fxml.FXML
     public void backToHomeOnClick(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/homepage.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(
+                "/cse213/refugeecampfinalproject/ResourcesManager/ResourcesDashboard.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
-        stage.setTitle("Home");
+        stage.setTitle("Resources Dashboard");
         stage.show();
     }
 }
