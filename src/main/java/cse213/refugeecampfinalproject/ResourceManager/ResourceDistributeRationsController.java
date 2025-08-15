@@ -1,7 +1,6 @@
 package cse213.refugeecampfinalproject.ResourceManager;
 
 import cse213.refugeecampfinalproject.Admin.AllResourcesModel;
-import cse213.refugeecampfinalproject.Refugee.AssignedResourcesController;
 import cse213.refugeecampfinalproject.Refugee.AssignedResourcesModel;
 import cse213.refugeecampfinalproject.Refugee.Refugee;
 import javafx.event.ActionEvent;
@@ -107,7 +106,7 @@ public class ResourceDistributeRationsController
 
     @javafx.fxml.FXML
     public void backToDashboardOnClick(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourcesManager/ResourcesDashboard.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourceManager/ResourcesDashboard.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Resources Dashboard");

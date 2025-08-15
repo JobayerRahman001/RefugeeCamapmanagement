@@ -3,7 +3,6 @@ package cse213.refugeecampfinalproject.Volunteer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -18,17 +17,17 @@ import java.util.Objects;
 public class VolunteerHoursAndFeedbackController {
 
 
-    @FXML private ComboBox<String> timePeriodComboBox;
-    @FXML private TableView<VolunteerShiftHours> hoursTable;
-    @FXML private TableColumn<VolunteerShiftHours, String> shiftTypeColumn;
-    @FXML private TableColumn<VolunteerShiftHours, Double> hoursColumn;
-    @FXML private TextField feedbackTextArea;
-    @FXML private Label feedbackLabel;
+    @javafx.fxml.FXML private ComboBox<String> timePeriodComboBox;
+    @javafx.fxml.FXML private TableView<VolunteerShiftHours> hoursTable;
+    @javafx.fxml.FXML private TableColumn<VolunteerShiftHours, String> shiftTypeColumn;
+    @javafx.fxml.FXML private TableColumn<VolunteerShiftHours, Double> hoursColumn;
+    @javafx.fxml.FXML private TextField feedbackTextArea;
+    @javafx.fxml.FXML private Label feedbackLabel;
 
 
     private final ObservableList<VolunteerShiftHours> volunteerHoursList = FXCollections.observableArrayList();
 
-    @FXML
+    @javafx.fxml.FXML
     public void initialize() {
 
         timePeriodComboBox.getItems().addAll("Weekly", "Monthly");
@@ -42,7 +41,7 @@ public class VolunteerHoursAndFeedbackController {
     }
 
 
-    @FXML
+    @javafx.fxml.FXML
     public void checkHoursButtonOnAction() {
         String period = timePeriodComboBox.getValue();
 
@@ -70,7 +69,7 @@ public class VolunteerHoursAndFeedbackController {
     }
 
 
-    @FXML
+    @javafx.fxml.FXML
     public void submitFeedbackButtonOnAction() {
         String feedback = feedbackTextArea.getText().trim();
 
@@ -85,7 +84,7 @@ public class VolunteerHoursAndFeedbackController {
     }
 
 
-    @FXML
+    @javafx.fxml.FXML
     public void backToHomeOnClick(ActionEvent actionEvent) throws IOException {
         Parent home = FXMLLoader.load(Objects.requireNonNull(
                 getClass().getResource("/cse213/refugeecampfinalproject/Volunteer/VolunteerDashboard.fxml")

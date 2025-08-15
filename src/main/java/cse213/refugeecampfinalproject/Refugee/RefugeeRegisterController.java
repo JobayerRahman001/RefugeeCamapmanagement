@@ -72,12 +72,11 @@ public static ObservableList<RefugeeAllocationsAdminModel> allocationList = FXCo
         alert.setContentText("Your ID is " + id);
         alert.showAndWait();
 
-
-            Parent root = FXMLLoader.load(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/RefugeeDashboard.fxml"));
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.setTitle("Refugee Dashboard");
-            stage.show();
+        Parent root = FXMLLoader.load(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/RefugeeDashboard.fxml"));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Refugee Dashboard");
+        stage.show();
 
     }
 

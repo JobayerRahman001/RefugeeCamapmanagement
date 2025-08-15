@@ -27,7 +27,7 @@ public class ResourcesDashboardController
 
     @javafx.fxml.FXML
     public void WaterLogsOnClick(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourcesManager/ResourceWaterLogs.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourceManager/ResourceWaterLogs.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Water Logs");
@@ -36,7 +36,7 @@ public class ResourcesDashboardController
 
     @javafx.fxml.FXML
     public void RestockInventoryOnClick(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourcesManager/ResourceInventoryRestock.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourceManager/ResourceInventoryRestock.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Restock Inventory");
@@ -45,7 +45,7 @@ public class ResourcesDashboardController
 
     @javafx.fxml.FXML
     public void AssignSanitationOnClick(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourcesManager/ResourceSanitationStaff.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourceManager/ResourceSanitationStaff.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Assign Sanitaion");
@@ -54,7 +54,7 @@ public class ResourcesDashboardController
 
     @javafx.fxml.FXML
     public void RepairRequestsOnClick(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourcesManager/ResourceRepairRequests.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourceManager/ResourceRepairRequests.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Repair Requests");
@@ -63,7 +63,7 @@ public class ResourcesDashboardController
 
     @javafx.fxml.FXML
     public void DisposeGoodsOnClick(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourcesManager/ResourceInventorySpoiledGoods.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourceManager/ResourceInventorySpoiledGoods.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Dispose Spoiled Goods");
@@ -72,7 +72,7 @@ public class ResourcesDashboardController
 
     @javafx.fxml.FXML
     public void DistributeRationsOnClick(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourcesManager/ResourceDistributeRations.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourceManager/ResourceDistributeRations.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Distribute Rations");

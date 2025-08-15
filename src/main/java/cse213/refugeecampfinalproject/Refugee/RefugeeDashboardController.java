@@ -64,54 +64,54 @@ public class RefugeeDashboardController
 
     @javafx.fxml.FXML
     public void assignedResourcesforRefOnClick(ActionEvent actionEvent) throws IOException {
-        Parent healthPortal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/AssignedResources.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/AssignedResources.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(healthPortal));
+        stage.setScene(new Scene(root));
         stage.setTitle("Assigned Resources");
         stage.show();
     }
 
     @javafx.fxml.FXML
     public void reportIssuesforRefOnClick(ActionEvent actionEvent) throws IOException {
-        Parent healthPortal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/ReportIssues.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/ReportIssues.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(healthPortal));
+        stage.setScene(new Scene(root));
         stage.setTitle("Report Issues");
         stage.show();
     }
 
     @javafx.fxml.FXML
     public void healcareServiceforRefOnClick(ActionEvent actionEvent) throws IOException {
-        Parent healthPortal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/HealthcareServices.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/HealthcareServices.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(healthPortal));
+        stage.setScene(new Scene(root));
         stage.setTitle("Healthcare Services");
         stage.show();
     }
 
     @javafx.fxml.FXML
     public void inventoryReqforRefOnClick(ActionEvent actionEvent) throws IOException {
-        Parent healthPortal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/ResourcesInventory.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/ResourcesInventory.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(healthPortal));
+        stage.setScene(new Scene(root));
         stage.setTitle("Resources Inventory");
         stage.show();
     }
 
     @javafx.fxml.FXML
     public void eductionServiceforRefOnClick(ActionEvent actionEvent) throws IOException {
-        Parent healthPortal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/EducationServices.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/EducationServices.fxml/cse213/refugeecampfinalproject/Refugee/EducationServices.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(healthPortal));
+        stage.setScene(new Scene(root));
         stage.setTitle("Education Services");
         stage.show();
     }
 
     @javafx.fxml.FXML
     public void addSkillsforRefOnClick(ActionEvent actionEvent) throws IOException {
-        Parent healthPortal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/RefugeeSkillsProfile.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/RefugeeSkillsProfile.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(healthPortal));
+        stage.setScene(new Scene(root));
         stage.setTitle("Refugee Skills Profile");
         stage.show();
     }
