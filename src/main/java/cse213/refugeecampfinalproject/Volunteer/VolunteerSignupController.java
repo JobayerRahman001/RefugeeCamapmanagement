@@ -1,5 +1,8 @@
 package cse213.refugeecampfinalproject.Volunteer;
 
+import cse213.refugeecampfinalproject.Refugee.Refugee;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -25,12 +28,13 @@ public class VolunteerSignupController
     @javafx.fxml.FXML
     private CheckBox volAvailabilityCheckBox;
 
+    public static ObservableList<VolunteerModel> VolunteerList = FXCollections.observableArrayList();
+
     @javafx.fxml.FXML
     public void initialize() {
 
         volServiceAreaComboBox.getItems().addAll( "Food", "Healthcare", "Education", "Inventory Management");
     }
-    public static ArrayList<VolunteerModel>VolunteerList = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void volSignupOnClick(ActionEvent actionEvent) throws IOException {
@@ -53,7 +57,7 @@ public class VolunteerSignupController
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Thank you for signing in as Volunteer");
         alert.setHeaderText("New Volunteer");
-        alert.setContentText("Your passcode is 'User5'");
+        alert.setContentText("Yor ID is: " + volid+ " Your passcode is 'User5'");
         alert.showAndWait();
 
 

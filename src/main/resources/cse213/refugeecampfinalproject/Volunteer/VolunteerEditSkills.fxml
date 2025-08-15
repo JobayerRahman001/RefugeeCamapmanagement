@@ -8,24 +8,24 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="556.0" style="-fx-background-color: #fff8e1;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.Volunteer.VolunteerEditSkillsController">
    <children>
-      <Label layoutX="217.0" layoutY="35.0" prefHeight="42.0" prefWidth="114.0" text="  Edit Skills">
+      <Label layoutX="221.0" layoutY="15.0" prefHeight="42.0" prefWidth="114.0" text="  Edit Skills">
          <font>
             <Font name="Bookman Old Style" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="42.0" layoutY="43.0" mnemonicParsing="false" onAction="#backToHomeOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Go Back" />
-      <Label fx:id="InputLabel" layoutX="51.0" layoutY="101.0" text="Input new skill: " />
-      <TextField fx:id="newSkillField" layoutX="146.0" layoutY="97.0" prefHeight="26.0" prefWidth="266.0" />
+      <Button layoutX="20.0" layoutY="22.0" mnemonicParsing="false" onAction="#backToHomeOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Go Back" />
+      <Label layoutX="20.0" layoutY="78.0" prefHeight="27.0" prefWidth="90.0" text="Input new skill: " />
+      <TextField fx:id="VolIDTextField" layoutX="365.0" layoutY="75.0" prefHeight="34.0" prefWidth="174.0" style="-fx-background-color: e0f7fa;" />
       <TableView fx:id="skillsTable" layoutX="32.0" layoutY="140.0" prefHeight="190.0" prefWidth="185.0" style="-fx-background-color: #e0f7fa;">
          <columns>
             <TableColumn fx:id="skillNameColumn" prefWidth="184.80000076293945" text="Skill" />
          </columns>
       </TableView>
-      <Label fx:id="validationLabel" layoutX="238.0" layoutY="174.0" prefHeight="73.0" prefWidth="240.0" style="-fx-background-color: white;" />
-      <Button fx:id="addSkillButton" layoutX="313.0" layoutY="133.0" mnemonicParsing="false" onAction="#addSkillButtonOnAction" prefHeight="26.0" prefWidth="90.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Add new skill" />
-      <Button fx:id="saveButton" layoutX="238.0" layoutY="265.0" mnemonicParsing="false" onAction="#saveButtonOnAction" prefHeight="34.0" prefWidth="90.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Save" />
+      <Label fx:id="validationLabel" layoutX="245.0" layoutY="187.0" prefHeight="73.0" prefWidth="240.0" />
+      <Button layoutX="313.0" layoutY="133.0" mnemonicParsing="false" onAction="#addSkillButtonOnAction" prefHeight="26.0" prefWidth="90.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Add new skill" />
+      <TextField fx:id="newSkillField" layoutX="102.0" layoutY="75.0" prefHeight="34.0" prefWidth="200.0" style="-fx-background-color: e0f7fa;" />
+      <Label layoutX="313.0" layoutY="78.0" prefHeight="27.0" prefWidth="49.0" text="Enter ID:" />
    </children>
 </AnchorPane>

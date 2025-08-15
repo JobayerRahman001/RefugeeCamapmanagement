@@ -19,8 +19,17 @@ public class VolunteerHoursAndFeedbackController {
     @javafx.fxml.FXML
     private ComboBox<String> timePeriodComboBox;
 
+<<<<<<< HEAD
     @javafx.fxml.FXML
     private TableView<VolunteerShiftHours> hoursTable;
+=======
+    @javafx.fxml.FXML private ComboBox<String> timePeriodComboBox;
+    @javafx.fxml.FXML private TableView<VolunteerShiftHours> hoursTable;
+    @javafx.fxml.FXML private TableColumn<VolunteerShiftHours, String> shiftTypeColumn;
+    @javafx.fxml.FXML private TableColumn<VolunteerShiftHours, Double> hoursColumn;
+    @javafx.fxml.FXML private TextField feedbackTextArea;
+    @javafx.fxml.FXML private Label feedbackLabel;
+>>>>>>> a4d7acb05e84bb143e37d79c9f777e0af3e212ee
 
     @javafx.fxml.FXML
     private TableColumn<VolunteerShiftHours, String> shiftTypeColumn;
@@ -46,6 +55,10 @@ public class VolunteerHoursAndFeedbackController {
         hoursTable.setItems(volunteerHoursList);
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a4d7acb05e84bb143e37d79c9f777e0af3e212ee
     @javafx.fxml.FXML
     public void checkHoursButtonOnAction() {
         String period = timePeriodComboBox.getValue();
@@ -73,6 +86,10 @@ public class VolunteerHoursAndFeedbackController {
         feedbackLabel.setText("Hours loaded for " + period);
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a4d7acb05e84bb143e37d79c9f777e0af3e212ee
     @javafx.fxml.FXML
     public void submitFeedbackButtonOnAction() {
         String feedback = feedbackTextArea.getText().trim();
@@ -87,6 +104,10 @@ public class VolunteerHoursAndFeedbackController {
         feedbackTextArea.clear();
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a4d7acb05e84bb143e37d79c9f777e0af3e212ee
     @javafx.fxml.FXML
     public void backToHomeOnClick(ActionEvent actionEvent) throws IOException {
         Parent home = FXMLLoader.load(Objects.requireNonNull(
