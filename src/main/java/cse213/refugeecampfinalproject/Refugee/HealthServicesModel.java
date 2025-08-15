@@ -1,6 +1,8 @@
 package cse213.refugeecampfinalproject.Refugee;
 
-public class HealthServicesModel {
+import java.io.Serializable;
+
+public class HealthServicesModel implements Serializable {
     private String refugeeID;
     private String healthcareServiceType;
     private String symptoms;

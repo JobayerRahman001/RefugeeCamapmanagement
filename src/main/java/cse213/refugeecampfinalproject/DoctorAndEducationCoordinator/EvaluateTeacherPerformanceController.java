@@ -59,9 +59,9 @@ public class EvaluateTeacherPerformanceController
     }
     private void fetchFeedbackData() {
         feedbackList.clear(); // Clear previous data
-        feedbackList.add(new FeedBackModel("Alice", 4.5, 30, "Great teacher, very engaging."));
-        feedbackList.add(new FeedBackModel("Bob", 3.8, 25, "Good, but needs to improve on attendance."));
-        feedbackList.add(new FeedBackModel("Charlie", 4.0, 28, "Very knowledgeable and helpful."));
+        feedbackList.add(new FeedBackModel("Asaduzzaman", 4.5, 30, "Great teacher, very engaging."));
+        feedbackList.add(new FeedBackModel("Mannan Hossain", 3.8, 25, "Good, but needs to improve on attendance."));
+        feedbackList.add(new FeedBackModel("Salam Sheikh", 4.0, 28, "Very knowledgeable and helpful."));
 
     }
 

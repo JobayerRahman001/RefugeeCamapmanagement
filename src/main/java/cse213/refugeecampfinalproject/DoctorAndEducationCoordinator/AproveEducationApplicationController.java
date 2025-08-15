@@ -47,6 +47,7 @@ public class AproveEducationApplicationController
     private void loadApplications() {
         applicationList.add(new EducationApplicationModel("John Doe", 25, "Literacy Program", "Monday 10 AM - 12 PM","pending"));
         applicationList.add(new EducationApplicationModel("Jane Smith", 17, "Language Program", "Tuesday 1 PM - 3 PM","pending"));
+
         ObservableList<EducationApplicationModel> observableList = FXCollections.observableArrayList(applicationList);
         educationalapplicationTableView.setItems(observableList);
     }

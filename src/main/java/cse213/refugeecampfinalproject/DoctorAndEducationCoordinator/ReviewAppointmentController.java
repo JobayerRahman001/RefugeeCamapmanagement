@@ -6,14 +6,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Scanner;
 
 public class ReviewAppointmentController
 {
@@ -76,19 +78,6 @@ public static ArrayList<HealthServicesModel> HealthcareServicesList = new ArrayL
     }
 
     @javafx.fxml.FXML
-    public void createPrescriptionOnClick(ActionEvent actionEvent) throws IOException {
-        HealthServicesModel selectedPatient = patientTableView.getSelectionModel().getSelectedItem();
-        selectedPatient = patientTableView.getSelectionModel().getSelectedItem();
-        if (selectedPatient == null) return;
-
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Doctor/Prescription.fxml")));
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(home));
-        stage.setTitle("Create Prescription");
-        stage.show();
-    }
-
-    @javafx.fxml.FXML
     public void scheduleFollowUpOnClick(ActionEvent actionEvent) {
         HealthServicesModel selectedPatient = patientTableView.getSelectionModel().getSelectedItem();
         if(selectedPatient != null&& !selectedPatient.getStatus().equals("Follow-up")) {
@@ -106,16 +95,126 @@ public static ArrayList<HealthServicesModel> HealthcareServicesList = new ArrayL
         }
     }
 
-    @javafx.fxml.FXML
-    public void addNotesOnClick(ActionEvent actionEvent) throws IOException {
-        HealthServicesModel selectedPatient = patientTableView.getSelectionModel().getSelectedItem();
-        selectedPatient = patientTableView.getSelectionModel().getSelectedItem();
-        if (selectedPatient == null) return;
 
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Doctor/MedicalNotes.fxml")));
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(home));
-        stage.setTitle("Medical Notes");
-        stage.show();
+
+    @javafx.fxml.FXML
+    public void shownasbinOnAction(ActionEvent actionEvent) {
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+        try {
+            File f = new File("appointments.bin");
+            if (f.exists()) {
+                fis = new FileInputStream(f);
+                ois = new ObjectInputStream(fis);
+                HealthcareServicesList = (ArrayList<HealthServicesModel>) ois.readObject();
+
+                patientTableView.getItems().clear();
+                patientTableView.getItems().addAll(HealthcareServicesList);
+                showAlert("Appointments loaded from binary file successfully!");
+            } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setContentText("Binary file does not exist!");
+                alert.showAndWait();
+            }
+        } catch (Exception e) {
+            showAlert("Error loading appointments from binary: " + e.getMessage());
+        } finally {
+            try {
+                if (ois != null) ois.close();
+                if (fis != null) fis.close();
+            } catch (Exception e) {
+                showAlert("Error closing file: " + e.getMessage());
+            }
+
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void saveasbinOnAction(ActionEvent actionEvent) {
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        try {
+            File f = new File("appointments.bin");
+            if (f.exists()) {
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
+                oos.writeObject(HealthcareServicesList);
+                showAlert("Appointments saved as binary file successfully!");
+            } else {
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
+                oos.writeObject(HealthcareServicesList);
+                showAlert("Binary file created and appointments saved successfully!");
+            }
+        } catch (Exception e) {
+            showAlert("Error saving appointments as binary: " + e.getMessage());
+        } finally {
+            try {
+                if (oos != null) oos.close();
+                if (fos != null) fos.close();
+            } catch (Exception e) {
+                showAlert("Error closing file: " + e.getMessage());
+            }
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void shownastxtOnAction(ActionEvent actionEvent) {
+        try {
+            File f = new File("appointments.txt");
+            if (f.exists()) {
+                Scanner scanner = new Scanner(f);
+                HealthcareServicesList.clear();
+
+                while (scanner.hasNextLine()) {
+                    String line = scanner.nextLine();
+                    // Create a simple appointment with the line as refugeeID for display
+                    HealthcareServicesList.add(new HealthServicesModel(line, null, null, null, null, null, null, null, null, "Loaded"));
+                }
+
+                scanner.close();
+                patientTableView.getItems().clear();
+                patientTableView.getItems().addAll(HealthcareServicesList);
+                showAlert("Appointments loaded from text file successfully!");
+            } else {
+                showAlert("Text file does not exist!");
+            }
+        } catch (Exception e) {
+            showAlert("Error loading appointments from text: " + e.getMessage());
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void saveastxtOnAction(ActionEvent actionEvent) {
+        FileWriter fw = null;
+        try {
+            File f = new File("appointments.txt");
+            if (f.exists()) {
+                fw = new FileWriter(f);
+            } else {
+                fw = new FileWriter(f);
+            }
+
+            String str = "";
+            for (HealthServicesModel a : HealthcareServicesList) {
+                str += a.toString() + "\n";
+            }
+
+            fw.write(str);
+            fw.close();
+            showAlert("Appointments saved as text file successfully!");
+        }catch (Exception e) {
+            showAlert("Error saving appointments as text: " + e.getMessage());
+        } finally {
+            try {
+                if (fw != null) fw.close();
+            } catch (Exception e) {
+                showAlert("Error closing file: " + e.getMessage());
+            }
+        }}
+    private void showAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }

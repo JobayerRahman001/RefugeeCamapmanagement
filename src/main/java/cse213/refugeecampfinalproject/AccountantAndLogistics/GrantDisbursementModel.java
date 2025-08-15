@@ -3,7 +3,6 @@ package cse213.refugeecampfinalproject.AccountantAndLogistics;
 import java.time.LocalDate;
 
 public class GrantDisbursementModel {
-
     private String grantName;
     private LocalDate milestoneDate;
     private String status;

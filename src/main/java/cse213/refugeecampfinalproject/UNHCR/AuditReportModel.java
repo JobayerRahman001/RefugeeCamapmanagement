@@ -1,7 +1,6 @@
 package cse213.refugeecampfinalproject.UNHCR;
 
 public class AuditReportModel {
-
     private String complianceStatus;
     private String findings;
     private String remarks;

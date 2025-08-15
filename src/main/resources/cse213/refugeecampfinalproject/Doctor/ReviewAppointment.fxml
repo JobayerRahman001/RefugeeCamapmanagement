@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="405.0" prefWidth="680.0" style="-fx-background-color: fff8e1;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.DoctorAndEducationCoordinator.ReviewAppointmentController">
+<AnchorPane prefHeight="405.0" prefWidth="680.0" style="-fx-background-color: fff8e1;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.DoctorAndEducationCoordinator.ReviewAppointmentController">
    <children>
-      <TableView fx:id="patientTableView" layoutX="65.0" layoutY="80.0" prefHeight="207.0" prefWidth="565.0" style="-fx-background-color: e0f7fa;">
+      <TableView fx:id="patientTableView" layoutX="45.0" layoutY="50.0" prefHeight="207.0" prefWidth="565.0" style="-fx-background-color: e0f7fa;">
         <columns>
           <TableColumn fx:id="refugeeIDTableCol" prefWidth="97.0" text="Refugee ID" />
           <TableColumn fx:id="appointmentTimeTableCol" prefWidth="107.5" text="Time" />
@@ -22,12 +22,14 @@
             <Font name="Bookman Old Style" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="584.0" layoutY="346.0" mnemonicParsing="false" onAction="#gobacktohealthportalOnAction" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Go Back" />
-      <Button layoutX="97.0" layoutY="350.0" mnemonicParsing="false" onAction="#markCancelledOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Cancelled" />
-      <Button layoutX="110.0" layoutY="309.0" mnemonicParsing="false" onAction="#markSeenOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Seen" />
-      <Button layoutX="207.0" layoutY="309.0" mnemonicParsing="false" onAction="#scheduleFollowUpOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Schedule Follow-up" />
-      <Button layoutX="222.0" layoutY="350.0" mnemonicParsing="false" onAction="#referHospitalOnClcik" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Refer Hospital" />
-      <Button layoutX="357.0" layoutY="309.0" mnemonicParsing="false" onAction="#addNotesOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Add Notes" />
-      <Button layoutX="357.0" layoutY="350.0" mnemonicParsing="false" onAction="#createPrescriptionOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Create Prescription" />
+      <Button layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#gobacktohealthportalOnAction" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Go Back" />
+      <Button layoutX="87.0" layoutY="340.0" mnemonicParsing="false" onAction="#markCancelledOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Cancelled" />
+      <Button layoutX="90.0" layoutY="299.0" mnemonicParsing="false" onAction="#markSeenOnClick" prefHeight="28.0" prefWidth="70.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Seen" />
+      <Button layoutX="197.0" layoutY="299.0" mnemonicParsing="false" onAction="#scheduleFollowUpOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Schedule Follow-up" />
+      <Button layoutX="198.0" layoutY="340.0" mnemonicParsing="false" onAction="#referHospitalOnClcik" prefHeight="28.0" prefWidth="123.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Refer Hospital" />
+      <Button layoutX="383.0" layoutY="299.0" mnemonicParsing="false" onAction="#saveastxtOnAction" prefHeight="28.0" prefWidth="86.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Save as txt" />
+      <Button layoutX="496.0" layoutY="299.0" mnemonicParsing="false" onAction="#saveasbinOnAction" prefHeight="28.0" prefWidth="89.0" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Save as bin" />
+      <Button layoutX="496.0" layoutY="340.0" mnemonicParsing="false" onAction="#shownasbinOnAction" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Shown as bin" />
+      <Button layoutX="383.0" layoutY="340.0" mnemonicParsing="false" onAction="#shownastxtOnAction" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Shown as txt" />
    </children>
 </AnchorPane>
