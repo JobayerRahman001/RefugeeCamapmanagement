@@ -4,7 +4,6 @@ public class RefugeeSkillsModel {
     private String skills;
     private String previousJob;
     private String certificates;
-    //
     private String matchedPrograms;
     private String requiredSkills;
 
