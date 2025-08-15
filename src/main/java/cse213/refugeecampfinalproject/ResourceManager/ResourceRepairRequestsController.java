@@ -3,6 +3,7 @@ package cse213.refugeecampfinalproject.ResourceManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -66,7 +67,7 @@ public class ResourceRepairRequestsController {
             return;
         }
 
-        // Check if staff is already assigned
+
         for (RepairTicketModel t : repairTicketsList) {
             if (t.getAssignedStaff() != null && t.getAssignedStaff().equalsIgnoreCase(staff) && t != ticket) {
                 confirmationLabel.setText(staff + " is already assigned.");
@@ -94,12 +95,14 @@ public class ResourceRepairRequestsController {
         confirmationLabel.setText("Ticket updated successfully.");
     }
 
+    @javafx.fxml.FXML
     public void backToHomeOnClick(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(
-                getClass().getResource("/cse213/refugeecampfinalproject/ResourceManager/ResourcesDashboard.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(
+                "/cse213/refugeecampfinalproject/ResourcesManager/ResourcesDashboard.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Resources Dashboard");
         stage.show();
     }
+
 }

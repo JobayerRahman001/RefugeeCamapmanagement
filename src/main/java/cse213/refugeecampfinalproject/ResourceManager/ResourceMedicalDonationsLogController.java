@@ -1,5 +1,6 @@
 package cse213.refugeecampfinalproject.ResourceManager;
 
+import cse213.refugeecampfinalproject.ResourcesManager.Donation;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -38,14 +39,23 @@ public class ResourceMedicalDonationsLogController {
 
     @javafx.fxml.FXML
     public void initialize() {
+<<<<<<< HEAD
+=======
         // Set up TableView columns
         itemNameCol.setCellValueFactory(new PropertyValueFactory<>("itemName"));
         quantityCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         expiryCol.setCellValueFactory(new PropertyValueFactory<>("expiryDate"));
         recipientCol.setCellValueFactory(new PropertyValueFactory<>("recipient"));
         lowStockCol.setCellValueFactory(new PropertyValueFactory<>("lowStock"));
+>>>>>>> d80db7c74b220bf122a9cca36621a4eecb3c1c25
 
-        // Sample data
+        itemNameCol.setCellValueFactory(new PropertyValueFactory<>("itemName"));
+        quantityCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        expiryCol.setCellValueFactory(new PropertyValueFactory<>("expiryDate"));
+        recipientCol.setCellValueFactory(new PropertyValueFactory<>("recipient"));
+        lowStockCol.setCellValueFactory(new PropertyValueFactory<>("lowStock"));
+
+
         donationList.addAll(
                 new Donation("Bandages", 50, "2025-12-31", "Clinic A", false),
                 new Donation("Paracetamol", 10, "2025-06-30", "Elderly", true),
@@ -60,7 +70,7 @@ public class ResourceMedicalDonationsLogController {
     public void updateInventoryBtnOnAction(ActionEvent event) {
         Donation selected = donationsTable.getSelectionModel().getSelectedItem();
         if (selected != null) {
-            // Example: increase quantity by 10
+
             selected.setQuantity(selected.getQuantity() + 10);
             statusLabel.setText("Updated quantity for: " + selected.getItemName());
             donationsTable.refresh();
@@ -71,8 +81,7 @@ public class ResourceMedicalDonationsLogController {
 
     @javafx.fxml.FXML
     public void backToHomeOnClick(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(
-                "/cse213/refugeecampfinalproject/ResourcesManager/ResourcesDashboard.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourcesManager/ResourcesDashboard.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Resources Dashboard");

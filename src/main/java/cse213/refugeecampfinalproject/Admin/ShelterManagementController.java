@@ -81,6 +81,14 @@ public class ShelterManagementController
 
         assignedShelterRefTableCol.setCellValueFactory(new PropertyValueFactory<>("refugeeID"));
         assignedShelterTableCol.setCellValueFactory(new PropertyValueFactory<>("shelterID"));
+
+        availableSheltersTableView.getItems().clear();
+        availableSheltersTableView.getItems().addAll(shelterList);
+
+        newRefugeeTableView.getItems().clear();
+        newRefugeeTableView.getItems().addAll(RefugeeRegisterController.RefugeeList);
+
+        assignedShelterTableView.getItems().clear();
     }
 
     @javafx.fxml.FXML
@@ -113,44 +121,34 @@ public class ShelterManagementController
         for (ShelterManagementModel smm : availableSheltersTableView.getItems()) {
             if (smm.getShelterID().equals(shelterID)) {
                 selectedShelter = smm;
-                break;
             }
         }
-        int famsize = Integer.parseInt(selectedRefugee.getRefFamSize());
-        int sheletercapacity = selectedShelter.getCapacity();
+        if (selectedRefugee != null & selectedShelter != null) {
+            int famSize = Integer.parseInt(selectedRefugee.getRefFamSize());
+            int sheleterCapacity = selectedShelter.getCapacity();
 
-        if (sheletercapacity < famsize) {
-            shelterManagementMsgLabel.setText("Capacity Error");
-            return;
+            if (sheleterCapacity < famSize) {
+                shelterManagementMsgLabel.setText("Capacity Error");
+                return;
+            }
+            selectedShelter.setCapacity(sheleterCapacity - famSize);
+            availableSheltersTableView.refresh();
+
+            newRefugeeTableView.getItems().remove(selectedRefugee);
+            newRefugeeTableView.refresh();
+
+            location = selectedShelter.getLocation();
+            ShelterManagementModel shelterManagementModel = new ShelterManagementModel(refugeeID, shelterID, location, null);
+            assignedShelterTableView.getItems().add(shelterManagementModel);
+            assignedShelterTableView.refresh();
+
+            String assignedDate = java.time.LocalDate.now().toString();
+            String shelterDetails = selectedShelter.getLocation() + selectedShelter.getShelterID();
+
+            AssignedResourcesModel shelterResource = new AssignedResourcesModel("Shelter", shelterDetails, assignedDate);
+            AssignedResourcesModel.assignedList.add(shelterResource);
+
+            shelterManagementMsgLabel.setText("Success");
         }
-        selectedShelter.setCapacity(sheletercapacity - famsize);
-        availableSheltersTableView.refresh();
-
-        newRefugeeTableView.getItems().remove(selectedRefugee);
-        newRefugeeTableView.refresh();
-
-        location = selectedShelter.getLocation();
-        ShelterManagementModel shelterManagementModel = new ShelterManagementModel(refugeeID, shelterID, location, null);
-        assignedShelterTableView.getItems().add(shelterManagementModel);
-        assignedShelterTableView.refresh();
-
-        String assignedDate = java.time.LocalDate.now().toString();
-        String shelterDetails = selectedShelter.getLocation() + selectedShelter.getShelterID();
-
-        AssignedResourcesModel shelterResource = new AssignedResourcesModel("Shelter", shelterDetails, assignedDate);
-        AssignedResourcesModel.assignedList.add(shelterResource);
-
-        shelterManagementMsgLabel.setText("Success");
-    }
-
-    @javafx.fxml.FXML
-    public void manageSheltersonClick(ActionEvent actionEvent) {
-        availableSheltersTableView.getItems().clear();
-        availableSheltersTableView.getItems().addAll(shelterList);
-
-        newRefugeeTableView.getItems().clear();
-        newRefugeeTableView.getItems().addAll(RefugeeRegisterController.RefugeeList);
-
-        assignedShelterTableView.getItems().clear();
     }
 }

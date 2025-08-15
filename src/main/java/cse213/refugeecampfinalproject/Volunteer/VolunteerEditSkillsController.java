@@ -21,23 +21,16 @@ import java.util.Objects;
 
 public class VolunteerEditSkillsController {
 
-    @FXML
-    private Label validationLabel;
-    @FXML
-    private TextField newSkillField;
-    @FXML
-    private Button saveButton;
-    @FXML
-    private Button addSkillButton;
-    @FXML
-    private TableView<VolunteerSkillsModel> skillsTable;
-    @FXML
-    private TableColumn<VolunteerSkillsModel, String> skillNameColumn;
+    @FXML private Label validationLabel;
+    @FXML private TextField newSkillField;
+    @FXML private Button saveButton;
+    @FXML private Button addSkillButton;
+    @FXML private TableView<VolunteerSkillsModel> skillsTable;
+    @FXML private TableColumn<VolunteerSkillsModel, String> skillNameColumn;
 
     private final ObservableList<VolunteerSkillsModel> skillsList = FXCollections.observableArrayList();
 
-    @FXML
-    public void initialize() {
+    @FXML public void initialize() {
 
         skillNameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getSkill()));
 
@@ -50,8 +43,7 @@ public class VolunteerEditSkillsController {
         skillsTable.setItems(skillsList);
     }
 
-    @FXML
-    public void addSkillOnClick(ActionEvent actionEvent) {
+    @FXML public void addSkillOnClick(ActionEvent actionEvent) {
         String newSkill = newSkillField.getText().trim();
 
         if (newSkill.isEmpty()) {
@@ -71,8 +63,7 @@ public class VolunteerEditSkillsController {
         skillsTable.refresh();
     }
 
-    @FXML
-    public void saveOnClick(ActionEvent actionEvent) {
+    @FXML public void saveOnClick(ActionEvent actionEvent) {
         if (skillsList.isEmpty()) {
             validationLabel.setText("Please add at least one skill before saving.");
             return;
@@ -82,8 +73,7 @@ public class VolunteerEditSkillsController {
         validationLabel.setText("Profile updated successfully.");
     }
 
-    @FXML
-    public void backToDashboardOnClick(ActionEvent actionEvent) throws IOException {
+    @FXML public void backToDashboardOnClick(ActionEvent actionEvent) throws IOException {
         Parent dashboard = FXMLLoader.load(Objects.requireNonNull(
                 getClass().getResource("/cse213/refugeecampfinalproject/Volunteer/VolunteerDashboard.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();

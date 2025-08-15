@@ -29,7 +29,6 @@ public class ReviewAppointmentController
     @javafx.fxml.FXML
     private TableColumn<HealthServicesModel, String> statusTableCol;
 
-    ArrayList<HealthServicesModel> patientsList = new ArrayList<>();
 public static ArrayList<HealthServicesModel> HealthcareServicesList = new ArrayList<>();
 
     @javafx.fxml.FXML
@@ -61,7 +60,7 @@ public static ArrayList<HealthServicesModel> HealthcareServicesList = new ArrayL
     @javafx.fxml.FXML
     public void markSeenOnClick(ActionEvent actionEvent) {
         HealthServicesModel selected = patientTableView.getSelectionModel().getSelectedItem();
-        if (selected != null && !selected.getStatus().equalsIgnoreCase("Seen")) {
+        if (selected != null && !selected.getStatus().equals("Seen")) {
             selected.setStatus("Seen");
             patientTableView.refresh();
         }
@@ -70,13 +69,13 @@ public static ArrayList<HealthServicesModel> HealthcareServicesList = new ArrayL
     @javafx.fxml.FXML
     public void markCancelledOnClick(ActionEvent actionEvent) {
         HealthServicesModel selectedPatient = patientTableView.getSelectionModel().getSelectedItem();
-        if(selectedPatient != null&& !selectedPatient.getStatus().equalsIgnoreCase("Cancelled")) {
+        if(selectedPatient != null&& !selectedPatient.getStatus().equals("Cancelled")) {
             selectedPatient.setStatus("Cancelled");
             patientTableView.refresh();
         }
     }
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void createPrescriptionOnClick(ActionEvent actionEvent) throws IOException {
         HealthServicesModel selectedPatient = patientTableView.getSelectionModel().getSelectedItem();
         selectedPatient = patientTableView.getSelectionModel().getSelectedItem();
@@ -92,7 +91,7 @@ public static ArrayList<HealthServicesModel> HealthcareServicesList = new ArrayL
     @javafx.fxml.FXML
     public void scheduleFollowUpOnClick(ActionEvent actionEvent) {
         HealthServicesModel selectedPatient = patientTableView.getSelectionModel().getSelectedItem();
-        if(selectedPatient != null&& !selectedPatient.getStatus().equalsIgnoreCase("Follow-up")) {
+        if(selectedPatient != null&& !selectedPatient.getStatus().equals("Follow-up")) {
             selectedPatient.setStatus("Follow-up");
             patientTableView.refresh();
         }
@@ -101,13 +100,13 @@ public static ArrayList<HealthServicesModel> HealthcareServicesList = new ArrayL
     @javafx.fxml.FXML
     public void referHospitalOnClcik(ActionEvent actionEvent) {
         HealthServicesModel selectedPatient = patientTableView.getSelectionModel().getSelectedItem();
-        if(selectedPatient != null&& !selectedPatient.getStatus().equalsIgnoreCase("Referred to a Hospital")) {
+        if(selectedPatient != null&& !selectedPatient.getStatus().equals("Referred to a Hospital")) {
             selectedPatient.setStatus("Referred to a Hospital");
             patientTableView.refresh();
         }
     }
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void addNotesOnClick(ActionEvent actionEvent) throws IOException {
         HealthServicesModel selectedPatient = patientTableView.getSelectionModel().getSelectedItem();
         selectedPatient = patientTableView.getSelectionModel().getSelectedItem();
