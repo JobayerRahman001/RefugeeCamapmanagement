@@ -3,7 +3,6 @@ package cse213.refugeecampfinalproject.Volunteer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,35 +17,43 @@ import java.util.Objects;
 
 public class VolunteerManageShiftsController {
 
-    @FXML
+    @javafx.fxml.FXML
     private TableView<ShiftsModel> availableShiftsTable;
-    @FXML
+
+    @javafx.fxml.FXML
     private TableColumn<ShiftsModel, String> shiftDateColumn;
-    @FXML
+
+    @javafx.fxml.FXML
     private TableColumn<ShiftsModel, String> shiftTimeColumn;
-    @FXML
+
+    @javafx.fxml.FXML
     private TableColumn<ShiftsModel, String> shiftRoleColumn;
 
-    @FXML
+    @javafx.fxml.FXML
     private TableView<ShiftsModel> registeredShiftsTable;
-    @FXML
+
+    @javafx.fxml.FXML
     private TableColumn<ShiftsModel, String> regShiftDateColumn;
-    @FXML
+
+    @javafx.fxml.FXML
     private TableColumn<ShiftsModel, String> regShiftTimeColumn;
-    @FXML
+
+    @javafx.fxml.FXML
     private TableColumn<ShiftsModel, String> regShiftRoleColumn;
 
-    @FXML
+    @javafx.fxml.FXML
     private Button registerShiftButton;
-    @FXML
+
+    @javafx.fxml.FXML
     private Button cancelShiftButton;
-    @FXML
+
+    @javafx.fxml.FXML
     private Label registeredShiftsLabel;
 
     private final ObservableList<ShiftsModel> shifts = FXCollections.observableArrayList();
     private final ObservableList<ShiftsModel> registeredShifts = FXCollections.observableArrayList();
 
-    @FXML
+    @javafx.fxml.FXML
     public void initialize() {
         // sample shift
         shifts.addAll(
@@ -55,12 +62,10 @@ public class VolunteerManageShiftsController {
                 new ShiftsModel("2025-08-14", "09:00", "Sanitation Support")
         );
 
-
         shiftDateColumn.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("date"));
         shiftTimeColumn.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("time"));
         shiftRoleColumn.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("role"));
         availableShiftsTable.setItems(shifts);
-
 
         regShiftDateColumn.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("date"));
         regShiftTimeColumn.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("time"));
@@ -68,7 +73,7 @@ public class VolunteerManageShiftsController {
         registeredShiftsTable.setItems(registeredShifts);
     }
 
-    @FXML
+    @javafx.fxml.FXML
     public void registerButtonOnAction(ActionEvent actionEvent) {
         ShiftsModel selectedShift = availableShiftsTable.getSelectionModel().getSelectedItem();
         if (selectedShift == null) {
@@ -84,7 +89,7 @@ public class VolunteerManageShiftsController {
         registeredShiftsTable.refresh();
     }
 
-    @FXML
+    @javafx.fxml.FXML
     public void cancelShiftButtonOnAction(ActionEvent actionEvent) {
         ShiftsModel selectedShift = registeredShiftsTable.getSelectionModel().getSelectedItem();
         if (selectedShift == null) {
@@ -96,7 +101,7 @@ public class VolunteerManageShiftsController {
         registeredShiftsTable.refresh();
     }
 
-    @FXML
+    @javafx.fxml.FXML
     public void backToHomeOnClick(ActionEvent actionEvent) throws IOException {
         Parent home = FXMLLoader.load(Objects.requireNonNull(
                 getClass().getResource("/cse213/refugeecampfinalproject/Volunteer/VolunteerDashboard.fxml")));

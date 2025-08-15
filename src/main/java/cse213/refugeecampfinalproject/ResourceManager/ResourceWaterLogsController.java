@@ -3,7 +3,6 @@ package cse213.refugeecampfinalproject.ResourceManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -17,45 +16,45 @@ import java.util.Objects;
 
 public class ResourceWaterLogsController {
 
-    @FXML
+    @javafx.fxml.FXML
     private TextField clarityLabel;
 
-    @FXML
+    @javafx.fxml.FXML
     private Button saveTestBrequestRefillButtonutton1;
 
-    @FXML
+    @javafx.fxml.FXML
     private Label phLabel;
 
-    @FXML
+    @javafx.fxml.FXML
     private TableColumn<WaterTankModel, String> tankNameColumn;
 
-    @FXML
+    @javafx.fxml.FXML
     private Label ETALabel;
 
-    @FXML
+    @javafx.fxml.FXML
     private TableColumn<WaterTankModel, Double> tankLevelColumn;
 
-    @FXML
+    @javafx.fxml.FXML
     private TableColumn<WaterTankModel, String> tankStatusColumn;
 
-    @FXML
+    @javafx.fxml.FXML
     private TableView<WaterTankModel> repairTicketsTable;
 
-    @FXML
+    @javafx.fxml.FXML
     private Button saveTestButton;
 
-    @FXML
+    @javafx.fxml.FXML
     private Label testResultLabel;
 
-    @FXML
+    @javafx.fxml.FXML
     private Label assignStaffLabel;
 
-    @FXML
+    @javafx.fxml.FXML
     private TextField phField;
 
     private final ObservableList<WaterTankModel> waterTanks = FXCollections.observableArrayList();
 
-    @FXML
+    @javafx.fxml.FXML
     public void initialize() {
         tankNameColumn.setCellValueFactory(new PropertyValueFactory<>("tankName"));
         tankLevelColumn.setCellValueFactory(new PropertyValueFactory<>("level"));
@@ -70,7 +69,7 @@ public class ResourceWaterLogsController {
         repairTicketsTable.setItems(waterTanks);
     }
 
-    @FXML
+    @javafx.fxml.FXML
     public void saveTestButtonOnAction(ActionEvent actionEvent) {
         try {
             double phValue = Double.parseDouble(phField.getText());
@@ -87,7 +86,7 @@ public class ResourceWaterLogsController {
         }
     }
 
-    @FXML
+    @javafx.fxml.FXML
     public void requestRefillButtonOnAction(ActionEvent actionEvent) {
         WaterTankModel selectedTank = repairTicketsTable.getSelectionModel().getSelectedItem();
         if (selectedTank != null) {
