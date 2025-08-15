@@ -1,6 +1,6 @@
 package cse213.refugeecampfinalproject.ResourceManager;
 
-import cse213.refugeecampfinalproject.ResourcesManager.Donation;
+import cse213.refugeecampfinalproject.ResourceManager.Donation;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -40,13 +40,11 @@ public class ResourceMedicalDonationsLogController {
     @javafx.fxml.FXML
     public void initialize() {
 
-        // Set up TableView columns
         itemNameCol.setCellValueFactory(new PropertyValueFactory<>("itemName"));
         quantityCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         expiryCol.setCellValueFactory(new PropertyValueFactory<>("expiryDate"));
         recipientCol.setCellValueFactory(new PropertyValueFactory<>("recipient"));
         lowStockCol.setCellValueFactory(new PropertyValueFactory<>("lowStock"));
-
 
         itemNameCol.setCellValueFactory(new PropertyValueFactory<>("itemName"));
         quantityCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
@@ -80,7 +78,7 @@ public class ResourceMedicalDonationsLogController {
 
     @javafx.fxml.FXML
     public void backToHomeOnClick(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourcesManager/ResourcesDashboard.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourceManager/ResourcesDashboard.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Resources Dashboard");

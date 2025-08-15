@@ -3,7 +3,6 @@ package cse213.refugeecampfinalproject.ResourceManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -89,7 +88,7 @@ public class ResourceSanitationStaffController
     @javafx.fxml.FXML
     public void backToHomeOnClick(ActionEvent actionEvent) throws IOException {
         Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(
-                "/cse213/refugeecampfinalproject/ResourcesManager/ResourcesDashboard.fxml")));
+                "/cse213/refugeecampfinalproject/ResourceManager/ResourcesDashboard.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Resources Dashboard");

@@ -31,7 +31,7 @@ public class LoginController {
     @javafx.fxml.FXML
     public void initialize() {
         //ComboBox
-        userTypeComboBox.getItems().addAll("Refugee", "Camp Admin", "Doctor", "Educator", "Volunteer", "Resources Manager", "Accountant and Logistics Coordinator", "UN Representative");
+        userTypeComboBox.getItems().addAll("Refugee", "Camp Admin", "Doctor", "Educator", "Resources Manager", "Accountant and Logistics Coordinator", "UN Representative");
         if (RefugeeList.isEmpty()) {
             RefugeeList.add(new Refugee("R01", "Ali Khan", "1234", 35, "Male", "5", "Bangladeshi"));
             RefugeeList.add(new Refugee("R02", "Sara Noor", "5678", 28, "Female", "4", "Rohingya"));
@@ -96,20 +96,9 @@ public class LoginController {
             }
         }
 
-        if (selectedUser.equals("Volunteer")) {
-            if (passcode.getText().equals("User5")) {
-                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Volunteer/VolunteerDashboard.fxml")));
-                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                stage.setScene(new Scene(home));
-                stage.setTitle("Volunteer Dashboard");
-                stage.show();
-                return;
-            }
-        }
-
         if (selectedUser.equals("Resources Manager")) {
             if (passcode.getText().equals("User6")) {
-                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourcesManager/ResourcesDashboard.fxml")));
+                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourceManager/ResourcesDashboard.fxml")));
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(home));
                 stage.setTitle("Resources Dashboard");

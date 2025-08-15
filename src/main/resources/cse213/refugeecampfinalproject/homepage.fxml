@@ -11,13 +11,14 @@
    <!-- HOME PANE (Default visible) -->
    <AnchorPane fx:id="homePane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: fff8e1;">
       <Button fx:id="loginButton" layoutX="215.0" layoutY="113.0" mnemonicParsing="false" onAction="#goToLoginPageOnClick" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #e0f7fa; -fx-border-color: black;" text="Go to Log-in page" />
-      <Button fx:id="registerButton" layoutX="215.0" layoutY="193.0" mnemonicParsing="false" onAction="#registerRefugeeOnClick" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #e0f7fa; -fx-border-color: black;" text="Register as a refugee" />
-      <Button fx:id="volunteerSignupButton" layoutX="215.0" layoutY="274.0" mnemonicParsing="false" onAction="#volunteerSignupOnClick" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #e0f7fa; -fx-border-color: black;" text="Sign-up as volunteer" />
+      <Button fx:id="registerButton" layoutX="216.0" layoutY="186.0" mnemonicParsing="false" onAction="#registerRefugeeOnClick" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #e0f7fa; -fx-border-color: black;" text="Register as a refugee" />
+      <Button fx:id="volunteerSignupButton" layoutX="215.0" layoutY="258.0" mnemonicParsing="false" onAction="#volunteerSignupOnClick" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #e0f7fa; -fx-border-color: black;" text="Sign-up as volunteer" />
       <Label alignment="CENTER" contentDisplay="TOP" layoutX="166.0" layoutY="27.0" prefHeight="75.0" prefWidth="280.0" text="Refugee Camp Management" textAlignment="CENTER">
          <font>
             <Font name="Bookman Old Style" size="18.0" />
          </font>
       </Label>
+      <Button fx:id="volunteerSignupButton1" layoutX="215.0" layoutY="331.0" mnemonicParsing="false" onAction="#volunteerLoginOnClick" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #e0f7fa; -fx-border-color: black;" text="Volunteer Login " />
    </AnchorPane>
 
 </StackPane>

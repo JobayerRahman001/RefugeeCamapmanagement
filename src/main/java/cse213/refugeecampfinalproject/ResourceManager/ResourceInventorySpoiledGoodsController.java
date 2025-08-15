@@ -1,14 +1,10 @@
 package cse213.refugeecampfinalproject.ResourceManager;
 
-import cse213.refugeecampfinalproject.Refugee.ResourceRequestsModel;
-import cse213.refugeecampfinalproject.Volunteer.VolunteerModel;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -65,7 +61,7 @@ public class ResourceInventorySpoiledGoodsController {
     @javafx.fxml.FXML
     public void backToHomeOnClick(ActionEvent actionEvent) throws IOException {
         Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(
-                "/cse213/refugeecampfinalproject/ResourcesManager/ResourcesDashboard.fxml")));
+                "/cse213/refugeecampfinalproject/ResourceManager/ResourcesDashboard.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Resources Dashboard");
