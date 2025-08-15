@@ -41,9 +41,13 @@ public class UpdateVaccineRecordController
         HealthcareServicesList.addAll(HealthcareServicesController.HealthcareServicesList);
 
         HealthcareServicesList.add(new HealthServicesModel("R01", null, "fever", "Sun 2pm", null, null, null, null, null, "Pending"));
+        HealthcareServicesList.add(new HealthServicesModel("R02", null, "fever", "Sun 2pm", null, null, null, null, null, "Pending"));
+        HealthcareServicesList.add(new HealthServicesModel("R03", null, "fever", "Sun 2pm", null, null, null, null, null, "Pending"));
+        HealthcareServicesList.add(new HealthServicesModel("R04", null, "fever", "Sun 2pm", null, null, null, null, null, "Pending"));
         HealthcareServicesList.add(new HealthServicesModel("R05", null, "sore throat", "Wed 5pm", null, null, null, null, null, "Pending"));
-for (HealthServicesModel healthservice : HealthcareServicesList){
-    selectPatientComboBox.setValue(healthservice.getRefugeeID());
+
+        for (HealthServicesModel healthservice : HealthcareServicesList){
+    selectPatientComboBox.getItems().add(healthservice.getRefugeeID());
 }
 
     }

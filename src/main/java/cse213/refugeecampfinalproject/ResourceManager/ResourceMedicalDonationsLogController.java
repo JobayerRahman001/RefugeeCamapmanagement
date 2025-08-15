@@ -40,19 +40,13 @@ public class ResourceMedicalDonationsLogController {
     @javafx.fxml.FXML
     public void initialize() {
 
-<<<<<<< HEAD
-        // Set up TableView columns
-=======
->>>>>>> a4d7acb05e84bb143e37d79c9f777e0af3e212ee
+
         itemNameCol.setCellValueFactory(new PropertyValueFactory<>("itemName"));
         quantityCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         expiryCol.setCellValueFactory(new PropertyValueFactory<>("expiryDate"));
         recipientCol.setCellValueFactory(new PropertyValueFactory<>("recipient"));
         lowStockCol.setCellValueFactory(new PropertyValueFactory<>("lowStock"));
-<<<<<<< HEAD
 
-=======
->>>>>>> a4d7acb05e84bb143e37d79c9f777e0af3e212ee
 
         itemNameCol.setCellValueFactory(new PropertyValueFactory<>("itemName"));
         quantityCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));

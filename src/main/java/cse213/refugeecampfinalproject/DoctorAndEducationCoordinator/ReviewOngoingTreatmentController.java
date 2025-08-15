@@ -69,17 +69,17 @@ public class ReviewOngoingTreatmentController
     public void viewselectedpatientOnAction(ActionEvent actionEvent) {
         HealthServicesModel selectedPatient = ongointTableview.getSelectionModel().getSelectedItem();
         if (selectedPatient != null){
-            String treatmentDetails = fetchTreatmentDetails(selectedPatient);
+            String treatmentDetails = TreatmentDetails(selectedPatient);
             treatmentdetailsTextArea.setText(treatmentDetails);
 
         }else {
             treatmentdetailsTextArea.setText("Please select a patient to view details");
         }
     }
-    private String fetchTreatmentDetails(HealthServicesModel patient) {
+    private String TreatmentDetails(HealthServicesModel patient) {
         return "Patient ID: " + patient.getRefugeeID() + "\n" +
                 "Symptom: " + patient.getSymptoms() + "\n" +
-                "Status: " + patient.getStatus() + "\n" +
-                "Response Notes: [Placeholder for notes]";
+                "Status: " + patient.getStatus() ;
+
     }
 }

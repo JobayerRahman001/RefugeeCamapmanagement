@@ -36,7 +36,7 @@ public class UplodeTestresultController
     public void initialize() {
         HealthcareServicesList.clear();
         HealthcareServicesList.addAll(HealthcareServicesController.HealthcareServicesList);
-        //dummy data
+
         HealthcareServicesList.add(new HealthServicesModel("R01", null, "fever", "Sun 2pm", null, null, null, null, null, "Pending"));
         HealthcareServicesList.add(new HealthServicesModel("R05", null, "sore throat", "Wed 5pm", null, null, null, null, null, "Pending"));
         for (HealthServicesModel healthModel : HealthcareServicesList) {
@@ -61,9 +61,6 @@ public class UplodeTestresultController
         }
 
         TestResultModel testResultModel = new TestResultModel(selectPatient,reportType,selectedFile,date);
-
-        storeReport(testResultModel);
-        notifyPatient(selectPatient);
         showAlert("Success: Report uploaded successfully ");
     }
 
@@ -100,11 +97,5 @@ public class UplodeTestresultController
         alert.setTitle(null);
         alert.setContentText(massege);
         alert.showAndWait();
-    }
-    private void storeReport(TestResultModel testResult){
-        System.out.println("Stored report for " + testResult.getPatientID() + ": " + testResult.getReportType() + " on " + testResult.getDate() + " with file: " + testResult.getReportType());
-    }
-    private void notifyPatient(String patient) {
-        System.out.println("Notified " + patient + " about their new report.");
     }
 }

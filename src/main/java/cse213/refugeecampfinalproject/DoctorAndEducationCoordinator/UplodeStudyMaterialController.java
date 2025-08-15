@@ -24,7 +24,6 @@ public class UplodeStudyMaterialController
     private File selectedFile;
     @javafx.fxml.FXML
     public void initialize() {
-        // Populate the program combo box (in a real application, this would come from a database)
         selectprogramComboBox.getItems().addAll("Literacy Program", "Language Program", "Vocational Program");
     }
 
@@ -65,15 +64,10 @@ public class UplodeStudyMaterialController
             errorsuccesslabel.setText("Invalid file format or size.");
             return;
     }
-        // Store the study material
         StudyMaterialsModel material = new StudyMaterialsModel(selectedFile.getName(), description, selectedProgram);
         studyMaterials.add(material);
-        // Confirm upload success
-        errorsuccesslabel.setText("File uploaded successfully: " + selectedFile.getName());
-        clearFields();
-    }
 
-    private void clearFields() {
+        errorsuccesslabel.setText("File uploaded successfully: " + selectedFile.getName());
         materialdescriptionTextField.clear();
         showselectedfilenamelabel.setText("No file selected.");
         selectprogramComboBox.setValue(null);
@@ -81,13 +75,11 @@ public class UplodeStudyMaterialController
     }
 
     private boolean validateFile(File file) {
-        // Check file size (e.g., limit to 10 MB)
         if (file.length() > 10 * 1024 * 1024) {
-            return false; // File too large
+            return false;
         }
-        // Check file extension
         String fileName = file.getName();
-        return fileName.endsWith(".pdf") || fileName.endsWith(".mp4") || fileName.endsWith(".avi");
+        return fileName.endsWith(".pdf") && fileName.endsWith(".mp4") && fileName.endsWith(".avi");
     }
 
 }
