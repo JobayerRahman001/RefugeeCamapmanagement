@@ -1,0 +1,4 @@
+AnalyticsModel{refugeeID='R04', type='null', status='Enrolled', program='Literacy', classTime='Tue-Thu 9:00 AM', itemName='null', distributed='null', remaining='null'}
+AnalyticsModel{refugeeID='R10', type='null', status='Enrolled', program='Vocational Training', classTime='Sun-Tue 10:00 AM', itemName='null', distributed='null', remaining='null'}
+AnalyticsModel{refugeeID='R14', type='null', status='Enrolled', program='Vocational Training', classTime='Sun-Tue 10:00 AM', itemName='null', distributed='null', remaining='null'}
+AnalyticsModel{refugeeID='R15', type='null', status='Enrolled', program='Basic Schooling', classTime='Daily 8:00 AM', itemName='null', distributed='null', remaining='null'}
