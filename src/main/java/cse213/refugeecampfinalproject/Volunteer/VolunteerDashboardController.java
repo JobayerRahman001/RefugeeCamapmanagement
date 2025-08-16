@@ -67,7 +67,7 @@ public class VolunteerDashboardController
 
     @javafx.fxml.FXML
     public void VolunteerManageShiftsOnClick(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(getClass().getResource("/cse213/refugeecampfinalproject/Volunteer/VolunteerManageShifts.fxml"));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Volunteer/VolunteerManageShifts.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Mange Shifts");
