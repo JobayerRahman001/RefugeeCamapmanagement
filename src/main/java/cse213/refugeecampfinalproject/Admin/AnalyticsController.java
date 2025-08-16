@@ -94,7 +94,7 @@ public static ArrayList<AnalyticsModel> food = new ArrayList<>();
         statusTableColE.setCellValueFactory(new PropertyValueFactory<>("status"));
 
         for (EducationServicesModel esm : EducationServicesController.EducationServicesList) {
-            educationTableView.getItems().add(new AnalyticsModel(esm.getRefugeeID(), null, "Enrolled", esm.getProgramName(), null, null, null, null));
+            educationTableView.getItems().add(new AnalyticsModel(esm.getRefugeeID(), null, "Enrolled", esm.getProgramName(), esm.getTiming(), null, null, null));
         }
 
         itemNameTableColF.setCellValueFactory(new PropertyValueFactory<>("itemName"));
