@@ -23,12 +23,12 @@
             <TableColumn fx:id="statusTableColH" prefWidth="105.0" text="Status" />
          </columns>
       </TableView>
-      <TableView fx:id="educationTableView" layoutX="14.0" layoutY="298.0" prefHeight="200.0" prefWidth="370.0" style="-fx-background-color: e0f7fa;">
+      <TableView fx:id="educationTableView" layoutX="14.0" layoutY="298.0" prefHeight="200.0" prefWidth="390.0" style="-fx-background-color: e0f7fa;">
          <columns>
             <TableColumn fx:id="refugeeIDTableColE" prefWidth="85.0" text="Refugee ID" />
             <TableColumn fx:id="programTableCol" prefWidth="102.0" text="Program" />
-            <TableColumn fx:id="classTimeTableCol" prefWidth="83.0" text="Class Time" />
-            <TableColumn fx:id="statusTableColE" prefWidth="99.0" text="Status" />
+            <TableColumn fx:id="classTimeTableCol" prefWidth="111.0" text="Class Time" />
+            <TableColumn fx:id="statusTableColE" prefWidth="91.0" text="Status" />
          </columns>
       </TableView>
       <TableView fx:id="resourcesTableView" layoutX="412.0" layoutY="298.0" prefHeight="200.0" prefWidth="323.0" style="-fx-background-color: e0f7fa;">
