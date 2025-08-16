@@ -59,4 +59,22 @@ public class HealthPortalController {
         stage.setTitle("Review Appointments");
         stage.show();
     }
+
+    @javafx.fxml.FXML
+    public void medicalnoteOnAction(ActionEvent actionEvent) throws IOException {
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Doctor/MedicalNotes.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(home));
+        stage.setTitle("Medical Notes");
+        stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void createprescriptionOnAction(ActionEvent actionEvent) throws IOException {
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Doctor/Prescription.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(home));
+        stage.setTitle("Prescription");
+        stage.show();
+    }
 }

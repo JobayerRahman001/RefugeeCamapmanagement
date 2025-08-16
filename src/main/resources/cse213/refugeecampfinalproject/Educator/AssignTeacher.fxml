@@ -7,12 +7,9 @@
 <?import javafx.scene.text.Font?>
 
 
-<<<<<<< HEAD:src/main/resources/cse213/refugeecampfinalproject/AssignTeacher.fxml
+
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.DoctorAndEducationCoordinator.AssignTeacherController">
-=======
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.Educator.AssignTeacherController">
->>>>>>> 3766be206684680eb274de4e03789a2b43595b2f:src/main/resources/cse213/refugeecampfinalproject/Educator/AssignTeacher.fxml
-   <children>
+  <children>
       <Label layoutX="242.0" layoutY="17.0" text="Assign Teacher">
          <font>
             <Font name="Bookman Old Style" size="18.0" />

@@ -31,13 +31,10 @@ public class AproveEducationApplicationController
     private TableColumn<EducationApplicationModel,String> refugeeageColum;
     @javafx.fxml.FXML
     private Label confirmationLabel;
-    @javafx.fxml.FXML
-    private TableColumn<EducationApplicationModel,String> refugeenameColum;
 
     private ArrayList<EducationApplicationModel> applicationList = new ArrayList<>();
     @javafx.fxml.FXML
     public void initialize() {
-        refugeenameColum.setCellValueFactory(new PropertyValueFactory<>("refugeeName"));
         refugeeageColum.setCellValueFactory(new PropertyValueFactory<>("age"));
         selecedprogramColum.setCellValueFactory(new PropertyValueFactory<>("selectedProgram"));
         requestedtimeColum.setCellValueFactory(new PropertyValueFactory<>("requestedTime"));
@@ -53,7 +50,7 @@ public class AproveEducationApplicationController
     }
     @javafx.fxml.FXML
     public void gobacktoeducationOnAction(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject//DoctorAndEducationCoordinator/EducationPanel.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Educator/EducationPanel.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Education Panel");
