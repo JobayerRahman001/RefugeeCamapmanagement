@@ -44,7 +44,7 @@ public class ArchiveProgramController
     }
     @javafx.fxml.FXML
     public void gobacktoeducationpanelOnAction(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject//DoctorAndEducationCoordinator/EducationPanel.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Educator/EducationPanel.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Education Panel");
@@ -58,7 +58,7 @@ public class ArchiveProgramController
         if (selectedProgram != null) {
             selectedProgram.getSchedule();
             statusLabel.setText("Program " + selectedProgram.getProgramName() + " marked as completed.");
-            loadCompletedPrograms();
+
         } else {
             statusLabel.setText("Please select a program to mark as completed.");
         }
@@ -70,14 +70,10 @@ public class ArchiveProgramController
         if (selectedProgram != null) {
             selectedProgram.isArchived();
             statusLabel.setText("Program " + selectedProgram.getProgramName() + " has been archived.");
-            notifyStakeholders(selectedProgram);
-            loadCompletedPrograms();
         } else {
             statusLabel.setText("Please select a program to archive.");
         }
     }
-    private void notifyStakeholders(ArchiveModel program) {
-        System.out.println("Notifying stakeholders about the archival of " + program.getProgramName());
-    }
+
 
 }

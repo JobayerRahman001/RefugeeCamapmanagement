@@ -52,7 +52,11 @@ public static ArrayList<HealthServicesModel> HealthcareServicesList = new ArrayL
 
     @javafx.fxml.FXML
     public void gobacktohealthportalOnAction(ActionEvent actionEvent) throws IOException {
+<<<<<<< HEAD
         Parent home = FXMLLoader.load(getClass().getResource("/cse213/refugeecampfinalproject//DoctorAndEducationCoordinator/HealthPortal.fxml"));
+=======
+        Parent home = FXMLLoader.load(getClass().getResource("/cse213/refugeecampfinalproject/Doctor/HealthPortal.fxml"));
+>>>>>>> 9ddce292a8b807e01d2a07fba9cb8d2b8cf78e45
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Health Portal");
