@@ -34,7 +34,7 @@ public class VolunteerDashboardController
         Parent home = FXMLLoader.load(getClass().getResource("/cse213/refugeecampfinalproject/Volunteer/VolunteerSafetyAndSupply.fxml"));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
-        stage.setTitle("Safety & Supply");
+        stage.setTitle("Safety and Supply");
         stage.show();
     }
 
@@ -70,7 +70,7 @@ public class VolunteerDashboardController
         Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Volunteer/VolunteerManageShifts.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
-        stage.setTitle("Mange Shifts");
+        stage.setTitle("Manage Shifts");
         stage.show();
     }
 }
