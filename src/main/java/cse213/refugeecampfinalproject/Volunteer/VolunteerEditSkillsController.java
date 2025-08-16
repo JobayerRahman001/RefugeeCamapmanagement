@@ -1,8 +1,5 @@
 package cse213.refugeecampfinalproject.Volunteer;
 
-import cse213.refugeecampfinalproject.Refugee.EducationServicesModel;
-import cse213.refugeecampfinalproject.Refugee.LoggedInRefModel;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -19,7 +15,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Objects;
 
 import static cse213.refugeecampfinalproject.Volunteer.VolunteerSignupController.VolunteerList;
 
@@ -37,7 +32,8 @@ public class VolunteerEditSkillsController {
     private TextField newSkillField;
 
 
-    @javafx.fxml.FXML public void initialize() {
+    @javafx.fxml.FXML
+    public void initialize() {
 
         skillNameColumn.setCellValueFactory(new PropertyValueFactory<>("volSkills"));
 
@@ -45,10 +41,10 @@ public class VolunteerEditSkillsController {
         for (VolunteerModel volunteer : VolunteerList) {
             if (volunteer.getVolID().equals(LoggedInVolModel.getLoggedInVolID())) {
                 skillsTable.getItems().add(volunteer);
-                if (VolunteerList.isEmpty()) {
-                    skillsTable.getItems().add(new VolunteerModel("", "", "Fluency in Arabic", "", true));
-                }
             }
+        }
+        if (VolunteerList.isEmpty()) {
+            skillsTable.getItems().add(new VolunteerModel("", "", "Fluency in Arabic", "", true));
         }
     }
 
@@ -61,23 +57,33 @@ public class VolunteerEditSkillsController {
             validationLabel.setText("Please fill in all fields");
             return;
         }
-        String volunteerID = VolIDTextField.getText().trim();
-        if(!volunteerID.equals(LoggedInVolModel.getLoggedInVolID())) {
-            validationLabel.setText("Please enter your own  ID!");
+
+        if (!volID.equals(LoggedInVolModel.getLoggedInVolID())) {
+            validationLabel.setText("Please enter your own ID!");
             return;
         }
-        skillsTable.setItems(VolunteerList);
-        for (VolunteerModel volunteerSkill : VolunteerList) {
-            if (volunteerSkill.getVolID().equals(volID)) {
-                if (volunteerSkill.getVolSkills().contains(newSkill)) {
-                    validationLabel.setText("Skill already exists");
-                    return;
-                }
-                validationLabel.setText("Skill added");
-                VolunteerModel newVolSkill = new VolunteerModel(null, null, newSkill, null, true);
-                VolunteerList.add(newVolSkill);
+
+        for (VolunteerModel vm : VolunteerList) {
+            if (volID.equals(vm.getVolID()) && newSkill.equals(vm.getVolSkills())) {
+                validationLabel.setText("Skill already exists");
+                return;
             }
         }
+
+        VolunteerModel newVolSkill = new VolunteerModel(volID, null, newSkill, null, true);
+        VolunteerList.add(newVolSkill);
+
+        ObservableList<VolunteerModel> loggedInSkills = FXCollections.observableArrayList();
+        for (VolunteerModel vm : VolunteerList) {
+            if (vm.getVolID().equals(LoggedInVolModel.getLoggedInVolID())) {
+                loggedInSkills.add(vm);
+            }
+        }
+
+        skillsTable.setItems(loggedInSkills);
+        skillsTable.refresh();
+        validationLabel.setText("Skill added");
+        newSkillField.clear();
     }
 
     @javafx.fxml.FXML

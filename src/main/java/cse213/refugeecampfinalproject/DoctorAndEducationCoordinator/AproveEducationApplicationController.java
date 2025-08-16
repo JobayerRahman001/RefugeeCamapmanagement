@@ -118,7 +118,7 @@ public class AproveEducationApplicationController {
     @javafx.fxml.FXML
     public void saveastxtOnAction(ActionEvent actionEvent) {
         FileChooser fc = new FileChooser();
-        fc.setTitle("Save Education Data as Text");
+        fc.setTitle("Save Education Application Data as Text");
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
 
         File file = fc.showSaveDialog(null);
