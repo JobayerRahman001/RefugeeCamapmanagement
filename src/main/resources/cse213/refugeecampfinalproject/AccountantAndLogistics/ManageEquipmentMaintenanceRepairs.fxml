@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.AccountantAndLogistics.ManageEquipmentMaintenanceRepairsContrller">
    <children>
       <Label layoutX="96.0" layoutY="5.0" text="Manage Equipment Maintenance and Repairs">
@@ -38,5 +37,6 @@
       </TableView>
       <Label fx:id="maintencelabel" layoutX="33.0" layoutY="369.0" prefHeight="17.0" prefWidth="200.0" text=" " />
       <Button layoutX="302.0" layoutY="365.0" mnemonicParsing="false" onAction="#GoBacktoAccountLogisticDashboardOnAction" text="Go Back to Account &amp; Logistic Dashboard" />
+      <Button layoutX="61.0" layoutY="365.0" mnemonicParsing="false" onAction="#saveastxtOnAction" text="Save as txt" />
    </children>
 </AnchorPane>

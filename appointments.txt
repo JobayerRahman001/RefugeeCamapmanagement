@@ -1,2 +1,0 @@
-HealthServicesModel{refugeeID='R01', healthcareServiceType='null', symptoms='fever', appointmentTime='Sun 2pm', concerns='null', counsellingTime='null', testName='null', result='null', prescription='null', status='Pending'}
-HealthServicesModel{refugeeID='R05', healthcareServiceType='null', symptoms='sore throat', appointmentTime='Wed 5pm', concerns='null', counsellingTime='null', testName='null', result='null', prescription='null', status='Pending'}
