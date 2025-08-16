@@ -3,10 +3,18 @@ package cse213.refugeecampfinalproject.AccountantAndLogistics;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.util.Objects;
 
 public class SalaryDisbursementController
 {
@@ -45,12 +53,17 @@ public class SalaryDisbursementController
             statusLabel.setText("No payments to confirm.");
             return;
         }
-        statusLabel.setText("Salary confirmation sent to staff accounts ✅");
+        statusLabel.setText("Salary confirmation sent to staff accounts ");
 
     }
 
     @javafx.fxml.FXML
-    public void gobacktoaccountlogistictdashboardOnAction(ActionEvent actionEvent) {
+    public void gobacktoaccountlogistictdashboardOnAction(ActionEvent actionEvent) throws IOException {
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/AccountantAndLogistics/AccountantAndLogisticsDashboard.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(home));
+        stage.setTitle("Accountant Logistics Coordinator Controller");
+        stage.show();
     }
 
     @javafx.fxml.FXML
@@ -59,7 +72,7 @@ public class SalaryDisbursementController
             statusLabel.setText("No salary sheet to submit.");
             return;
         }
-        statusLabel.setText("Payment batch submitted ✅");
+        statusLabel.setText("Payment batch submitted ");
 
     }
 

@@ -1,5 +1,6 @@
 package cse213.refugeecampfinalproject.AccountantAndLogistics;
 
+import cse213.refugeecampfinalproject.Refugee.HealthServicesModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -11,12 +12,13 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class ManageEquipmentMaintenanceRepairsContrller
-{
+public class ManageEquipmentMaintenanceRepairsContrller {
     @javafx.fxml.FXML
     private TextField equipmentnameTextField;
     @javafx.fxml.FXML
@@ -43,8 +45,10 @@ public class ManageEquipmentMaintenanceRepairsContrller
     private Label maintencelabel;
 
     private final ObservableList<EquipmentManagementModel> maintenanceList = FXCollections.observableArrayList();
+
     @javafx.fxml.FXML
-    public void initialize() { equipmentColum.setCellValueFactory(new PropertyValueFactory<>("equipmentName"));
+    public void initialize() {
+        equipmentColum.setCellValueFactory(new PropertyValueFactory<>("equipmentName"));
         issueColum.setCellValueFactory(new PropertyValueFactory<>("issueDescription"));
         priorityColum.setCellValueFactory(new PropertyValueFactory<>("priority"));
         technicinColum.setCellValueFactory(new PropertyValueFactory<>("technician"));
@@ -61,7 +65,7 @@ public class ManageEquipmentMaintenanceRepairsContrller
 
     @javafx.fxml.FXML
     public void GoBacktoAccountLogisticDashboardOnAction(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/AccountantAndLogisticsDashboard.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/AccountantAndLogistics/AccountantAndLogisticsDashboard.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Accountant Logistics Coordinator Controller");
@@ -102,4 +106,39 @@ public class ManageEquipmentMaintenanceRepairsContrller
             maintencelabel.setText("Error scheduling repair!");
         }
     }
+
+    @javafx.fxml.FXML
+    public void saveastxtOnAction(ActionEvent actionEvent) {
+        FileWriter fw = null;
+        try {
+            File f = new File("Equipment.txt");
+            if (f.exists()) {
+                fw = new FileWriter(f);
+            } else {
+                fw = new FileWriter(f);
+            }
+
+            String str = "";
+            for (EquipmentManagementModel a : maintenanceList) {
+                str += a.toString() + "\n";
+            }
+
+            fw.write(str);
+            fw.close();
+            showAlert("Appointments saved as text file successfully!");
+        } catch (Exception e) {
+            showAlert("Error saving appointments as text: " + e.getMessage());
+        } finally {
+            try {
+                if (fw != null) fw.close();
+            } catch (Exception e) {
+                showAlert("Error closing file: " + e.getMessage());
+            }
+        }
     }
+    public void showAlert(String m){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setContentText(m);
+        alert.showAndWait();
+    }
+}

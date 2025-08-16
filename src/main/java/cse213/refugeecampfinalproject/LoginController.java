@@ -62,6 +62,7 @@ public class LoginController {
             }
             loginMsgLabel.setText("Invalid refugee passcode.");
             return;
+<<<<<<< HEAD
         } else if (selectedUser.equals("Camp Admin") && enteredPasscode.equals("User2")) {
             Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Admin/AdminDashboard.fxml")));
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -104,6 +105,72 @@ public class LoginController {
             stage.setTitle("UN Rep Dashboard");
             stage.show();
             return;
+=======
+        }
+        if (selectedUser.equals("Camp Admin")) {
+            if (passcode.getText().equals("User2")) {
+                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Admin/AdminDashboard.fxml")));
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(home));
+                stage.setTitle("Admin Dashboard");
+                stage.show();
+                return;
+            }
+        }
+
+        if (selectedUser.equals("Doctor")) {
+            if (passcode.getText().equals("User3")) {
+                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Doctor/HealthPortal.fxml")));
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(home));
+                stage.setTitle("Admin Dashboard");
+                stage.show();
+                return;
+            }
+        }
+
+        if (selectedUser.equals("Educator")) {
+            if (passcode.getText().equals("User4")) {
+                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Educator/EducationPanel.fxml")));
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(home));
+                stage.setTitle("Education Panel");
+                stage.show();
+                return;
+            }
+        }
+
+        if (selectedUser.equals("Resources Manager")) {
+            if (passcode.getText().equals("User6")) {
+                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourceManager/ResourcesDashboard.fxml")));
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(home));
+                stage.setTitle("Resources Dashboard");
+                stage.show();
+                return;
+            }
+        }
+
+        if (selectedUser.equals("Accountant and Logistics Coordinator")) {
+            if (passcode.getText().equals("User7")) {
+                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/AccountantAndLogistics/AccountantAndLogisticsDashboard.fxml")));
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(home));
+                stage.setTitle("Accountant and Logistics Coordinator Dashboard");
+                stage.show();
+                return;
+            }
+        }
+
+        if (selectedUser.equals("UN Representative")) {
+            if (passcode.getText().equals("User8")) {
+                Parent home = FXMLLoader.load(getClass().getResource("/cse213/refugeecampfinalproject/UNHCR/UNRepDashboard.fxml"));
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(home));
+                stage.setTitle("UN Rep Dashboard");
+                stage.show();
+            }
+>>>>>>> c8c4ab00774ba079636760607635b1336426bdfe
         } else {
             loginMsgLabel.setText("Invalid passcode or user type.");
         }

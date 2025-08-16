@@ -1,0 +1,1 @@
+EquipmentManagementModel{equipmentName='ed', issueDescription='dw', priority='Low', technician='Technician A', repairDate=2025-08-19, status='Scheduled', cost=0.0}

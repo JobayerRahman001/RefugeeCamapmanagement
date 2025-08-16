@@ -50,7 +50,7 @@ public class FundAllocationController
         allocateToDepartment("Logistics", "Department Support", logisticsallocationTextField);
         allocateToDepartment("Other", "Department Support", otherallocationTextField);
 
-        balanceupdatenoticeLabel.setText("Balances updated ✅");
+        balanceupdatenoticeLabel.setText("Balances updated ");
         budgetcheckLabel.setText("Available Budget: " + getAvailableBudget());
         statusmassegeLabel.setText("Fund distribution completed.");
     }
@@ -83,7 +83,7 @@ public class FundAllocationController
 
     @javafx.fxml.FXML
     public void GoBacktoAccountantLogisticsCoordinatorOnAction(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/AccountantAndLogisticsDashboard.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/AccountantAndLogistics/AccountantAndLogisticsDashboard.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Accountant & Logistics Coordinator");
