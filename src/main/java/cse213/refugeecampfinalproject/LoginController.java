@@ -120,7 +120,7 @@ public class LoginController {
 
         if (selectedUser.equals("UN Representative")) {
             if (passcode.getText().equals("User8")) {
-                Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/UNHCR/UNRepDashboard.fxml")));
+                Parent home = FXMLLoader.load(getClass().getResource("/cse213/refugeecampfinalproject/UNHCR/UNRepDashboard.fxml"));
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(home));
                 stage.setTitle("UN Rep Dashboard");
