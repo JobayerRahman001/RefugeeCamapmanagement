@@ -12,9 +12,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -23,7 +24,7 @@ public class AnalyticsController
     @javafx.fxml.FXML
     private TableColumn<AnalyticsModel, String> distributionTableColF;
     @javafx.fxml.FXML
-    private TableColumn<AnalyticsModel, String> programTableCol;
+    private TableColumn<EducationServicesModel, String> programTableCol;
     @javafx.fxml.FXML
     private TableColumn<AnalyticsModel, String> classTimeTableCol;
     @javafx.fxml.FXML
@@ -114,5 +115,81 @@ public static ArrayList<AnalyticsModel> food = new ArrayList<>();
         stage.setScene(new Scene(home));
         stage.setTitle("Admin Dashboard");
         stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void foodTxtOnClick(ActionEvent actionEvent) {
+        FileChooser fc = new FileChooser();
+        fc.setTitle("Save Food Data as Text");
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
+
+        File file = fc.showSaveDialog(null);
+        if (file != null) {
+            try (FileWriter fw = new FileWriter(file)) {
+                for (AnalyticsModel model : FoodTableView.getItems()) {
+                    fw.write(model.toString() + "\n");
+                }
+            } catch (Exception e) {
+                //
+            }
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void educationTxtOnClick(ActionEvent actionEvent) {
+        FileChooser fc = new FileChooser();
+        fc.setTitle("Save Education Data as Text");
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
+
+        File file = fc.showSaveDialog(null);
+        if (file != null) {
+            try (FileWriter fw = new FileWriter(file)) {
+                for (AnalyticsModel model : educationTableView.getItems()) {
+                    fw.write(model.toString() + "\n");
+                }
+            } catch (Exception e) {
+                //
+            }
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void healthcareBinOnClick(ActionEvent actionEvent) {
+        FileChooser fc = new FileChooser();
+        fc.setTitle("Save Healthcare Data as Binary");
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Binary Files", "*.bin"));
+
+        File file = fc.showSaveDialog(null);
+        if (file != null) {
+            try (FileOutputStream fos = new FileOutputStream(file);
+                 ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+
+                for (AnalyticsModel model : healthcareTableView.getItems()) {
+                    oos.writeObject(model);
+                }
+            } catch (Exception e) {
+                //
+            }
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void resourcesBinOnClick(ActionEvent actionEvent) {
+        FileChooser fc = new FileChooser();
+        fc.setTitle("Save Resources Data as Binary");
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Binary Files", "*.bin"));
+
+        File file = fc.showSaveDialog(null);
+        if (file != null) {
+            try (FileOutputStream fos = new FileOutputStream(file);
+                 ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+
+                for (AnalyticsModel model : resourcesTableView.getItems()) {
+                    oos.writeObject(model);
+                }
+            } catch (Exception e) {
+                //
+            }
+        }
     }
 }

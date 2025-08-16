@@ -59,5 +59,9 @@
          </font>
       </Label>
       <Button layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#goBackToDashboardOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Go back" />
+      <Button layoutX="240.0" layoutY="28.0" mnemonicParsing="false" onAction="#healthcareBinOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Save as bin file" />
+      <Button layoutX="591.0" layoutY="27.0" mnemonicParsing="false" onAction="#foodTxtOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Save as txt file" />
+      <Button layoutX="232.0" layoutY="269.0" mnemonicParsing="false" onAction="#educationTxtOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Save as txt file" />
+      <Button layoutX="650.0" layoutY="269.0" mnemonicParsing="false" onAction="#resourcesBinOnClick" style="-fx-background-color: e0f7fa; -fx-border-color: black;" text="Save as bin file" />
    </children>
 </AnchorPane>

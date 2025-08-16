@@ -18,27 +18,14 @@ public class VolunteerHoursAndFeedbackController {
 
     @javafx.fxml.FXML
     private ComboBox<String> timePeriodComboBox;
-
     @javafx.fxml.FXML
     private TableView<VolunteerShiftHours> hoursTable;
-
-    @javafx.fxml.FXML private ComboBox<String> timePeriodComboBox;
-    @javafx.fxml.FXML private TableView<VolunteerShiftHours> hoursTable;
-    @javafx.fxml.FXML private TableColumn<VolunteerShiftHours, String> shiftTypeColumn;
-    @javafx.fxml.FXML private TableColumn<VolunteerShiftHours, Double> hoursColumn;
-    @javafx.fxml.FXML private TextField feedbackTextArea;
-    @javafx.fxml.FXML private Label feedbackLabel;
-
-
     @javafx.fxml.FXML
     private TableColumn<VolunteerShiftHours, String> shiftTypeColumn;
-
     @javafx.fxml.FXML
     private TableColumn<VolunteerShiftHours, Double> hoursColumn;
-
     @javafx.fxml.FXML
     private TextField feedbackTextArea;
-
     @javafx.fxml.FXML
     private Label feedbackLabel;
 

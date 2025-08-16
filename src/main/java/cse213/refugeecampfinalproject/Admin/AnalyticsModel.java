@@ -1,6 +1,8 @@
 package cse213.refugeecampfinalproject.Admin;
 
-public class AnalyticsModel {
+import java.io.Serializable;
+
+public class AnalyticsModel implements Serializable {
     private String refugeeID;
     private String type;
     private String status;
