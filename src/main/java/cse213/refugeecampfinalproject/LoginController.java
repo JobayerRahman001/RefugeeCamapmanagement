@@ -49,6 +49,7 @@ public class LoginController {
         }
 
         if (selectedUser.equals("Refugee")) {
+            boolean found = false;
             for (Refugee r : RefugeeList) {
                 if (r.getPasscode().equals(enteredPasscode)) {
                     LoggedInRefModel.setLoggedInRefugeeId(r.getId());
@@ -57,77 +58,82 @@ public class LoginController {
                     stage.setScene(new Scene(dashboard));
                     stage.setTitle("Refugee Dashboard");
                     stage.show();
-                    return;
+                    found = true;
+                    break;
                 }
             }
-            loginMsgLabel.setText("Invalid refugee passcode.");
-            return;
+            if (!found) {
+                loginMsgLabel.setText("Invalid refugee passcode.");
+            }
         }
-        if (selectedUser.equals("Camp Admin")) {
-            if (passcode.getText().equals("User2")) {
+        else if (selectedUser.equals("Camp Admin")) {
+            if (enteredPasscode.equals("User2")) {
                 Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Admin/AdminDashboard.fxml")));
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(home));
                 stage.setTitle("Admin Dashboard");
                 stage.show();
-                return;
+            } else {
+                loginMsgLabel.setText("Invalid passcode for Camp Admin.");
             }
         }
-
-        if (selectedUser.equals("Doctor")) {
-            if (passcode.getText().equals("User3")) {
+        else if (selectedUser.equals("Doctor")) {
+            if (enteredPasscode.equals("User3")) {
                 Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Doctor/HealthPortal.fxml")));
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(home));
-                stage.setTitle("Admin Dashboard");
+                stage.setTitle("Doctor Dashboard");
                 stage.show();
-                return;
+            } else {
+                loginMsgLabel.setText("Invalid passcode for Doctor.");
             }
         }
-
-        if (selectedUser.equals("Educator")) {
-            if (passcode.getText().equals("User4")) {
+        else if (selectedUser.equals("Educator")) {
+            if (enteredPasscode.equals("User4")) {
                 Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Educator/EducationPanel.fxml")));
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(home));
                 stage.setTitle("Education Panel");
                 stage.show();
-                return;
+            } else {
+                loginMsgLabel.setText("Invalid passcode for Educator.");
             }
         }
-
-        if (selectedUser.equals("Resources Manager")) {
-            if (passcode.getText().equals("User6")) {
+        else if (selectedUser.equals("Resources Manager")) {
+            if (enteredPasscode.equals("User6")) {
                 Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/ResourceManager/ResourcesDashboard.fxml")));
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(home));
                 stage.setTitle("Resources Dashboard");
                 stage.show();
-                return;
+            } else {
+                loginMsgLabel.setText("Invalid passcode for Resources Manager.");
             }
         }
-
-        if (selectedUser.equals("Accountant and Logistics Coordinator")) {
-            if (passcode.getText().equals("User7")) {
+        else if (selectedUser.equals("Accountant and Logistics Coordinator")) {
+            if (enteredPasscode.equals("User7")) {
                 Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/AccountantAndLogistics/AccountantAndLogisticsDashboard.fxml")));
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(home));
                 stage.setTitle("Accountant and Logistics Coordinator Dashboard");
                 stage.show();
-                return;
+            } else {
+                loginMsgLabel.setText("Invalid passcode for Accountant and Logistics Coordinator.");
             }
         }
-
-        if (selectedUser.equals("UN Representative")) {
-            if (passcode.getText().equals("User8")) {
+        else if (selectedUser.equals("UN Representative")) {
+            if (enteredPasscode.equals("User8")) {
                 Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/UNHCR/UNRepDashboard.fxml")));
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(home));
                 stage.setTitle("UN Rep Dashboard");
                 stage.show();
+            } else {
+                loginMsgLabel.setText("Invalid passcode for UN Representative.");
             }
-        } else {
-            loginMsgLabel.setText("Invalid passcode or user type.");
+        }
+        else {
+            loginMsgLabel.setText("Invalid user type.");
         }
     }
 

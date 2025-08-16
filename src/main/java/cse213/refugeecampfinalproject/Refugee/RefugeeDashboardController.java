@@ -100,7 +100,7 @@ public class RefugeeDashboardController
 
     @javafx.fxml.FXML
     public void eductionServiceforRefOnClick(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/EducationServices.fxml/cse213/refugeecampfinalproject/Refugee/EducationServices.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Refugee/EducationServices.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setTitle("Education Services");

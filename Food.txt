@@ -1,0 +1,5 @@
+AnalyticsModel{refugeeID='null', type='null', status='null', program='null', classTime='null', itemName='Rice', distributed='100kg', remaining='20kg'}
+AnalyticsModel{refugeeID='null', type='null', status='null', program='null', classTime='null', itemName='Lentil', distributed='70kg', remaining='5kg'}
+AnalyticsModel{refugeeID='null', type='null', status='null', program='null', classTime='null', itemName='Eggs', distributed='15 dozens', remaining='2 dozens'}
+AnalyticsModel{refugeeID='null', type='null', status='null', program='null', classTime='null', itemName='Fish', distributed='80kg', remaining='20kg'}
+AnalyticsModel{refugeeID='null', type='null', status='null', program='null', classTime='null', itemName='Water', distributed='1000 litres', remaining='150 litres'}

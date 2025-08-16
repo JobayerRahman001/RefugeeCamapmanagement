@@ -26,7 +26,7 @@ public class VolunteerPerformanceManagementAdminController
     @javafx.fxml.FXML
     private TableColumn<VolunteerWorkLogsModel, String> tasksTableCol;
     @javafx.fxml.FXML
-    private TableColumn<VolunteerModel, String> skillsTableCol;
+    private TableColumn<VolunteerWorkLogsModel, String> skillsTableCol;
     @javafx.fxml.FXML
     private TableColumn<VolunteerWorkLogsModel, String> serviceAreaTableCol;
     @javafx.fxml.FXML
@@ -41,20 +41,18 @@ public class VolunteerPerformanceManagementAdminController
         volIDTableCol.setCellValueFactory(new PropertyValueFactory<>("volID"));
         volNameTableCol.setCellValueFactory(new PropertyValueFactory<>("volName"));
         serviceAreaTableCol.setCellValueFactory(new PropertyValueFactory<>("volServiceArea"));
-        skillsTableCol.setCellValueFactory(new PropertyValueFactory<>("volSkills"));
+        skillsTableCol.setCellValueFactory(new PropertyValueFactory<>("VolSkills"));
         tasksTableCol.setCellValueFactory(new PropertyValueFactory<>("task"));
 
-        volunteerIdentifyTableView.getItems().clear();
         if(VolunteerDashboardController.VolunteerList.isEmpty()) {
-            //dummy data
-            volunteerIdentifyTableView.getItems().addAll(new VolunteerModel("V01", "Mahmud", null, null, true));
-            volunteerIdentifyTableView.getItems().addAll(new VolunteerModel("V02", "Mita", null, null, true));
-            volunteerIdentifyTableView.getItems().addAll(new VolunteerModel("V03", "Rahim", null, null, true));
+            VolunteerDashboardController.VolunteerList.addAll(
+                    new VolunteerModel("V01", "Mahmud", "Teaching", "Education", true),
+                    new VolunteerModel("V02", "Mita", "First-aid, CPR", "Healthcare", true),
+                    new VolunteerModel("V03", "Rahim", "Cooking", "Food", true)
+            );
         }
+        volunteerIdentifyTableView.getItems().clear();
         volunteerIdentifyTableView.getItems().addAll(VolunteerDashboardController.VolunteerList);
-
-        volunteerWorkTableView.getItems().clear();
-
     }
 
     @javafx.fxml.FXML
@@ -81,22 +79,39 @@ public class VolunteerPerformanceManagementAdminController
     @javafx.fxml.FXML
     public void showPerformanceOnClick(ActionEvent actionEvent) {
         VolunteerModel selected = volunteerIdentifyTableView.getSelectionModel().getSelectedItem();
-        if(selected == null)
+        if (selected == null)
             return;
 
         volunteerWorkTableView.getItems().clear();
 
-        //dummy data
-        if(selected.getVolID().equals("V01")) {
-            volunteerWorkTableView.getItems().add(new VolunteerWorkLogsModel(null, "Education", "Completed 3 sessions", "Teaching"));
-        } if(selected.getVolID().equals("V02")) {
-            volunteerWorkTableView.getItems().add(new VolunteerWorkLogsModel(null, "Healthcare", "Completed health checkups", "First-aid, CPR"));
-        }if(selected.getVolID().equals("V03")) {
-            volunteerWorkTableView.getItems().add(new VolunteerWorkLogsModel(null, "Food", "Completed serving 5 meals", "Cooking"));
-        }else {
-            volunteerWorkTableView.getItems().add(new VolunteerWorkLogsModel(null, selected.getVolServiceArea(), "0 Tasks Completed", selected.getVolSkills()));
+        for (VolunteerWorkLogsModel log : VolunteerWorkLogsController.VolunteerWorkLogsList) {
+            if (log.getVolID().equals(selected.getVolID())) {
+                volunteerWorkTableView.getItems().add(log);
+            }
         }
-        volunteerWorkTableView.getItems().addAll(VolunteerWorkLogsController.VolunteerWorkLogsList);
+
+        //dummy data
+        if (volunteerWorkTableView.getItems().isEmpty()) {
+            String dummyTask;
+            if (selected.getVolID().equals("V01")) {
+                dummyTask = "Completed 3 sessions";
+            } else if (selected.getVolID().equals("V02")) {
+                dummyTask = "Completed health checkups";
+            } else if (selected.getVolID().equals("V03")) {
+                dummyTask = "Completed serving 5 meals";
+            } else {
+                dummyTask = "0 Tasks Completed";
+            }
+
+            volunteerWorkTableView.getItems().add(
+                    new VolunteerWorkLogsModel(
+                            selected.getVolID(),
+                            selected.getVolServiceArea(),
+                            dummyTask,
+                            selected.getVolSkills()
+                    )
+            );
+        }
     }
 
     @javafx.fxml.FXML

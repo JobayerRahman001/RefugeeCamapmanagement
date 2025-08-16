@@ -65,9 +65,11 @@ public class ShelterManagementController
         shelterList.add(new ShelterManagementModel(null, "S006", "Block B", 6));
         shelterList.add(new ShelterManagementModel(null, "S007", "Block C", 7));
 
-        RefugeeRegisterController.RefugeeList.add(new Refugee("R01", "Amina", "1234", 32, "Female", "4", "Bangladeshi"));
-        RefugeeRegisterController.RefugeeList.add(new Refugee("R02", "Roy", "5678", 45, "Male", "5", "Yemen"));
-        RefugeeRegisterController.RefugeeList.add(new Refugee("R03", "Sohel", "9101", 37, "Male", "4", "Rohingya"));
+        if (RefugeeRegisterController.RefugeeList.isEmpty()) {
+            RefugeeRegisterController.RefugeeList.add(new Refugee("R01", "Amina", "1234", 32, "Female", "4", "Bangladeshi"));
+            RefugeeRegisterController.RefugeeList.add(new Refugee("R02", "Roy", "5678", 45, "Male", "5", "Yemen"));
+            RefugeeRegisterController.RefugeeList.add(new Refugee("R03", "Sohel", "9101", 37, "Male", "4", "Rohingya"));
+        }
 
         newRefugeeIDTableCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         newRefugeeNameTableCol.setCellValueFactory(new PropertyValueFactory<>("refName"));

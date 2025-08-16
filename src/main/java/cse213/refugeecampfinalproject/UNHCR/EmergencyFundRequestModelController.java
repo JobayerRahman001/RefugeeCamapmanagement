@@ -120,10 +120,10 @@ public class EmergencyFundRequestModelController
 
     @javafx.fxml.FXML
     public void gobacktoundashboardOnAction(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/AccountantAndLogisticsDashboard.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/UNHCR/UNRepDashboard.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
-        stage.setTitle("Accountant Logistics Coordinator Controller");
+        stage.setTitle("UNHCR");
         stage.show();
     }
 }

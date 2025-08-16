@@ -1,13 +1,20 @@
 package cse213.refugeecampfinalproject.DoctorAndEducationCoordinator;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class UplodeStudyMaterialController
 {
@@ -28,7 +35,12 @@ public class UplodeStudyMaterialController
     }
 
     @javafx.fxml.FXML
-    public void gobacktoeducationpanelOnAction(ActionEvent actionEvent) {
+    public void gobacktoeducationpanelOnAction(ActionEvent actionEvent) throws IOException {
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Educator/EducationPanel.fxml")));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(home));
+        stage.setTitle("Education Panel");
+        stage.show();
     }
 
     @javafx.fxml.FXML

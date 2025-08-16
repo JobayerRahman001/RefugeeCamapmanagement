@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.refugeecampfinalproject.DoctorAndEducationCoordinator.ArchiveProgramController">
    <children>
       <Label layoutX="232.0" layoutY="12.0" text="Archive Program">
@@ -24,7 +23,7 @@
       <Button layoutX="411.0" layoutY="81.0" mnemonicParsing="false" onAction="#completeprogramOnAction" prefHeight="25.0" prefWidth="153.0" text="Complete Program" />
       <Button layoutX="411.0" layoutY="150.0" mnemonicParsing="false" onAction="#archiveprogramOnAction" prefHeight="25.0" prefWidth="153.0" text="Archive Program" />
       <Button layoutX="411.0" layoutY="277.0" mnemonicParsing="false" onAction="#gobacktoeducationpanelOnAction" text="Go Back to education Panel" />
-      <Label fx:id="statusLabel" layoutX="50.0" layoutY="331.0" prefHeight="33.0" prefWidth="280.0">
+      <Label fx:id="statusLabel" layoutX="50.0" layoutY="331.0" prefHeight="33.0" prefWidth="527.0">
          <font>
             <Font name="Bookman Old Style" size="18.0" />
          </font>

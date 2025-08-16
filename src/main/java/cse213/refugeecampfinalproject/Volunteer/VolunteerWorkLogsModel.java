@@ -4,13 +4,13 @@ public class VolunteerWorkLogsModel {
     private String volID;
     private String VolServiceArea;
     private String task;
-    private String Volskills;
+    private String VolSkills;
 
-    public VolunteerWorkLogsModel(String volID, String volServiceArea, String task, String volskills) {
+    public VolunteerWorkLogsModel(String volID, String volServiceArea, String task, String volSkills) {
         this.volID = volID;
         VolServiceArea = volServiceArea;
         this.task = task;
-        Volskills = volskills;
+        VolSkills = volSkills;
     }
 
     public String getVolID() {
@@ -37,12 +37,12 @@ public class VolunteerWorkLogsModel {
         this.task = task;
     }
 
-    public String getVolskills() {
-        return Volskills;
+    public String getVolSkills() {
+        return VolSkills;
     }
 
-    public void setVolskills(String volskills) {
-        Volskills = volskills;
+    public void setVolSkills(String volSkills) {
+        VolSkills = volSkills;
     }
 
     @Override
@@ -51,7 +51,7 @@ public class VolunteerWorkLogsModel {
                 "volID='" + volID + '\'' +
                 ", VolServiceArea='" + VolServiceArea + '\'' +
                 ", task='" + task + '\'' +
-                ", Volskills='" + Volskills + '\'' +
+                ", VolSkills='" + VolSkills + '\'' +
                 '}';
     }
 }

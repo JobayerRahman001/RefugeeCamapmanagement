@@ -1,0 +1,2 @@
+EducationApplicationModel{refugeeName='R01', age=25, selectedProgram='Literacy Program', requestedTime='Monday 10 AM - 12 PM', status='pending'}
+EducationApplicationModel{refugeeName='R02', age=17, selectedProgram='Language Program', requestedTime='Tuesday 1 PM - 3 PM', status='pending'}

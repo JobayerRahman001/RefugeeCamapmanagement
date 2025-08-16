@@ -58,10 +58,11 @@ public static ObservableList<RefugeeAllocationsAdminModel> allocationList = FXCo
         //Refugee ID generation from list
         String id = "REF" + (RefugeeList.size()+1);
 
-
         Refugee r = new Refugee(id, refName, passcode, refAge, refGender, refFamSize, refNationality);
 
         RefugeeList.add(r);
+        LoggedInRefModel.setLoggedInRefugeeId(r.getId());
+
         RefugeeAllocationsAdminModel newallocation = new RefugeeAllocationsAdminModel(id, "", "", "", "");
         RefugeeRegisterController.allocationList.clear();
         RefugeeRegisterController.allocationList.add(newallocation);
