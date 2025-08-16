@@ -1,5 +1,6 @@
 package cse213.refugeecampfinalproject.DoctorAndEducationCoordinator;
 
+import cse213.refugeecampfinalproject.Admin.AnalyticsModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -11,8 +12,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -42,8 +46,8 @@ public class AproveEducationApplicationController
         loadApplications();
     }
     private void loadApplications() {
-        applicationList.add(new EducationApplicationModel("John Doe", 25, "Literacy Program", "Monday 10 AM - 12 PM","pending"));
-        applicationList.add(new EducationApplicationModel("Jane Smith", 17, "Language Program", "Tuesday 1 PM - 3 PM","pending"));
+        applicationList.add(new EducationApplicationModel("R01", 25, "Literacy Program", "Monday 10 AM - 12 PM","pending"));
+        applicationList.add(new EducationApplicationModel("R02", 17, "Language Program", "Tuesday 1 PM - 3 PM","pending"));
 
         ObservableList<EducationApplicationModel> observableList = FXCollections.observableArrayList(applicationList);
         educationalapplicationTableView.setItems(observableList);
@@ -102,5 +106,24 @@ public class AproveEducationApplicationController
     private void refreshApplications() {
         ObservableList<EducationApplicationModel> observableList = FXCollections.observableArrayList(applicationList);
         educationalapplicationTableView.setItems(observableList);
+    }
+
+
+    @javafx.fxml.FXML
+    public void saveastxtOnAction(ActionEvent actionEvent) {
+        FileChooser fc = new FileChooser();
+        fc.setTitle("Save Education Application data as txt");
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
+
+        File file = fc.showSaveDialog(null);
+        if (file != null) {
+            try (FileWriter fw = new FileWriter(file)) {
+                for (EducationApplicationModel model : educationalapplicationTableView.getItems()) {
+                    fw.write(model.toString() + "\n");
+                }
+            } catch (Exception e) {
+                //
+            }
+        }
     }
 }
