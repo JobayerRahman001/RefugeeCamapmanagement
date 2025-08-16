@@ -42,9 +42,13 @@ public class VolunteerEditSkillsController {
         skillNameColumn.setCellValueFactory(new PropertyValueFactory<>("volSkills"));
 
         skillsTable.getItems().clear();
-        skillsTable.getItems().addAll(VolunteerList);
-        if(VolunteerList.isEmpty()){
-            skillsTable.getItems().add(new VolunteerModel("", "", "Fluency in Arabic", "", true));
+        for (VolunteerModel volunteer : VolunteerList) {
+            if (volunteer.getVolID().equals(LoggedInVolModel.getLoggedInVolID())) {
+                skillsTable.getItems().add(volunteer);
+                if (VolunteerList.isEmpty()) {
+                    skillsTable.getItems().add(new VolunteerModel("", "", "Fluency in Arabic", "", true));
+                }
+            }
         }
     }
 
@@ -62,6 +66,7 @@ public class VolunteerEditSkillsController {
             validationLabel.setText("Please enter your own  ID!");
             return;
         }
+        skillsTable.setItems(VolunteerList);
         for (VolunteerModel volunteerSkill : VolunteerList) {
             if (volunteerSkill.getVolID().equals(volID)) {
                 if (volunteerSkill.getVolSkills().contains(newSkill)) {

@@ -21,22 +21,22 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class AproveEducationApplicationController
-{
+public class AproveEducationApplicationController {
     @javafx.fxml.FXML
-    private TableColumn<EducationApplicationModel,String> statusColum;
+    private TableColumn<EducationApplicationModel, String> statusColum;
     @javafx.fxml.FXML
     private TableView<EducationApplicationModel> educationalapplicationTableView;
     @javafx.fxml.FXML
-    private TableColumn<EducationApplicationModel,String> requestedtimeColum;
+    private TableColumn<EducationApplicationModel, String> requestedtimeColum;
     @javafx.fxml.FXML
-    private TableColumn<EducationApplicationModel,String> selecedprogramColum;
+    private TableColumn<EducationApplicationModel, String> selecedprogramColum;
     @javafx.fxml.FXML
-    private TableColumn<EducationApplicationModel,String> refugeeageColum;
+    private TableColumn<EducationApplicationModel, String> refugeeageColum;
     @javafx.fxml.FXML
     private Label confirmationLabel;
 
     private ArrayList<EducationApplicationModel> applicationList = new ArrayList<>();
+
     @javafx.fxml.FXML
     public void initialize() {
         refugeeageColum.setCellValueFactory(new PropertyValueFactory<>("age"));
@@ -45,13 +45,15 @@ public class AproveEducationApplicationController
         statusColum.setCellValueFactory(new PropertyValueFactory<>("status"));
         loadApplications();
     }
+
     private void loadApplications() {
-        applicationList.add(new EducationApplicationModel("R01", 25, "Literacy Program", "Monday 10 AM - 12 PM","pending"));
-        applicationList.add(new EducationApplicationModel("R02", 17, "Language Program", "Tuesday 1 PM - 3 PM","pending"));
+        applicationList.add(new EducationApplicationModel("R01", 25, "Literacy Program", "Monday 10 AM - 12 PM", "pending"));
+        applicationList.add(new EducationApplicationModel("R02", 17, "Language Program", "Tuesday 1 PM - 3 PM", "pending"));
 
         ObservableList<EducationApplicationModel> observableList = FXCollections.observableArrayList(applicationList);
         educationalapplicationTableView.setItems(observableList);
     }
+
     @javafx.fxml.FXML
     public void gobacktoeducationOnAction(ActionEvent actionEvent) throws IOException {
         Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Educator/EducationPanel.fxml")));
@@ -94,15 +96,19 @@ public class AproveEducationApplicationController
             confirmationLabel.setText("Please select an application to approve.");
         }
     }
+
     private boolean isAgeGroupMatch(EducationApplicationModel application) {
         return application.getAge() >= 15; // Example condition
     }
+
     private boolean isScheduleConflict(EducationApplicationModel application) {
         return false;
     }
+
     private void updateRefugeeProfile(EducationApplicationModel application) {
         System.out.println("Updating profile for " + application.getRefugeeName());
     }
+
     private void refreshApplications() {
         ObservableList<EducationApplicationModel> observableList = FXCollections.observableArrayList(applicationList);
         educationalapplicationTableView.setItems(observableList);
@@ -112,7 +118,7 @@ public class AproveEducationApplicationController
     @javafx.fxml.FXML
     public void saveastxtOnAction(ActionEvent actionEvent) {
         FileChooser fc = new FileChooser();
-        fc.setTitle("Save Education Application data as txt");
+        fc.setTitle("Save Education Data as Text");
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
 
         File file = fc.showSaveDialog(null);
