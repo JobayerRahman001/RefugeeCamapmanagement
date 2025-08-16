@@ -90,7 +90,7 @@ public static ArrayList<AnalyticsModel> food = new ArrayList<>();
 
         refugeeIDTableColE.setCellValueFactory(new PropertyValueFactory<>("refugeeID"));
         programTableCol.setCellValueFactory(new PropertyValueFactory<>("program"));
-        classTimeTableCol.setCellValueFactory(new PropertyValueFactory<>("classTimes"));
+        classTimeTableCol.setCellValueFactory(new PropertyValueFactory<>("classTime"));
         statusTableColE.setCellValueFactory(new PropertyValueFactory<>("status"));
 
         for (EducationServicesModel esm : EducationServicesController.EducationServicesList) {
