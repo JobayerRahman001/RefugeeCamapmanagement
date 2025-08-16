@@ -15,11 +15,11 @@
             <Font name="Bookman Old Style" size="18.0" />
          </font>
       </Label>
-      <TableView fx:id="assignedResourcesTableView" layoutX="121.0" layoutY="95.0" prefHeight="197.0" prefWidth="359.0">
+      <TableView fx:id="assignedResourcesTableView" layoutX="74.0" layoutY="95.0" prefHeight="211.0" prefWidth="469.0">
         <columns>
-          <TableColumn fx:id="resourcesCategoryTableCol" prefWidth="116.0" text="Category" />
-          <TableColumn fx:id="resourcesDetailsTableCol" prefWidth="107.5" text="Details" />
-            <TableColumn fx:id="assignedDateTableCol" prefWidth="134.5" text="Assigned Date" />
+          <TableColumn fx:id="resourcesDetailsTableCol" prefWidth="143.5" text="Details" />
+            <TableColumn fx:id="assignedDateTableCol" prefWidth="179.0" text="Assigned Date" />
+          <TableColumn fx:id="resourcesCategoryTableCol" prefWidth="145.5" text="Category" />
         </columns>
       </TableView>
    </children>
