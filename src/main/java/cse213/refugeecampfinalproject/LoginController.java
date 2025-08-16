@@ -62,7 +62,6 @@ public class LoginController {
             }
             loginMsgLabel.setText("Invalid refugee passcode.");
             return;
-<<<<<<< HEAD
         } else if (selectedUser.equals("Camp Admin") && enteredPasscode.equals("User2")) {
             Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/Admin/AdminDashboard.fxml")));
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -105,7 +104,6 @@ public class LoginController {
             stage.setTitle("UN Rep Dashboard");
             stage.show();
             return;
-=======
         }
         if (selectedUser.equals("Camp Admin")) {
             if (passcode.getText().equals("User2")) {
@@ -170,7 +168,6 @@ public class LoginController {
                 stage.setTitle("UN Rep Dashboard");
                 stage.show();
             }
->>>>>>> c8c4ab00774ba079636760607635b1336426bdfe
         } else {
             loginMsgLabel.setText("Invalid passcode or user type.");
         }

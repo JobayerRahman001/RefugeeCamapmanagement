@@ -89,11 +89,11 @@ public class VolunteerPerformanceManagementAdminController
         //dummy data
         if(selected.getVolID().equals("V01")) {
             volunteerWorkTableView.getItems().add(new VolunteerWorkLogsModel(null, "Education", "Completed 3 sessions", "Teaching"));
-        } if(selected.getVolID().equals("V02")) {
+        } else if(selected.getVolID().equals("V02")) {
             volunteerWorkTableView.getItems().add(new VolunteerWorkLogsModel(null, "Healthcare", "Completed health checkups", "First-aid, CPR"));
-        }if(selected.getVolID().equals("V03")) {
+        } else if(selected.getVolID().equals("V03")) {
             volunteerWorkTableView.getItems().add(new VolunteerWorkLogsModel(null, "Food", "Completed serving 5 meals", "Cooking"));
-        }else {
+        } else {
             volunteerWorkTableView.getItems().add(new VolunteerWorkLogsModel(null, selected.getVolServiceArea(), "0 Tasks Completed", selected.getVolSkills()));
         }
         volunteerWorkTableView.getItems().addAll(VolunteerWorkLogsController.VolunteerWorkLogsList);
