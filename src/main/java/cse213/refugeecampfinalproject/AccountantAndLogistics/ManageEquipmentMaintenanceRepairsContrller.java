@@ -61,7 +61,7 @@ public class ManageEquipmentMaintenanceRepairsContrller
 
     @javafx.fxml.FXML
     public void GoBacktoAccountLogisticDashboardOnAction(ActionEvent actionEvent) throws IOException {
-        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/AccountantAndLogisticsDashboard.fxml")));
+        Parent home = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/cse213/refugeecampfinalproject/AccountantAndLogistics/AccountantAndLogisticsDashboard.fxml")));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(home));
         stage.setTitle("Accountant Logistics Coordinator Controller");
